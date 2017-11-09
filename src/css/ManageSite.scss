@@ -1,0 +1,81 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #f0f1f0;
+}
+#app{
+    margin-bottom: pxToRem(90px)
+}
+.managebox{
+    margin-top: pxToRem(10px);
+}
+.manage{
+    background: #ffffff;
+    overflow: hidden;
+    padding: pxToRem(20px) pxToRem(20px);
+    font-size: pxToRem(26px);
+    color: #7d7d7e;
+    img{
+        width: pxToRem(26px);
+        height: pxToRem(26px);
+        margin:0 pxToRem(10px) 0 0; 
+    }
+    p:nth-child(1){
+        float: left;
+        position: relative;
+        span{
+            margin-left: pxToRem(40px)
+        }
+        img{
+             position: absolute;
+            top: 47%;
+            margin-top: pxToRem(-13px)
+        }
+    }
+    p:nth-child(2){
+        float: right;
+        span:nth-child(1){
+            margin-right: pxToRem(30px)
+        }
+        
+    }
+}
+.active{
+    color: #b12b4a;
+}
+.btn{
+    width: 100%;
+    height: pxToRem(90px);
+    color: #ffffff;
+    font-size: pxToRem(32px);
+    background: #d12b4a;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    line-height: pxToRem(90px);
+}
+.sitebox{
+    background: #ffffff;
+    padding: pxToRem(30px) pxToRem(20px);
+    border-bottom: 1px solid #bebebe;
+    p:nth-child(1){
+        font-size: pxToRem(28px);
+        color: #272728;
+        overflow: hidden;
+        margin-bottom: pxToRem(20px);
+        span:nth-child(1){
+            float: left
+        }
+        span:nth-child(2){
+            float: right
+        }
+    }
+    p:nth-child(2){
+        font-size: pxToRem(28px);
+        color: #272728;
+        
+    }
+}

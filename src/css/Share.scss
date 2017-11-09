@@ -1,0 +1,59 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    // background: #f0f1f0;
+}
+#content{
+    width: 100%;
+    height: pxToRem(1600px);
+    background: url(../img/Share/share.png) no-repeat;
+    background-color: #FFFFFF;
+    background-size: 100%;
+    margin-top: pxToRem(96px);
+    position: relative;
+}
+#navTop{
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    height: pxToRem(96px);
+    line-height: pxToRem(96px);
+    background-color: #fff;
+    color: #333;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 99;
+    justify-content:space-between;
+    span{
+        font-size: pxToRem(34px);
+        padding:0 pxToRem(35px);
+    }
+    .icon-back{
+        font-size:pxToRem(48px);
+        vertical-align:middle;
+        padding-left: pxToRem(20px);
+    }
+    .icon-fenxiang{
+        color:#666;
+        font-size:pxToRem(40px);
+        vertical-align:middle;
+        padding-right: pxToRem(25px);
+    }
+}
+.shareBtn{
+    width: pxToRem(443px);
+    height: pxToRem(67px);
+    line-height: pxToRem(67px);
+    background-color: #fff;
+    border-radius: pxToRem(10px);
+    text-align: center;
+    font-size: pxToRem(36px);
+    color: #ED5002;
+    position: absolute;
+    left:pxToRem(140px);
+    bottom:pxToRem(80px);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <title>分类</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <search></search>
+        <mt-swipe :auto="4000" class="banner">
+            <mt-swipe-item v-for="(item,index) in bannerList">
+                <img @click="bannerhandle(item.link)" :src="item.imgurl" alt="">
+            </mt-swipe-item>
+        </mt-swipe>
+        <div class="goods">
+            <!-- 左侧导航栏 -->
+            <div class="menu-wrapper">
+                <ul>
+                  <li class="menu-item"
+                      v-for="(item, index) in goodsList"
+                      :class="{'current': currentIndex == index}" @click="selectMenu(index,item.classid)">
+                    <span class="text">{{item.classname}}</span>
+                  </li>
+                </ul>
+            </div>
+            <div class="foods-wrapper">
+                <ul class="foods-list">
+                    <li v-for="(item,index) in goodsDetails">
+                        <h3 class="title">/ &nbsp&nbsp {{item.title}} &nbsp&nbsp /</h3>
+                        <ul>
+                            <li class="foods-item" v-for="(list,index) in item.categorylist" @click="gotoClassifyList(list)">
+                                <img :src="list.image" alt="">
+                                <span>{{list.name}}</span>
+                            </li>
+                            <!-- <li class="foods-item">
+                                <img src="" alt="">
+                                <span>oppo</span>
+                            </li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/GoodsClass.js"></script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <title>编辑地址</title>
+    <style>
+        [v-cloak]{ 
+            display: none
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <section>
+            <div class="line line-f">
+                <label>收货人</label><input type="text" v-model="consignee" >
+            </div>
+            <div class="line line-f">
+                <label>联系电话</label><input type="text" v-model="Phone">
+            </div>
+            <div class="line line-site" v-on:click="selectSite">
+                <p>所在地区</p><p>{{site}}<img src="../src/img/orderdetail/bigArrows.png" alt=""></p>
+            </div>
+            <div class="line line-info">
+                <textarea v-model="DetailedSite"></textarea>
+            </div>
+            <div class="line line-radio" v-on:click="setDefault">
+                <p>设置默认</p>
+                 <img v-show="defaultSite==1" src="../src/img/ManageSite/5_04.png" alt="">
+                <img v-show="defaultSite==0" src="../src/img/ManageSite/5_03.png" alt="">
+            </div>
+            <div class="line line-delete" v-on:click="deleteSite">
+                <p>删除地址</p>
+            </div>
+        </section>
+        <div class="btn" v-on:click="SaveSite">保存</div>
+        
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/EditSite.js"></script>
+</html> 

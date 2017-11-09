@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <title>选择收货地址</title>
+    <style>
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="fist-sitebox" v-for="item in list" v-on:click="savesite(item)">
+            <p><span>{{item.name}}</span><span>{{item.phone}}</span></p>
+            <p><span v-if="item.state==1">[默认地址]</span>{{item.areaname}}{{item.detailaddress}}</p>
+        </div>
+        
+    </div>
+</body>
+ <script src="../dist/SelectSite.js"></script>
+</html>

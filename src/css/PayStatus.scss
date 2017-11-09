@@ -1,0 +1,51 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #f0f1f0;
+}
+.mint-loadmore-bottom{
+    font-size: pxToRem(24px) !important;
+    margin-bottom: pxToRem(20px) !important;
+    color: #7d7d7e !important;
+}
+
+.paystatus{
+    width: 100%;
+    height: pxToRem(475px);
+    background: #ffffff;
+    margin-top: pxToRem(10px);
+    text-align: center;
+    font-size: pxToRem(28px);
+    .paystatusbox{
+        padding-top: pxToRem(70px);
+        .paytext{
+            padding-bottom: pxToRem(60px);
+        }
+
+    }
+    .btn-group{
+        p{
+            display: inline-block;
+            padding: pxToRem(10px) pxToRem(20px);
+
+            border-radius: pxToRem(25px);
+        }
+        p:nth-child(1){
+            border:1px solid #ED4F02;
+            color: #ED4F02;
+            margin-right: pxToRem(80px);
+        }
+        p:nth-child(2){
+            border:1px solid #bebebe;
+            color: #bebebe;
+        }
+    }
+    img{
+        width: pxToRem(160px);
+        height: pxToRem(160px);
+        margin-bottom: pxToRem(25px)
+    }
+}

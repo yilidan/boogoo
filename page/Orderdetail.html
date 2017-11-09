@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <title>订单详情</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <loadmores v-on:increment="loadup" :bottomtext="bottomtext">
+            <!-- <div class="orderState">
+                {{datas.statename}}
+            </div> -->
+            <div class="ordertime">
+                <p>订单编号：{{datas.orderid}}</p>
+                <p>创建时间：{{datas.createtime}}</p>
+                <p v-if="paymentTime">付款时间：{{datas.paytime}}</p>
+                <p v-if="deliverTime">发货时间：{{datas.sendtime}}</p>
+            </div>
+            <div class="parcelState" v-if="showparcelState" v-on:click="GoLogistics">
+                <img class="carbg" src="../src/img/orderdetail/car.png" alt="">
+                <div>
+                    <p>包裹正在路上</p>
+                    <p>2017-04-05</p>
+                </div>
+                <img src="../src/img/orderdetail/bigArrows.png" alt="">
+            </div>
+            <div class="sitebar">
+                <img src="../src/img/orderdetail/2_04.png" alt="">
+                <div>
+                    <p><span>{{datas.addressname}}</span><span>{{datas.addressphone}}</span></p>
+                    <p>{{datas.address}}</p>
+                </div>
+            </div>
+            <div class="infobox">
+                <div class="store">
+                    <img class="head" :src="datas.headurl" alt="">
+                    <p class="storename">{{datas.anchorname}}的小店 <img src="../src/img/orderdetail/smallArrows.png" alt=""></p>
+                    <p class="starts">{{datas.statename}}</p>
+                </div>
+                <div class="detail" v-for="item in datas.prolist">
+                    <img :src="item.coverurl" alt="">
+                    <div class="detailname">
+                        <h1>{{item.name}}</h1>
+                        <p>{{item.attrdesc}}</p>
+                    </div>
+                    <div class="price">
+                        <p>¥{{item.price}}</p>
+                        <p>x{{item.num}}</p>
+                    </div>
+                </div>
+                <div class="privilege">
+                    <p class="practical">
+                        <span>实付款</span><span>¥<a>{{datas.totalprice}}</a></span>
+                    </p>
+                    <p>
+                        <span>+运费</span><span>+0.00</span>
+                    </p>
+                    <!--<p>
+                <span>限时促销</span><span>-¥400</span>
+            </p>-->
+                </div>
+            </div>
+            <div class="btn-group">
+                <!--<span class="btn" v-if="paybtn" v-on:click="pay">退款</span>-->
+                <span class="btn" v-if="paybtn" v-on:click="pay">付款</span>
+                <span class="btn" v-if="Confirmbtn" v-on:click="confirm">确认收货</span>
+            </div>
+            <Youlike :page="pageindex"></Youlike>
+        </loadmores>
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/Orderdetail.js"></script>
+
+</html>

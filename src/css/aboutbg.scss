@@ -1,0 +1,37 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #fff;
+}
+
+#app{
+    h2{
+        text-align: center;
+        font-size: pxToRem(30px);
+        padding:pxToRem(20px) 0;
+        font-weight: bold;
+    }
+}
+.content1{
+    margin-top: pxToRem(10px);
+    li{
+        padding:0 pxToRem(15px);
+        h3{
+            padding:pxToRem(30px) 0;
+            padding-left: pxToRem(25px);
+            font-size:pxToRem(28px);
+            font-weight: bold;
+        }
+        p{
+            line-height: 2;
+            text-indent:pxToRem(25px);
+        }
+        img{
+            width: 100%;
+            vertical-align: middle;
+        }
+    }
+}

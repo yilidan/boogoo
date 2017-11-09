@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <title>查看物流</title>
+     <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <header>
+            <img :src="imgurl" alt="">
+            <div>
+                <p>物流状态 <span>运输中</span></p>
+                <p>运单编号:{{couriernum}}</p>
+            </div>
+        </header>
+        <section>
+            <div class="box" :class="[index==0?firstbox:'']" v-for="(item,index) in list">      
+                <img src="../src/img/Logistics/3.png" alt="">
+                <div class="text">
+                     <p>{{item.AcceptStation}}</p>
+                     <p>{{item.AcceptTime}}</p>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            
+        </section>
+    </div>
+</body>
+<script src="../dist/Logistics.js"></script>
+
+</html>

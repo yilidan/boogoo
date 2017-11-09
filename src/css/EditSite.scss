@@ -1,0 +1,125 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #f0f1f0;
+}
+.ios-select-widget-box header.iosselect-header a{
+    font-size: pxToRem(30px) !important;
+}
+.ios-select-widget-box ul li.at{
+    font-size: pxToRem(30px) !important;
+}
+.ios-select-widget-box ul li.side1{
+    font-size: pxToRem(26px) !important;
+}
+.ios-select-widget-box ul li{
+    font-size: pxToRem(22px) !important;
+}
+.ios-select-widget-box.olay > div{
+    bottom: pxToRem(-500px) 
+}
+
+
+section{
+    margin-top: pxToRem(10px);
+   
+}
+.line{
+    padding: pxToRem(30px) pxToRem(20px);
+    background: #ffffff;
+    
+    font-size: pxToRem(28px);
+    color: #272728;
+    border-bottom: pxToRem(1px) solid #E5E9F2;
+   
+}
+.line-f{
+    
+    label{
+        display: inline-block;
+        width: 23%;
+    }
+    
+    input{
+        display: inline-block;
+        border: 0px;
+        outline: none;
+        width: 77%;
+        font-size: pxToRem(28px);
+        color: #272728;
+    }
+}
+.line-site{
+    P:nth-child(1){
+        width: 23%;
+       display: inline-block;
+    }
+    
+    p:nth-child(2){
+        float: right;
+    }
+    img{
+        width: pxToRem(13px);
+        height: pxToRem(22px);
+        float: right;
+        margin-left: pxToRem(20px);
+        margin-top: pxToRem(2px)
+    }
+
+}
+.line-info{
+    textarea{
+        width: 100%;
+        height: pxToRem(170px);
+        border: 0px;
+        outline:none;
+        font-size: pxToRem(24px);
+        color: #272728;
+    }
+}
+.line-radio{
+    overflow: hidden;
+    margin-top: pxToRem(10px);
+    p{
+        float: left
+    }
+    img{
+        float: right;
+        width:pxToRem(23px);
+        height: pxToRem(22px);
+    }
+}
+.line-delete{
+    margin-top: pxToRem(10px);
+    font-size: pxToRem(28px);
+    color: #dc1740;
+}
+.btn{
+    width: pxToRem(625px);
+    height: pxToRem(80px);
+    margin: pxToRem(35px) auto;
+    text-align: center;
+    line-height: pxToRem(80px);
+    background: #d12b4a;
+    color: #ffffff;
+    font-size: pxToRem(32px);
+}
+
+.selectScroll{
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.picker-items{
+   
+    height: pxToRem(410px) !important;
+}
+.picker-item, .picker-center-highlight {
+    height: pxToRem(65px) !important;
+    line-height: pxToRem(65px) !important;
+    font-size: pxToRem(30px)!important;
+}

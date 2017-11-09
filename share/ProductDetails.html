@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>分享商品</title>
+    <meta name="format-detection" content="telephone=no" />
+    <!-- <meta name="apple-itunes-app" content="app-id=8W5CNKFJFF, affiliate-data=myAffiliateData, app-argument=myURL"> -->
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/lib/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="../src/lib/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .mint-popup {
+            width: 100%;
+        }
+
+        .v-modal {
+            overflow: hidden
+        }
+
+        .lightbox-bottom {
+            background: url(../src/img/productDetails/close.png);
+        }
+        .swiper-pagination-bullet-active{
+            background-color: #EE6A02 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 头部 -->
+        <div class="navTop" id="JdownApp" v-show="showReminder">
+            <img id="tips" src="../src/img/productDetails/1_07.png" alt="">
+        </div>
+        <!-- 商品详情 -->
+        <transition name="fade-choose">
+        <div class="product_details" id="main">
+            <div class="product_top">
+                <header>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="turn in pI.turnimg">
+                                <img :src="turn+'?imageView2/2/w/550'" v-on:click="showlightbox($event,2)" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="headertitle">
+                        <h1>{{pI.name}}</h1>
+                        <p class="preferentialPrice">¥<span>{{pI.price}}</span></p>
+                        <p class="originalPrice">价格<span>¥{{pI.originprice}}</span></p>
+                        <ul class="col-3">
+                            <li>快递：包邮</li>
+                            <li>月销 {{pI.salesnum}}笔</li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </header>
+                <div class="attribute">
+                    <div class="boxs" v-on:click="handlers(true)">
+                        <p>{{confirmClass}}</p><img src="../src/img/productDetails/rights.png" alt="">
+                    </div>
+                    <div class="boxs" v-on:click="selectAbbr">
+                        <p>产品参数</p><img src="../src/img/productDetails/rights.png" alt="">
+                    </div>
+                </div>
+                <!--小店-->
+                <div class="house" v-if="houseshow">
+                    <div class="housename">
+                        <img :src="pI.headurl" alt="">
+                        <p>{{pI.anchorname}}</p>
+                    </div>
+                    <div class="houseinfobox">
+                        <div class="houseinfo">
+                            <p>{{pI.totalpronum}}</p>
+                            <p>全部商品</p>
+                        </div>
+                        <div class="houseinfo">
+                            <p>{{pI.fansnum}}</p>
+                            <p>关注人数</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--详情-->
+            <div class="info product_bottom" id="container">
+                <h2>
+                    <p></p>
+                    <a>
+                        <span>详情</span>
+                    </a>
+                </h2>
+                <div class="picture-group gallery" id="image_container" class="container">
+                    <ul class="detailInfo">
+                        <li v-for="info in infoimgdata">
+                            <img class="infoimg lazy" :src="info+'?imageView2/2/w/550'" v-on:click="showlightbox($event,2)" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </transition>
+        <!--按钮集-->
+        <div class="btn-group" @click="downloadApp()">
+            <img src="../src/img/productDetails/download-line.png" alt="">
+        </div>
+        <!--选择属性-->
+        <mt-popup v-model="attrshow" position="bottom" class="mint-popup-4">
+            <div class="seletAttr">
+                <div class="seletheader">
+                    <div class="productImgPar">
+                        <img class="productimg" :src="imgurl+'?imageView2/2/w/350'" alt="" v-on:touchstart.prevent="showlightbox($event,1)">
+                    </div>
+                    <div class="pirce">
+                        <p>¥ {{ (prices=="") ? pI.price: prices}}</p>
+                        <p class="stock">库存{{stock}}件</p>
+                        <p>{{confirmClass}}</p>
+                    </div>
+                    <img v-on:touchstart.prevent="hideAttr" class="close" src="../src/img/productDetails/close.png" alt="">
+                    <div class="clear"></div>
+                </div>
+                <div class="seletsection">
+                    <div class="attr" v-for="(attr,findex) in arrts">
+                        <h1>{{attr.attrname}}</h1>
+                        <ul>
+                            <li v-for="(item,index) in attr.attrValueList" :class="{active:iscur['type'+attr.attrid]==item.attrid}" v-on:touchstart.prevent="actives(item.attrname,attr.attrid,item.attrid)"><a>{{item.attrname}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="attr buyMunber">
+                        <p>购买数量</p>
+                        <div class="mun">
+                            <span v-on:touchstart.prevent="minus"><img src="../src/img/productDetails/minus.png" alt=""/></span>
+                            <a>{{buynumber}}</a>
+                            <span v-on:touchstart.prevent="plus"><img src="../src/img/productDetails/plus.png" alt=""/></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="seletfooter" v-on:click="hideAttr">
+                    <div class="btnconfirm">确定</div>
+                </div>
+            </div>
+        </mt-popup>
+        <!--查看参数-->
+        <mt-popup v-model="abbrshow" position="bottom" class="mint-popup-4">
+            <div class="seletAbbr">
+                <h1>产品参数</h1>
+                <div class="seletheader">
+                    <div class="box" v-for="item in pI.otherparameters">
+                        <p>{{item.Key}}</p>
+                        <p>{{item.Value}}</p>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="btnconfirm" v-on:click="hideAbbr">确定</div>
+            </div>
+        </mt-popup>
+        <!--弹出图片-->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <div class="pswp__bg"></div>
+
+            <div class="pswp__scroll-wrap">
+
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+
+                        <div class="pswp__counter"></div>
+
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/shareProduct.js"></script>
+<script src="../src/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+<script src="../src/lib/photoswipe/photoswipe.min.js"></script>
+<script src="../src/lib/jquery/jquery.min.js"></script>
+<script src="../src/lib/lazy/lazy.js"></script>
+</html>

@@ -1,0 +1,103 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #fff;
+}
+
+.green{
+    color: #70AD47;
+}
+.imgHelp{
+    width: 70% !important;
+}
+.hearder{
+    width: 100%;
+    height: pxToRem(430px);
+    line-height: pxToRem(430px);
+    text-align: center;
+    border-bottom: pxToRem(10px) solid #ececec;
+    img{
+        width: pxToRem(315px);
+        height: pxToRem(323px);
+        vertical-align: middle;
+    }
+}
+.content{
+    border-bottom: pxToRem(1px) solid #ececec;
+    padding-left: pxToRem(20px);
+    span{
+        display: inline-block;
+        font-size: pxToRem(28px);
+        padding:pxToRem(20px) 0;
+        font-weight: bold;
+    }
+    img{
+        width: pxToRem(21px);
+        height: pxToRem(21px);
+        vertical-align: text-top;
+    }
+}
+.content3{
+    margin-top: pxToRem(10px);
+    padding-left: pxToRem(10px);
+    h3{
+        padding-left: 0;
+    }
+    .blackCir{
+        display: inline-block;
+        width: pxToRem(15px);
+        height: pxToRem(15px);
+        background-color: #000;
+        border-radius: 50%;
+        margin-right: pxToRem(10px);
+    }
+    .greenCir{
+        display: inline-block;
+        width: pxToRem(15px);
+        height: pxToRem(15px);
+        background-color: #70AD47;
+        border-radius: 50%;
+        margin-right: pxToRem(10px);
+    }
+    p:first-child{
+        padding-left: pxToRem(15px);
+    }
+    p{
+        padding-left: pxToRem(40px);
+        line-height: 1.5;
+    }
+}
+.content1{
+    li{
+        padding-left: pxToRem(48px);
+        padding-right: pxToRem(25px);
+        font-size: pxToRem(28px);
+        color: #000;
+        p{
+            line-height: 1.5;
+            // text-indent:pxToRem(50px);
+        }
+        img{
+            margin: pxToRem(15px) 0;
+            width: 100%;
+            // height: pxToRem(279px);
+            vertical-align: middle;
+        }
+    }
+}
+.tableClass{
+    width: 95%;
+    height: auto;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin:pxToRem(10px) 0;
+    margin-left: pxToRem(20px);
+    td{
+        // width: 20%;
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+}

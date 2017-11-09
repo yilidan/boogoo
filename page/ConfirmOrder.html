@@ -1,0 +1,208 @@
+<!--@{
+    Layout = null;
+}
+<!DOCTYPE html>-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <title>确认订单</title>
+    <style>
+        .bgbar {
+            background: url(../src/img/ConfirmOrder/5_02.png) repeat-x 0 100% #fff;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        body{
+            max-height: 999999px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="sitebar">
+            <div v-if="defultesite" class="info" v-on:click="selectSite">
+                <p>
+                    <span>{{site.name}}</span>
+                    <span class="phone">{{site.phone}}</span>
+                    <span v-if="site.state==1" class="defaultCont">默认</span>
+                </p>
+                <p class="addressCont">{{site.areaname}}{{site.detailaddress}}</p>
+                <img class="icon" src="../src/img/orderdetail/2_07.png" alt="">
+                <img class="arrows" src="../src/img/ConfirmOrder/bigArrows.png" alt="">
+            </div>
+            <div @click="GoaddSite" v-else class="addsite">
+                <i class="iconfont icon-iconfont707"></i>
+            </div>
+        </div>
+        <div class="bgbar"></div>
+        <div class="box">
+            <div class="margin" v-for="item in orderinfo">
+                <div class="store">
+                    <img class="head" :src="item.headerimg" alt="">
+                    <p class="storename">
+                        {{item.anchorname}}
+                        <!-- <img src="../src/img/orderdetail/smallArrows.png" alt=""> -->
+                    </p>
+                </div>
+                <div class="detail" v-for="product in item.data">
+                    <img :src="product.productimg+'?imageView2/2/w/250'" alt="">
+                    <div class="detailname">
+                        <h1>{{product.productname}}</h1>
+                        <p>{{product.skutext}}</p>
+                    </div>
+                    <div class="price">
+                        <p>¥{{product.prices}}</p>
+                        <p>x{{product.num}}</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="OrderStatus">
+                    <ul class="privilege">
+                        <li>配送方式：普通快递</li>
+                        <li>发票类型：不开发票</li>
+                        <li>
+                            <p>
+                                <span>商品总额</span>
+                                <span>¥ {{item.subtotal}}</span>
+                            </p>
+                            <p>
+                                <span>+运费</span>
+                                <span>+0.00</span>
+                            </p>
+                        </li>
+                        <!-- <p>运费</p>
+                        <p>包邮</p>
+                        <div class="clear"></div> -->
+                    </ul>
+                    <div class="subtotal">
+                        <p>实付款： <span>¥ <a>{{item.subtotal}}</a></span></p>
+                        <!-- <p>共{{item.number}}件产品 小计：<span>¥<a>{{item.subtotal}}</a></span></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <div>实付金额：<span>¥ <a>{{total}}</a></span></div>
+            <div @click="popupOptionPay()">提交订单</div>
+            <div class="clear"></div>
+        </div>
+        <!-- 新增地址 -->
+        <mt-popup v-model="popupAddSite" class="popupAddSite">
+            <div class="popupTitle">
+                <template v-if="defultesite">
+                    <i class="iconfont icon-fanhui" @click="popupBackUp()"></i>
+                </template>
+                <h3 v-text="popupAddress"></h3>
+                <i class="iconfont icon-guanbi" @click="popupAddSite=false"></i>
+            </div>
+            <div class="line line-f">
+                <label>收件人</label><input type="text" v-model="consignee">
+            </div>
+            <div class="line line-f">
+                <label>手机</label><input type="tel" v-model="Phone" maxlength="11">
+            </div>
+            <div class="line line-site" @click="selectCitySite">
+                <p>所在地区</p>
+                <p>
+                    {{receSite}}
+                    <img src="../src/img/orderdetail/bigArrows.png" alt="">
+                </p>
+            </div>
+            <div class="line line-f">
+                <!-- <span>详细地址</span>
+                <textarea></textarea> -->
+                <label>详细地址</label><input type="text" placeholder="请输入详细地址" v-model="DetailedSite">
+            </div>
+            <div class="line line-default">
+                <span>
+                    设置为默认地址<br>
+                    注：每次下单会使用地址
+                </span>
+                <mt-switch v-model="defaultValue" @change="setDefault"></mt-switch>
+            </div>
+            <div class="addBottomBtn">
+                <mt-button v-if="popupAddress=='新建地址'" class="addSubmit" @click="AddSiteBtn(0)">保存并使用</mt-button>
+                <mt-button v-if="popupAddress=='编辑地址'" class="addSubmit" @click="AddSiteBtn(1)">保存并使用</mt-button>
+            </div>
+        </mt-popup>
+        <!-- 选择创建收货地址 -->
+        <mt-popup v-model="popupSelect" class="popupAddSite2">
+            <p class="selectText">我们想知道把商品送到哪里，<br>是否新建一个收货地址？</p>
+            <div class="selectBottomBtn">
+                <mt-button class="cancelBtn" @click="cancelBtn">取消，退出购买</mt-button>
+                <mt-button class="goNewBtn" @click="goNewBtn">去新建</mt-button>
+            </div>
+        </mt-popup>
+        <!-- 更改收货地址 -->
+        <mt-popup v-model="popupChangeSite" class="popupAddSite">
+            <div class="popupTitle">
+                <h3>更改收货地址</h3>
+                <i class="iconfont icon-guanbi" @click="popupChangeSite=false"></i>
+            </div>
+            <ul class="siteContent">
+                <li v-for="(item,index) in allAddressList">
+                    <div class="addressContent" @click="changeAddress(item)">
+                        <!-- <img src="../src/img/orderdetail/nike.png" alt=""> -->
+                        <span>{{item.name}}</span>
+                        <span>{{item.phone}}</span>
+                        <span v-if="item.state==1" class="defaultCont">默认</span>
+                        <div class="addressCont2">{{item.areaname}}{{item.detailaddress}}</div>
+                    </div>
+                    <div class="editAddress" @click="editAddress(item)">
+                        <img src="../src/img/orderdetail/edit.png" alt="">
+                    </div>
+                </li>
+            </ul>
+            <div class="addBottomBtn" style="margin-top:3%;">
+                <mt-button class="addSubmit" @click="gotoNewAddress">
+                    <i class="iconfont icon-iconfont707"></i>
+                    新建地址
+                </mt-button>
+            </div>
+        </mt-popup>
+        <!-- 选择支付方式 -->
+        <mt-popup v-model="popupPayMode" class="popupAddSite">
+            <div class="popupTitle">
+                <h3>支付信息</h3>
+                <i class="iconfont icon-guanbi" @click="popupPayMode=false"></i>
+            </div>
+            <ul class="payModeMoney">
+                <li>
+                    <span>支付金额</span>
+                    <span class="popupTotal">￥{{total}}</span>
+                </li>
+                <li>
+                    <img src="../src/img/ConfirmOrder/zhifubao.png" alt="">
+                    <span :class="[popupPayConfirm?'popupActive':'']" @click="popupPayConfirm=!popupPayConfirm"></span>
+                </li>
+            </ul>
+            <div class="addBottomBtn">
+                <mt-button class="addSubmit" @click="popupSubmit()">立即付款</mt-button>
+            </div>
+        </mt-popup>
+    </div>
+</body>
+<script>
+    //  var order_info={
+    //     cartlist:"10301",
+    //     userid:10043,
+    //     token:"31F1D0573D6B0AADCE03E4F18FF0703B"
+    // };
+    // var order_info=@ViewBag.order_info;
+    // var order_info = "";
+
+</script>
+<!-- <script src="../src/lib/vue/vue.min.js"></script> -->
+<script src="../src/lib/vue/vue.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../src/lib/base64/base64.js"></script>
+<script src="../dist/ConfirmOrder.js"></script>
+
+</html>

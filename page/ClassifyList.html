@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <title>分类</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" v-cloak>
+        <search></search>
+        <mt-swipe :auto="4000" class="banner">
+            <mt-swipe-item v-for="(item,index) in bannerList">
+                <img @click="bannerhandle(item.link)" :src="item.imgurl" alt="">
+            </mt-swipe-item>
+        </mt-swipe>
+        <div class="hotWordSelect">
+            <div class="hotWord" id="hotWord">
+                <div @click="activeAlign('0')">
+                    <span :class="{'active':activeBtn==0}">最新</span>
+                </div>
+                <div class="shengxu" @click="activeAlign('1')">
+                    <span :class="{'active':activeBtn==1}">销量</span>
+                    <span style="position:relative;">
+                        <i :class="{'activeFont':sortXS2==0}" class="iconfont icon-biaotou-zhengxu"></i>
+                        <i :class="{'activeFont':sortXS2==1}" class="iconfont icon-biaotou-daoxu" style=""></i>
+                    </span>
+                </div>
+                <div class="shengxu" @click="activeAlign('2')">
+                    <span :class="{'active':activeBtn==2}">价格</span>
+                    <span style="position:relative;">
+                        <i :class="{'activeFont':sortXS2==3}" class="iconfont icon-biaotou-zhengxu"></i>
+                        <i :class="{'activeFont':sortXS2==4}" class="iconfont icon-biaotou-daoxu"></i>
+                    </span>
+                </div>
+                <div @click="popupScreen=!popupScreen" modal="false" v-if="ifBranid">
+                    <span>筛选</span>
+                    <i class="iconfont icon-shaixuan"></i>
+                </div>
+                <div class="popupScreen" v-show="popupScreen">
+                    <!-- <h3>品牌</h3> -->
+                    <ul>
+                        <li :class="{'activeScreen':currentScreenBtn==index}" v-for="(item,index) in brandScreenList" @click="screenSelectBtn(item.brandid,index)">{{item.brandname}}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <loadmores v-on:increment="loadup" :bottomtext="bottomtext">
+            <div class="lists">
+                <ul class="likeList">
+                    <li v-for="(item,index) in productlist" @click="GoProductDetails(item.productid)">
+                        <img :src="item.coverurl+'?imageView2/2/w/350'" alt="">
+                        <b class="restriction">限购{{item.stock}}件</b>
+                        <span>{{item.name}}</span>
+                        <div class="price">
+                            <span class="discount">{{item.discount}}折</span>
+                            <span class="money">￥ {{item.price}}</span>
+                            <span class="sales">销量：{{item.salesnum}}</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- <div class="listbox">
+                    <div v-for="(item,index) in productlist">
+                        <div v-on:click="GoProductDetails(item.productid)" class="box">
+                            <img :src="item.coverurl+'?imageView2/2/w/350'" alt="">
+                            <p class="name">{{item.name}}</p>
+                            <div class="info">
+                                <p class="pirces">¥ <span>{{item.price}}</span></a>
+                                    <div class="sites">
+                                        <p>销售：{{item.salesnum}}</p>
+                                    </div>
+                                    <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div> -->
+            </div>
+        </loadmores>
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../src/lib/jquery/jquery.min.js"></script>
+<script src="../dist/ClassifyList.js"></script>
+<!-- <script src="../src/lib/lazy/lazy.js"></script> -->
+
+</html>

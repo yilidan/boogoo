@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <title>品牌</title>
+    <style>
+        [v-cloak] {display: none;}
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <search></search>
+        <mt-swipe :auto="4000" class="banner">
+            <mt-swipe-item v-for="(item,index) in bannerList" :key="index">
+                <img @click="bannerhandle(item.link)" :src="item.imgurl" alt="">
+            </mt-swipe-item>
+        </mt-swipe>
+        <ul class="brandStyle">
+            <li v-for="(item,index) in brandList">
+                <h3>{{item.brandorigin}}</h3>
+                <ul class="brandImg">
+                    <li v-for="(list,index) in item.brandlist" @click="goToClassifyList(list.brandid)">
+                        <img :src="list.brandlogo" alt="">
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/BrandClass.js"></script>
+
+</html>

@@ -1,0 +1,83 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #f0f1f0;
+}
+header{
+    background: #ffffff;
+    padding: pxToRem(20px) pxToRem(20px);
+    overflow: hidden;
+    margin-bottom: pxToRem(10px);
+    img{
+        width: pxToRem(105px);
+        height: pxToRem(108px);
+        float: left;
+        margin-right: pxToRem(30px)
+    }
+    div{
+        float: left;
+        p:nth-child(1){
+            font-size: pxToRem(28px);
+            margin: pxToRem(20px) 0;
+            color: #272728;
+            span{
+                color: #27b292
+            }
+        }
+        p:nth-child(2){
+            font-size: pxToRem(28px);
+            color:#7d7d7e;
+        }
+    }
+}
+section{
+    background: #ffffff;
+    padding: pxToRem(20px) pxToRem(20px);
+    overflow: hidden;
+    
+    .box{
+        position: relative;
+        border-left: 1px solid #bebebe;
+        margin-left:pxToRem(25px);
+            img{
+                position: absolute;
+                top: pxToRem(10px);
+                left: pxToRem(-9px);
+                width: pxToRem(15px);
+                height: pxToRem(15px);
+            }
+     
+        .text{
+            width: pxToRem(640px);
+            float: right;
+            color:#7d7d7e;
+            border-bottom: 1px solid #7d7d7e;
+            margin-bottom: pxToRem(20px);
+           line-height: pxToRem(36px);
+            p:nth-child(1){
+                font-size: pxToRem(28px);
+                margin-bottom: pxToRem(10px);
+                letter-spacing:2px;
+            }
+            p:nth-child(2){
+                 margin-bottom: pxToRem(10px);
+                font-size: pxToRem(22px);
+            }
+        }
+    }
+    .firstbox{
+        img{
+            position: absolute;
+            top: pxToRem(0px);
+            left: pxToRem(-14px);
+            width: pxToRem(28px);
+            height: pxToRem(28px)
+        }
+        .text{
+            color: #27b292;
+        }
+    }
+}

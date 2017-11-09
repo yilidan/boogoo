@@ -1,0 +1,64 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+
+}
+body{
+    background-color: #ECECEC;
+}
+.banner{
+    width: 100%;
+    height: pxToRem(300px);
+    margin-top: pxToRem(88px);
+}
+.banner img{
+    width: 100%;
+    height: pxToRem(300px);
+    vertical-align: middle;
+}
+.mint-swipe-indicator{
+    width: pxToRem(12px);
+    height: pxToRem(12px);
+}
+.mint-swipe-indicator.is-active{
+    background-color: #ED4F02;
+    opacity: .8;
+}
+.brandStyle{
+    margin-bottom: pxToRem(30px);
+}
+.brandStyle>li{
+    margin-top: pxToRem(10px);
+    background-color: #fff;
+}
+.brandStyle>li>h3{
+    height: pxToRem(80px);
+    line-height: pxToRem(80px);
+    text-align: center;
+    font-size: pxToRem(32px);
+    border-bottom: pxToRem(1px) solid #ECECEC;
+}
+.brandImg{
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap:wrap;
+    li{
+        width: 33%;
+        height: pxToRem(250px);
+        line-height: pxToRem(250px);
+        text-align: center;
+        border-right: pxToRem(1px) solid #ECECEC;
+        border-bottom: pxToRem(1px) solid #ECECEC;
+        img{
+            width: pxToRem(200px);
+            // height:1.6rem;
+            vertical-align: middle;
+        }
+    }
+    li:nth-child(3n){
+        border-right: 0;
+    }
+}

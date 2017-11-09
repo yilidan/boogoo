@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <title>订单状态</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <loadmores v-on:increment="loadup" :bottomtext="bottomtext">
+            <div class="paystatus">
+                <div class="paystatusbox">
+                    <img  src="../src/img/paystatus/success.png" alt="">
+                    
+                    <p class="paytext">{{text}}</p>
+                    <div class="btn-group">
+                        <p v-on:click="GoOrder">查看订单</p>
+                        <p v-on:click="GoIndex">回到首页</p>
+                    </div>
+                </div>
+            </div>
+            <Youlike :page="pageindex"></Youlike>
+        </loadmores>
+    </div>
+</body>
+<script src="../dist/PayStatus.js"></script>
+
+</html>

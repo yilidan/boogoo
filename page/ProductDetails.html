@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>商品详情</title>
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/lib/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="../src/lib/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .mint-popup {
+            width: 100%;
+        }
+
+        .v-modal {
+            overflow: hidden
+        }
+
+        .lightbox-bottom {
+            background: url(../src/img/productDetails/close.png);
+        }
+        .swiper-pagination-bullet-active{
+            background-color: #EE6A02 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 头部 -->
+        <div id="navTop">
+            <a @click="backUpBtn">
+                <i class="iconfont icon-back"></i>
+            </a>
+             <span :class="{'currentNav':currentIndex==0}" @click="chooseMenu(0)">宝贝</span>
+             <span :class="{'currentNav':currentIndex==1}" @click="chooseMenu(1)">详情</span>
+             <a @click="shareBtn">
+                 <i class="iconfont icon-fenxiang"></i>
+             </a>
+        </div>
+        <!-- 商品详情 -->
+        <transition name="fade-choose">
+        <div class="product_details" id="main">
+            <div class="product_top">
+                <header>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="turn in pI.turnimg">
+                                <img :src="turn+'?imageView2/2/w/550'" v-on:click="showlightbox($event,2)" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="headertitle">
+                        <h1>{{pI.name}}</h1>
+                        <p class="preferentialPrice">¥<span>{{pI.price}}</span></p>
+                        <p class="originalPrice">价格<span>¥{{pI.originprice}}</span></p>
+                        <ul class="col-3">
+                            <li>快递：包邮</li>
+                            <li>月销 {{pI.salesnum}}笔</li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </header>
+                <div class="attribute">
+                    <div class="boxs" v-on:click="handlers(true)">
+                        <p>{{confirmClass}}</p><img src="../src/img/productDetails/rights.png" alt="">
+                    </div>
+                    <div class="boxs" v-on:click="selectAbbr">
+                        <p>产品参数</p><img src="../src/img/productDetails/rights.png" alt="">
+                    </div>
+                </div>
+                <!--小店-->
+                <div class="house" v-if="houseshow">
+                    <div class="housename">
+                        <img :src="pI.headurl" alt="">
+                        <p>{{pI.anchorname}}</p>
+                    </div>
+                    <div class="houseinfobox">
+                        <div class="houseinfo">
+                            <p>{{pI.totalpronum}}</p>
+                            <p>全部商品</p>
+                        </div>
+                        <div class="houseinfo">
+                            <p>{{pI.fansnum}}</p>
+                            <p>关注人数</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+            </div>
+            <!--详情-->
+            <div class="info product_bottom" id="container">
+                <!-- <div> -->
+                <h2>
+                    <p></p>
+                    <a>
+                        <span>详情</span>
+                    </a>
+                </h2>
+                <div class="picture-group gallery" id="image_container" class="container">
+                    <ul class="detailInfo">
+                        <li v-for="info in infoimgdata">
+                            <img class="infoimg lazy" :src="info+'?imageView2/2/w/550'" v-on:click="showlightbox($event,2)" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <!-- <h5>- 已经到底了！-</h5> -->
+            </div>
+        </div>
+    </transition>
+        <!--按钮集-->
+        <div class="btn-group">
+            <div class="small-group">
+                <div class="groupbox" @click="showservice">
+                    <!-- <img src="../src/img/productDetails/1_03.png" alt=""> -->
+                    <i class="iconfont icon-kefu2"></i>
+                    <span>客服</span>
+                </div>
+                <!--<div class="groupbox">
+                    <img src="../src/img/productDetails/1_04.png" alt="">
+                    <p>好货</p>
+                </div>-->
+                <div class="groupbox" @click="setcollect">
+                    <div v-show="iscollect==0">
+                        <!-- <img src="../src/img/productDetails/1_05.png" alt=""> -->
+                        <i class="iconfont icon-fav"></i>
+                        <span>收藏</span>
+                    </div>
+                    <div v-show="iscollect==1">
+                        <!-- <img src="../src/img/productDetails/1_06.png" alt=""> -->
+                        <i class="iconfont icon-fav" style="color:#ff4700;"></i>
+                        <span style="color:#ff4700;">已收藏</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="big-group">
+                <a v-on:touchstart.prevent="handlers(false,1)">加入购物车</a>
+                <a v-on:touchstart.prevent="handlers(false,2)">立即购买</a>
+
+            </div>
+        </div>
+        <!--客服-->
+        <div class="servicebox" v-if="serviceshow">
+            <div class="service">
+                <div class="tel">
+                    <i @click="hideservice" class="iconfont icon-guanbi"></i>
+                    <p>客服电话</p>
+                    <p>0571-56705383</p>
+                </div>
+                <div class="telbtn">
+                    <!-- <a v-on:click="hideservice">取消</a> -->
+                    <a href="tel:057156705383"><i class="iconfont icon-kefu2"></i>联系客服</a>
+                </div>
+            </div>
+        </div>
+
+        <!--选择属性-->
+        <mt-popup v-model="attrshow" position="bottom" class="mint-popup-4">
+            <div class="seletAttr">
+                <div class="seletheader">
+                    <!-- <img class="productimg" :src="imgurl+'?imageView2/2/w/350'" alt="" v-on:touchstart.prevent="showlightbox($event,1)"> -->
+                    <div class="productImgPar">
+                        <img class="productimg" :src="imgurl+'?imageView2/2/w/350'" alt="" v-on:touchstart.prevent="showlightbox($event,1)">
+                    </div>
+                    <div class="pirce">
+                        <p>¥ {{ (prices=="") ? pI.price: prices}}</p>
+                        <p class="stock">库存{{stock}}件</p>
+                        <p>{{confirmClass}}</p>
+                    </div>
+                    <img v-on:touchstart.prevent="hideAttr" class="close" src="../src/img/productDetails/close.png" alt="">
+                    <div class="clear"></div>
+                </div>
+                <div class="seletsection">
+                    <div class="attr" v-for="(attr,findex) in arrts">
+                        <h1>{{attr.attrname}}</h1>
+                        <ul>
+                            <li v-for="(item,index) in attr.attrValueList" :class="{active:iscur['type'+attr.attrid]==item.attrid}" v-on:touchstart.prevent="actives(item.attrname,attr.attrid,item.attrid)"><a>{{item.attrname}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="attr buyMunber">
+                        <p>购买数量</p>
+                        <div class="mun">
+                            <span v-on:touchstart.prevent="minus"><img src="../src/img/productDetails/minus.png" alt=""/></span>
+                            <a>{{buynumber}}</a>
+                            <span v-on:touchstart.prevent="plus"><img src="../src/img/productDetails/plus.png" alt=""/></span>
+                        </div>
+                        <!-- <div class="clear"></div> -->
+                    </div>
+                    <!-- <div class="clear"></div> -->
+                </div>
+                <div class="seletfooter">
+                    <div v-if="btnMunber" class="btngroup">
+                        <p v-on:click="shoping(1)">加入购物车</p>
+                        <p v-on:click="shoping(2)">立即购买</p>
+                        <div class="clear"></div>
+                    </div>
+                    <div v-else class="btnconfirm" @click="confirm">确定</div>
+                </div>
+            </div>
+        </mt-popup>
+        <!--查看参数-->
+        <mt-popup v-model="abbrshow" position="bottom" class="mint-popup-4">
+            <div class="seletAbbr">
+                <h1>产品参数</h1>
+                <div class="seletheader">
+                    <div class="box" v-for="item in pI.otherparameters">
+                        <p>{{item.Key}}</p>
+                        <p>{{item.Value}}</p>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="btnconfirm" v-on:click="hideAbbr">确定</div>
+            </div>
+        </mt-popup>
+        <!--弹出图片-->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <div class="pswp__bg"></div>
+
+            <div class="pswp__scroll-wrap">
+
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+
+                        <div class="pswp__counter"></div>
+
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/ProductDetails.js"></script>
+<script src="../src/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+<script src="../src/lib/photoswipe/photoswipe.min.js"></script>
+<script src="../src/lib/jquery/jquery.min.js"></script>
+<script src="../src/lib/lazy/lazy.js"></script>
+</html>

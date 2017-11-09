@@ -1,0 +1,54 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    background: #f0f1f0;
+}
+.fist-sitebox{
+    background: #ffffff;
+    margin: pxToRem(10px) 0;
+    padding: pxToRem(30px) pxToRem(20px);
+    p:nth-child(1){
+        font-size: pxToRem(28px);
+        color: #272728;
+        overflow: hidden;
+        padding-bottom: pxToRem(20px);
+        span:nth-child(1){
+            float: left
+        }
+        span:nth-child(2){
+            float: right
+        }
+    }
+    p:nth-child(2){
+        font-size: pxToRem(28px);
+        color: #272728;
+        span{
+            color: #d12b4a;
+        }
+    }
+}
+.sitebox{
+    background: #ffffff;
+    padding: pxToRem(30px) pxToRem(20px);
+    border-bottom: 1px solid #bebebe;
+    p:nth-child(1){
+        font-size: pxToRem(28px);
+        color: #272728;
+        overflow: hidden;
+        padding-bottom: pxToRem(20px);
+        span:nth-child(1){
+            float: left
+        }
+        span:nth-child(2){
+            float: right
+        }
+    }
+    p:nth-child(2){
+        font-size: pxToRem(28px);
+        color: #272728;
+        
+    }
+}

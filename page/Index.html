@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <title>商城</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- <div class=""> -->
+        <template>
+            <div v-if="headshow!=1" class="search" :class="{'searchBGC':opactiyShow}" ref="searchTop">
+                <search-bar></search-bar>
+            </div>
+            <div v-else>
+                <search></search>
+            </div>
+        </template>
+        <div class="main" ref="mainWrapper">
+            <!-- <div> -->
+                <loadmores v-on:increment="loadup" v-on:refresh="loadTop"
+                :bottomtext="bottomtext" :toptext="toptext">
+                    <div class="header">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" v-for="item in swiperSlides">
+                                    <img v-on:click="bannerhandle(item.link)" :src="item.imgurl" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <div class="box" v-for="nav in navs" v-on:click="GoClassifyList(nav.classid)">
+                            <img :src="nav.classimgurl" alt="">
+                            <p>{{nav.classname}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="shops">
+                            <div class="col-2">
+                                <div v-for="item in fistProduct" class="col-2-box" v-on:click="GoProductDetails(item.productid)">
+                                    <p>{{item.name}}</p>
+                                    <p>{{item.description}}</p>
+                                    <img :src="item.imgurl" alt="">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="col-3-box" v-for="item in secondProduct" v-on:click="GoProductDetails(item.productid)">
+                                    <p>{{item.name}}</p>
+                                    <p>{{item.description}}</p>
+                                    <img :src="item.imgurl" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!--活动-->
+                        <div class="discover">
+                            <img v-for="item in adlist" :src="item.imgurl" alt="" v-on:click="bannerhandle(item.link)">
+                        </div>
+                        <!--手机-->
+                        <!-- <div class="phoneNav">
+                            <div class="phoneNavbox" v-for="item in thirdProduct" v-on:click="GoProductDetails(item.productid)">
+                                <img v-lazy="item.imgurl+'?imageView2/2/w/250'" alt="">
+                                <p class="phoneName">{{item.name}}</p>
+                                <p>¥<span>{{item.price}}</span></p>
+                                <p>某东价格<a>¥{{item.OriginPrice}}</a></p>
+                            </div>
+                        </div> -->
+                        <!--主题-->
+                        <!-- <div class="theme">
+                            <div class="themebox" v-for="them in themes" v-on:click="GoClassifyTheme(them.brandid)">
+                                <img id="themebg" :src="them.brandimgurl" alt="">
+                                <div>
+                                    <p>{{them.brandname}}</p>
+                                    <img src="../src/img/index/1_03.png" alt="">
+                                </div>
+
+                            </div>
+                        </div> -->
+                    </div>
+                    <Youlike :page="pageindex"></Youlike>
+                </loadmores>
+            <!-- </div> -->
+        </div>
+    </div>
+</body>
+<!-- <script src="../src/lib/iscroll/iscroll.js"></script> -->
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/Index.js"></script>
+<!-- <script src="../src/lib/touch/transform.js"></script>
+<script src="../src/lib/touch/alloy_touch.js"></script> -->
+<script type="text/javascript">
+    // var myScroll;
+    // function loaded () {
+    //     myScroll = new IScroll('#wrapper', {
+    //         scrollbars: true,
+    //         mouseWheel: true,
+    //         interactiveScrollbars: true,
+    //         shrinkScrollbars: 'scale',
+    //         fadeScrollbars: true
+    //     });
+    // }
+    // loaded();
+    // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+    // 	capture: false,
+    // 	passive: false
+    // } : false);
+</script>
+
+</html>

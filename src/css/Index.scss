@@ -1,0 +1,261 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    // -ms-touch-action: none;
+}
+body{
+    // overflow: hidden;
+    // -webkit-overflow-scroll:touch;
+}
+ // .mint-loadmore-bottom{
+ //     height: pxToRem(80px) !important;
+ // }
+.swiper-pagination-bullet{ //swiper分页器
+    width: pxToRem(12px) !important;
+    height: pxToRem(12px) !important;
+}
+.mint-header{
+    height: pxToRem(96px);
+}
+.search{
+    width: 100%;
+    height: pxToRem(96px);
+    line-height: pxToRem(96px);
+    text-align: center;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    // transform: translate3d(0, 0, 0);
+    // -webkit-transform:translate3d(0, 0, 0);
+    background-color: rgba(255,255,255,0);
+    transition:background-color 1s linear;
+    -moz-transition:background-color 1s linear; /* Firefox 4 */
+    -webkit-transition:background-color 1s linear; /* Safari and Chrome */
+    -o-transition:background-color 1s linear; /* Opera */
+    // -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.searchBGC{
+    background-color: rgba(255,255,255,1);
+}
+.main{
+    // overflow: auto;
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;
+    // position: fixed;
+    // top:0;
+    // left:0;
+    //  -webkit-overflow-scrolling: touch;
+}
+
+// #wrapper {
+// 	position: absolute;
+// 	z-index: 1;
+// 	top: 0;
+// 	// bottom: 48px;
+// 	left: 0;
+// 	width: 100%;
+//     height: 100%;
+// 	// background: #ccc;
+// 	overflow: hidden;
+// }
+// #scroller{
+// 	position: absolute;
+// 	z-index: 1;
+// 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+// 	width: 100%;
+//     height: auto;
+// 	-webkit-transform: translateZ(0);
+// 	-moz-transform: translateZ(0);
+// 	-ms-transform: translateZ(0);
+// 	-o-transform: translateZ(0);
+// 	transform: translateZ(0);
+// 	-webkit-touch-callout: none;
+// 	-webkit-user-select: none;
+// 	-moz-user-select: none;
+// 	-ms-user-select: none;
+// 	user-select: none;
+// 	-webkit-text-size-adjust: none;
+// 	-moz-text-size-adjust: none;
+// 	-ms-text-size-adjust: none;
+// 	-o-text-size-adjust: none;
+// 	text-size-adjust: none;
+// }
+
+.header{
+    img{
+        width: 100%;
+        height: pxToRem(350px);
+    }
+}
+.nav{
+    margin-bottom: pxToRem(10px);
+    background: #ffffff;
+    overflow: hidden;
+
+    .box{
+        width: 20%;
+        text-align: center;
+        font-size: pxToRem(26px);
+        color: #9d9d9e;
+        float: left;
+        margin: pxToRem(10px) 0;
+        img{
+            margin-bottom: pxToRem(10px);
+            width: pxToRem(89px);
+            height: pxToRem(89px);
+        }
+    }
+
+}
+
+.shops{
+    background: #ffffff;
+    .col-2{
+        overflow: hidden;
+        .col-2-box:nth-child(1){
+            border-right:1px solid #dedede;
+
+        }
+        .col-2-box{
+            float: left;
+            width: 49%;
+            padding-bottom:pxToRem(15px);
+            border-bottom:1px solid #e2e1e1;
+            height: pxToRem(210px);
+            position: relative;
+                p:nth-child(1){
+                    font-size: pxToRem(30px);
+                    color:#3d3a39;
+                    padding: pxToRem(15px) 0 pxToRem(15px) pxToRem(15px);
+                }
+                p:nth-child(2){
+                    width: 30%;
+                    font-size: pxToRem(24px);
+                    color:#e73817;
+                    padding-left: pxToRem(15px);
+                    line-height: pxToRem(35px)
+                }
+            img{
+                position: absolute;
+                bottom: 0;
+
+                width: 100%
+
+            }
+        }
+    }
+     .col-3{
+        overflow: hidden;
+
+        .col-3-box{
+            border-right:1px solid #e2e1e1;
+            float: left;
+            width: 33%;
+            padding-bottom:pxToRem(15px);
+            border-bottom:1px solid #e2e1e1;
+            height: pxToRem(210px);
+            position: relative;
+                p:nth-child(1){
+                    font-size: pxToRem(32px);
+                    color:#272728;
+                    padding: pxToRem(15px) 0 pxToRem(15px) pxToRem(15px);
+                }
+                p:nth-child(2){
+                    width: 35%;
+                    font-size: pxToRem(24px);
+                    color:#e73817;
+                    padding-left: pxToRem(15px);
+                    line-height: pxToRem(32px)
+                }
+            img{
+                position: absolute;
+                bottom:0;
+                right:0;
+                width: 90%
+
+
+            }
+        }
+    }
+}
+.discover{
+    img{
+        width: 100%;
+    }
+}
+.phoneNav{
+    overflow: hidden;
+    background: #ffffff;
+    margin-bottom: pxToRem(10px);
+    .phoneNavbox{
+        text-align: center;
+        width: 33.3%;
+        padding: pxToRem(20px) 0;
+        float: left;
+        img{
+            width: 100%;
+            height: pxToRem(140px);
+        }
+        .phoneName{
+            font-size: pxToRem(26px);
+            color: #3d3a39;
+            padding: pxToRem(10px) 0;
+        }
+        p:nth-child(3){
+            font-size: pxToRem(20px);
+            color:#c52d48;
+            padding-bottom: pxToRem(10px);
+            span{
+                font-size: pxToRem(26px)
+            }
+        }
+        p:nth-child(4){
+            padding-bottom: pxToRem(10px);
+            font-size: pxToRem(20px);
+            color:#9e9f9f;
+            a{
+                text-decoration:line-through;
+            }
+        }
+    }
+}
+.theme{
+    .themebox{
+        background: #ffffff;
+        border-bottom: 1px solid #e2e2e2;
+        margin-bottom: pxToRem(10px);
+        #themebg{
+            width: 100%;
+        }
+        div{
+
+          padding: pxToRem(20px) pxToRem(20px);
+          position: relative;
+          p{
+             font-size: pxToRem(28px);
+             color: #393a39;
+             line-height: pxToRem(30px)
+          }
+          img{
+              position: absolute;
+              top: 50%;
+              right:pxToRem(20px);
+
+              width: pxToRem(8px);
+              height: pxToRem(14px);
+              margin-top: pxToRem(-7px)
+          }
+        }
+
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../src/lib/mint/style.css">
+    <title>管理收货地址</title>
+    <style>
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head> 
+<body>
+    <div id="app" v-cloak>
+        <div class="managebox" v-for="(item,index) in sitelist">
+            <div class="sitebox" > 
+                <p><span>{{item.name}}</span><span>{{item.phone}}</span></p>
+                <p>{{item.areaname}}{{item.detailaddress}}</p>
+            </div>
+            <div class="manage">
+                <p v-bind:class="[activeindex===index? active:'']" v-on:click="setDefault(index,item.addressid)">
+                    <img v-if="activeindex===index" src="../src/img/ManageSite/5_04.png" alt="">
+                    <img  v-else src="../src/img/ManageSite/5_03.png" alt="">
+                    <span>默认地址</span>
+                </p>
+                <p>
+                    <span v-on:click="edit(item)">
+                        <img src="../src/img/ManageSite/5_05.png" alt="">编辑
+                    </span>
+                    <span v-on:click="deletes(item.addressid)">
+                        <img src="../src/img/ManageSite/5_06.png" alt="">删除
+                    </span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="btn" v-on:click="addsite">
+            添加新地址
+        </div>
+    </div>
+</body>
+<script src="../src/lib/vue/vue.min.js"></script>
+<script src="../src/lib/mint/index.js"></script>
+<script src="../dist/ManageSite.js"></script>
+</html>

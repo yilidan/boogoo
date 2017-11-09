@@ -1,0 +1,30 @@
+$baseFontSize: 75px !default;
+@function pxToRem($px){
+    @return $px/$baseFontSize*1rem
+}
+html{
+    font-family: "Microsoft Yahei";
+    // background: #E8A02A;
+}
+
+#content{
+    width: 100%;
+    height: pxToRem(1600px);
+    background: url(../img/Share/share.png) no-repeat;
+    background-color: #FFFFFF;
+    background-size: 100%;
+    position: relative;
+}
+.shareBtn{
+    width: pxToRem(443px);
+    height: pxToRem(67px);
+    line-height: pxToRem(67px);
+    background-color: #fff;
+    border-radius: pxToRem(10px);
+    text-align: center;
+    font-size: pxToRem(36px);
+    color: #ED5002;
+    position: absolute;
+    left:pxToRem(140px);
+    bottom:pxToRem(80px);
+}
