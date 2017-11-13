@@ -1,11 +1,12 @@
 import $ from "jquery"
+import axios from "axios"
 import "../lib/flexibel/flexible.debug.js"
 import "../css/style.css"
 import "../css/ClassifyList.scss"
 import global from "../lib/global.js"
 import search from "../components/Search.vue"
 import loadmores from "../components/loadMore.vue"
-import axios from "axios"
+import {Indicator} from 'mint-ui';
 
 var userid = global.getUserid(),
     token = global.getToken();
@@ -246,11 +247,16 @@ var vm = new Vue({
             })
         },
         screenSelectBtn:function(sBrandid,index){
-            this.currentScreenBtn = index;
-            brandid = sBrandid;
+            if(sBrandid == "all"){
+                this.currentScreenBtn = -1;
+                brandid = "";
+            }else{
+                this.currentScreenBtn = index;
+                brandid = sBrandid;
+            }
             this.popupScreen = false;
             this.getlistdata();
-            console.log(sBrandid);
+            console.log(brandid);
         },
         setBottomtext: function (datas) {
             //判断数据的个数，用来显示底部文本

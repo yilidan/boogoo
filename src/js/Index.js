@@ -154,11 +154,11 @@ var vm = new Vue({
                 // location.href = "./brandClass.html?classifyid=" + id;
 
             }else if(id === '2'){   //分类
-                // var data = JSON.stringify({
-                //     url: global.path + "/page/goodsClass.html?classifyid=" + id
-                // })
-                // location.href = "boogoo.app://?pushcode=100011&data=" + data
-                location.href = "./goodsClass.html?classifyid=" + id;
+                var data = JSON.stringify({
+                    url: global.path + "/page/goodsClass.html?classifyid=" + id
+                })
+                location.href = "boogoo.app://?pushcode=100011&data=" + data
+                // location.href = "./goodsClass.html?classifyid=" + id;
 
                 // var data = JSON.stringify({
                 //     url: global.path + "/page/test1.html?classifyid=" + id

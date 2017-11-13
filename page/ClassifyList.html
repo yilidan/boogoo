@@ -11,6 +11,12 @@
         [v-cloak] {
             display: none;
         }
+        .fade-enter-active, .fade-leave-active{
+            transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to{
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -45,12 +51,15 @@
                     <span>筛选</span>
                     <i class="iconfont icon-shaixuan"></i>
                 </div>
-                <div class="popupScreen" v-show="popupScreen">
-                    <!-- <h3>品牌</h3> -->
-                    <ul>
-                        <li :class="{'activeScreen':currentScreenBtn==index}" v-for="(item,index) in brandScreenList" @click="screenSelectBtn(item.brandid,index)">{{item.brandname}}</li>
-                    </ul>
-                </div>
+                <transition name="fade">
+                    <div class="popupScreen" v-show="popupScreen">
+                        <!-- <h3>品牌</h3> -->
+                        <ul>
+                            <li :class="{'activeScreen':currentScreenBtn==-1}" @click="screenSelectBtn('all',-1)">全部</li>
+                            <li :class="{'activeScreen':currentScreenBtn==index}" v-for="(item,index) in brandScreenList" @click="screenSelectBtn(item.brandid,index)">{{item.brandname}}</li>
+                        </ul>
+                    </div>
+                </transition>
             </div>
 
         </div>

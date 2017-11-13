@@ -1,5 +1,5 @@
 import $ from "jquery"
-import axios from 'axios';
+import axios from 'axios'
 import Swiper from "../lib/swiper/swiper.min.js"
 import "../lib/swiper/swiper.min.css"
 import global from "../lib/global.js"
@@ -63,6 +63,7 @@ var vm = new Vue({
         menuIndex: 0, //已选菜单索引值，默认为0
         menuIndexChange: true,//解决选中index时，scroll监听事件重复判断设置index的bug
         shopListTop: [], //商品列表的高度集合
+        productShare:{}, //商品分享数据
 
     },
     created: function () {
@@ -122,6 +123,7 @@ var vm = new Vue({
                 // this.$refs.searchTop.style.paddingTop = "3%";
             }
             this.initScroll();
+            this.queryShareData();
             // this.getFoodListHeight();
         })
         // var navHeight = $("#navTop").outerHeight();
@@ -648,7 +650,7 @@ var vm = new Vue({
 
         },
         setModalClick: function () {
-            var _this = this
+            var _this = this;
             var timer = setInterval(function () {
                 var el = document.querySelector(".v-modal")
                 if (el) {
@@ -661,18 +663,35 @@ var vm = new Vue({
             }, 10)
 
         },
+        // 获取分享数据
+        queryShareData:function(){
+            axios.get(global.Apipath+"/api/user/GetAppConfig").then((res) => {
+                this.productShare = res.data.data.ProductShare;
+                console.log(this.productShare);
+
+            }, (err) => {
+                alert("GetAppConfig err")
+            })
+        },
         // 头部分享按钮
         shareBtn:function(){
+            // let a = this.productShare.Content.replace(/XX/g,"123");
+            // console.log(a);
             // 参数 分享标题 分享语 分享配图 分享链接
             var data = JSON.stringify({
-                shareTitle:"分享标题",
-                weixinContent:"微信朋友内容",
-                weixinFriContent:"微信朋友圈内容",
-                sinaContent:"微博内容",
-                url: global.path + "/share/ProductDetails.html?productid=" + productid+"&higheruserid="+userid,
-                imgUrl:"https://file.boogoo.tv/homepage/index/4.png",
+                shareTitle:this.productShare.Title,
+                weixinContent:this.replaceString(this.productShare.Content),
+                weixinFriContent:this.replaceString(this.productShare.ContentWxFriend),
+                sinaContent:this.replaceString(this.productShare.ContentWb),
+                url: global.path + "/share/ProductDetails.html?productid=" + productid,
+                imgUrl:this.imgurl+"?imageView2/2/w/108",
             })
+            console.log(data);
             location.href = "boogoo.app://?pushcode=100009&data=" + data
+        },
+        replaceString:function(str){
+            let proName = this.pI.otherparameters[0].Value;
+            return str.replace(/XX/g,proName);
         },
         // 后退按钮
         backUpBtn:function(){

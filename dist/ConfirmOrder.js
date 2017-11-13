@@ -58,7 +58,7 @@
 
 	__webpack_require__(41);
 
-	__webpack_require__(69);
+	__webpack_require__(74);
 
 	var _global = __webpack_require__(29);
 
@@ -68,13 +68,13 @@
 
 	var _axios2 = _interopRequireDefault(_axios);
 
-	__webpack_require__(72);
+	__webpack_require__(77);
 
 	var _qs = __webpack_require__(30);
 
 	var _qs2 = _interopRequireDefault(_qs);
 
-	var _guid = __webpack_require__(73);
+	var _guid = __webpack_require__(78);
 
 	var _guid2 = _interopRequireDefault(_guid);
 
@@ -84,7 +84,7 @@
 
 	var _iosSelect2 = _interopRequireDefault(_iosSelect);
 
-	var _mintUi = __webpack_require__(74);
+	var _mintUi = __webpack_require__(69);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17349,326 +17349,6 @@
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(70);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(38)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!./ConfirmOrder.scss", function() {
-				var newContent = require("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!./ConfirmOrder.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(37)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\";\n  background: #f0f1f0; }\n\n.ios-select-widget-box header.iosselect-header a {\n  font-size: 0.4rem !important; }\n\n.ios-select-widget-box ul li.at {\n  font-size: 0.4rem !important; }\n\n.ios-select-widget-box ul li.side1 {\n  font-size: 0.34667rem !important; }\n\n.ios-select-widget-box ul li {\n  font-size: 0.29333rem !important; }\n\n.ios-select-widget-box.olay > div {\n  bottom: -6.66667rem;\n  z-index: 10000; }\n\n.ios-select-widget-box.olay {\n  background: rgba(0, 0, 0, 0.1) !important; }\n\n.mint-indicator-wrapper {\n  width: 2rem;\n  height: 2rem; }\n\n.mint-spinner-fading-circle {\n  width: 0.8rem !important;\n  height: 0.8rem !important;\n  margin-top: 50%; }\n\n.sitebar {\n  background: #ffffff;\n  padding: 0.4rem 0.26667rem 0.4rem 0.26667rem;\n  position: relative; }\n  .sitebar .info {\n    font-size: 0.37333rem;\n    margin-left: 0.66667rem;\n    width: 89%; }\n    .sitebar .info p:nth-child(1) {\n      margin-bottom: 0.13333rem; }\n      .sitebar .info p:nth-child(1) .defaultCont {\n        background-color: #394BFF;\n        color: #fff;\n        font-size: 0.32rem;\n        padding: 0.06667rem;\n        margin-left: 0.10667rem; }\n    .sitebar .info .addressCont {\n      color: #959595; }\n    .sitebar .info .phone {\n      line-height: 0.48rem; }\n    .sitebar .info .icon {\n      width: 0.33333rem;\n      height: 0.53333rem;\n      position: absolute;\n      top: 63%;\n      left: 0.26667rem;\n      margin-top: -0.21333rem; }\n    .sitebar .info .arrows {\n      width: 0.17333rem;\n      height: 0.29333rem;\n      position: absolute;\n      top: 50%;\n      right: 0.26667rem;\n      margin-top: -0.14667rem; }\n  .sitebar .addsite {\n    text-align: center; }\n    .sitebar .addsite i {\n      font-size: 0.93333rem;\n      color: #a9a9a9; }\n\n.bgbar {\n  width: 100%;\n  height: 0.06667rem;\n  margin-bottom: 0.13333rem;\n  background-size: 1.2rem 0.06667rem; }\n\n.margin {\n  margin-bottom: 0.26667rem; }\n\n.box {\n  margin-bottom: 1.46667rem; }\n\n.store {\n  background: #ffffff;\n  padding: 0.26667rem 0.26667rem;\n  overflow: hidden;\n  border-bottom: 1px solid #E7E7E7; }\n  .store .head {\n    width: 0.86667rem;\n    height: 0.86667rem;\n    border-radius: 50%;\n    float: left;\n    margin-right: 0.26667rem; }\n  .store p {\n    line-height: 0.86667rem; }\n  .store .storename {\n    color: #7d7d7e;\n    float: left; }\n    .store .storename img {\n      width: 0.10667rem;\n      height: 0.18667rem; }\n  .store .starts {\n    float: right;\n    color: #272728; }\n\n.detail:nth-child(even) {\n  border-bottom: 0.04rem solid #ffffff; }\n\n.detail {\n  padding: 0.26667rem 0.26667rem;\n  background-color: #fff;\n  position: relative; }\n  .detail img {\n    width: 2rem;\n    height: 2rem;\n    float: left;\n    margin-right: 0.26667rem; }\n  .detail .detailname {\n    float: left;\n    width: 50%; }\n    .detail .detailname h1 {\n      font-size: 0.37333rem;\n      margin-bottom: 0.26667rem; }\n    .detail .detailname p {\n      color: #7d7d7e;\n      font-size: 0.32rem; }\n  .detail .price {\n    float: right; }\n    .detail .price p:nth-child(1) {\n      font-size: 0.37333rem;\n      color: #EA0216;\n      margin-bottom: 0.13333rem; }\n    .detail .price p:nth-child(2) {\n      font-size: 0.34667rem;\n      color: #7d7d7e;\n      text-align: right;\n      position: absolute;\n      bottom: 0.26667rem;\n      right: 0.26667rem; }\n\n.OrderStatus {\n  background: #ffffff;\n  margin-top: 0.13333rem; }\n  .OrderStatus .privilege {\n    font-size: 0.32rem;\n    color: #9B9B9B; }\n    .OrderStatus .privilege li {\n      padding: 0.33333rem 0.26667rem;\n      border-bottom: 1px solid #EBEBEB; }\n    .OrderStatus .privilege li:last-child p {\n      margin-bottom: 0.13333rem; }\n      .OrderStatus .privilege li:last-child p span:last-child {\n        float: right; }\n  .OrderStatus .subtotal {\n    text-align: right;\n    font-size: 0.36rem;\n    color: #272728;\n    padding: 0.4rem 0.26667rem;\n    color: #EA0216; }\n\n.btn {\n  width: 100%;\n  position: fixed;\n  bottom: 0;\n  background: #ffffff; }\n  .btn div:nth-child(1) {\n    width: 70%;\n    float: left;\n    text-align: right;\n    font-size: 0.34667rem;\n    color: #EA0216;\n    height: 1.2rem;\n    line-height: 1.2rem; }\n    .btn div:nth-child(1) span {\n      padding-right: 0.26667rem;\n      color: #EA0216; }\n      .btn div:nth-child(1) span a {\n        font-size: 0.42667rem; }\n  .btn div:nth-child(2) {\n    float: left;\n    text-align: center;\n    background: #ED4F02;\n    color: #ffffff;\n    font-size: 0.42667rem;\n    width: 30%;\n    line-height: 1.2rem; }\n\n.popupAddSite {\n  width: 90%;\n  height: 9.06667rem;\n  border-radius: 3% !important;\n  padding: 0.13333rem;\n  z-index: 300 !important; }\n\n.popupAddSite2 {\n  width: 90%;\n  height: 5.33333rem;\n  border-radius: 3% !important;\n  padding: 0.13333rem;\n  z-index: 300 !important; }\n\n.v-modal {\n  z-index: 299 !important;\n  opacity: 0.5; }\n\n.popupTitle {\n  padding: 0.13333rem 0;\n  text-align: center;\n  font-size: 0.45333rem;\n  position: relative; }\n  .popupTitle .icon-guanbi {\n    position: absolute;\n    top: 0.13333rem;\n    right: 0.4rem;\n    font-size: 0.4rem; }\n  .popupTitle .icon-fanhui {\n    position: absolute;\n    top: 0.13333rem;\n    left: 0.13333rem;\n    font-size: 0.4rem; }\n\n.line {\n  padding: 0.4rem 0.26667rem;\n  background: #ffffff;\n  font-size: 0.37333rem;\n  color: #272728;\n  border-bottom: 0.01333rem solid #F0F0F0; }\n\n.line-f label {\n  display: inline-block;\n  width: 23%; }\n\n.line-f input {\n  display: inline-block;\n  border: 0px;\n  outline: none;\n  width: 77%;\n  font-size: 0.37333rem;\n  color: #272728; }\n\n.line-site P:nth-child(1) {\n  display: inline-block; }\n\n.line-site p:nth-child(2) {\n  float: right; }\n\n.line-site img {\n  width: 0.17333rem;\n  height: 0.29333rem;\n  float: right;\n  margin-left: 0.26667rem;\n  margin-top: 0.09333rem; }\n\n.line-info textarea {\n  width: 100%;\n  height: 2.26667rem;\n  border: 0px;\n  outline: none;\n  font-size: 0.32rem;\n  color: #272728; }\n\n.line-default {\n  overflow: hidden; }\n  .line-default span {\n    float: left;\n    font-size: 0.29333rem;\n    color: #999; }\n  .line-default .mint-switch {\n    float: right; }\n    .line-default .mint-switch .mint-switch-input:checked + .mint-switch-core {\n      border-color: #ED4F02;\n      background-color: #ED4F02; }\n\n.addBottomBtn {\n  width: 100%;\n  text-align: center;\n  padding: 0.13333rem 0; }\n  .addBottomBtn .addSubmit {\n    width: 3.2rem;\n    height: 0.93333rem;\n    background-color: #ED4F02; }\n    .addBottomBtn .addSubmit .mint-button-text {\n      font-size: 0.45333rem;\n      color: #fff; }\n\n.icon-iconfont707 {\n  font-size: 0.6rem; }\n\n.selectText {\n  padding-top: 1.2rem;\n  padding-bottom: 1.33333rem;\n  text-align: center;\n  font-size: 0.45333rem; }\n\n.selectBottomBtn {\n  width: 100%;\n  text-align: center;\n  padding: 0.13333rem 0; }\n  .selectBottomBtn .mint-button {\n    width: 4rem;\n    height: 1.06667rem;\n    background-color: #ED4F02; }\n    .selectBottomBtn .mint-button .mint-button-text {\n      font-size: 0.45333rem;\n      color: #fff; }\n  .selectBottomBtn .cancelBtn {\n    background-color: #FFFFFF;\n    border: 1px solid #ED4F02;\n    margin-right: 0.53333rem; }\n    .selectBottomBtn .cancelBtn .mint-button-text {\n      font-size: 0.45333rem;\n      color: #ED4F02; }\n\n.siteContent {\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n  height: 6.26667rem;\n  margin: 0 0.33333rem;\n  margin-top: 0.13333rem;\n  font-size: 0.32rem; }\n  .siteContent li {\n    border-bottom: 0.01333rem solid #E7E7E7;\n    padding: 0.2rem 0;\n    position: relative; }\n  .siteContent .addressContent {\n    width: 90%;\n    padding-bottom: 0.10667rem;\n    font-size: 0.32rem; }\n    .siteContent .addressContent span {\n      margin-right: 0.13333rem; }\n    .siteContent .addressContent img {\n      width: 0.33333rem;\n      height: 0.21333rem;\n      margin-right: 0.13333rem; }\n    .siteContent .addressContent .defaultCont {\n      background-color: #394BFF;\n      color: #fff;\n      padding: 0.06667rem;\n      margin-left: 0.10667rem; }\n    .siteContent .addressContent .addressCont2 {\n      color: #959595; }\n  .siteContent .editAddress {\n    position: absolute;\n    bottom: 0.4rem;\n    right: 0; }\n    .siteContent .editAddress img {\n      width: 0.46667rem;\n      height: 0.46667rem;\n      vertical-align: middle; }\n\n.payModeMoney {\n  margin: 0.13333rem 0.4rem;\n  margin-bottom: 4rem;\n  border-top: 1px solid #EBEBEB; }\n  .payModeMoney li {\n    display: flex;\n    display: -webkit-flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #EBEBEB;\n    padding: 0.2rem 0;\n    font-size: 0.42667rem; }\n    .payModeMoney li .popupTotal {\n      color: #EB020E; }\n  .payModeMoney li:last-child img {\n    width: 2.68rem;\n    height: 0.88rem;\n    vertical-align: middle; }\n  .payModeMoney li:last-child span {\n    display: inline-block;\n    width: 0.4rem;\n    height: 0.4rem;\n    border: 1px solid #8E8E8E;\n    border-radius: 50%; }\n  .payModeMoney li:last-child .popupActive {\n    background: url(" + __webpack_require__(71) + ") no-repeat center;\n    background-size: 0.4rem 0.4rem;\n    border: none; }\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports) {
-
-	module.exports = "data:image/png;base64,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0p8zAAA6BGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICAgICAgICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE3LTA5LTIyVDEwOjEwKzA4OjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNZXRhZGF0YURhdGU+MjAxNy0wOS0yMlQxMDoxMCswODowMDwveG1wOk1ldGFkYXRhRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTctMDktMjJUMTA6MTArMDg6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjdhYzVhYzQxLTMyM2QtMDg0ZS1iMmQwLWJiMWE5NzlmYjRkZDwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+eG1wLmRpZDphMzZlYjhlMC1iYjgzLWRiNDEtYmM4MC05OWYxNzVlOWRiOGY8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+eG1wLmRpZDphMzZlYjhlMC1iYjgzLWRiNDEtYmM4MC05OWYxNzVlOWRiOGY8L3htcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkhpc3Rvcnk+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmFjdGlvbj5jcmVhdGVkPC9zdEV2dDphY3Rpb24+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6YTM2ZWI4ZTAtYmI4My1kYjQxLWJjODAtOTlmMTc1ZTlkYjhmPC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE3LTA5LTIyVDEwOjEwKzA4OjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo3YWM1YWM0MS0zMjNkLTA4NGUtYjJkMC1iYjFhOTc5ZmI0ZGQ8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTctMDktMjJUMTA6MTArMDg6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cyk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgICAgPHBob3Rvc2hvcDpJQ0NQcm9maWxlPnNSR0IgSUVDNjE5NjYtMi4xPC9waG90b3Nob3A6SUNDUHJvZmlsZT4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6WFJlc29sdXRpb24+NzIwMDAwLzEwMDAwPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MzA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PhPAh2MAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAv9JREFUeNqs10toXFUYwPHf3EmTUls6xqYWKdIKbYoUFyOKSKuCmKBUi62P0YIouDAxSBAXlaKOpVAVFzXYh7jpRlMUiuDCJ6KUuvARRPBRSq0LUZoam/gIkjqNi3uumczMzcw488Fd3PM9/t8593znficzW9CILEI/bsE1uAK5oJvED/gcH+A9nK8XMFMHnMMwBtGjMfkV+7EvJNU0uBCcL/X/5ExI+kgtZVRjLIsDGG0BKviOhljZeuAs3sCA9slAiJldCLwP27RftuGlNPC9GGor7qo+7tyVvD0aGPPAOYy0DZiJKOxl57t0LS3XjCRlmICHsbIt0GwHQ6+xdSeZDH+cLdeuDCwROkOdtmGmGR45zPVlNfrXuUqrQXRG6GvicKizhZ5i046KZKoqqQd9Cbh1yd/O9mL1ePdltaz7I+RbhuZWMXA4XupK6d1UM80I61sGP/wKS7urx/+c4Kt3anms68DyhgFLckxXnPvX3c3Vd1TbfvsxIwWmztSKtDxqCLhqHbs+jJezXLqWsOPFavtPR9nbnwYFHZhK3dUdnWx9Mq7JRYuZnWVtntNjsf7WYVZcPt/n+OsceIALpYWmMhXhZE3VlTfx/NfcVYyhSZ1uf2Zu2bc8Md9n7G0OPVQPCicjfFl7tl3MTNcum7V5+oe46OK58dNj8Tf9Z6aRjzeWLW6Uxf3Vv/FTfPRqnP2GzUTR3Kx71pDfwuJlofn5hT03x7u4MdmTmS3oxM+4JNVsw2YeP8qyFdW6C6UY+t0njULPYnWEGby8oOn3x3j2Bn77qVr35tPNQIWOZCbpuXI4UfcP1bOG4jG6V8fvJ46z+8ZGNlP5bNdjMiprUR+r7/Yjz93G9BTn/+bQg81ABcYkZIsb/xv8JtTztQu6/j7Oqc/iJL54qxnofryQ1t4mzV67+66juAeltGavFAwOthF6sBKa1leXQpdwH8ZbAI6HGIOV0DRwIkfQi92YaAI4EXx6024RjdydKi9tfWWXtuS8PFd2aXs/PHXPzX8HABD7u6QQ5g0/AAAAAElFTkSuQmCC"
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	String.prototype.MD5 = function (bit) {
-	    var sMessage = this;
-	    function RotateLeft(lValue, iShiftBits) {
-	        return lValue << iShiftBits | lValue >>> 32 - iShiftBits;
-	    }
-	    function AddUnsigned(lX, lY) {
-	        var lX4, lY4, lX8, lY8, lResult;
-	        lX8 = lX & 0x80000000;
-	        lY8 = lY & 0x80000000;
-	        lX4 = lX & 0x40000000;
-	        lY4 = lY & 0x40000000;
-	        lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
-	        if (lX4 & lY4) return lResult ^ 0x80000000 ^ lX8 ^ lY8;
-	        if (lX4 | lY4) {
-	            if (lResult & 0x40000000) return lResult ^ 0xC0000000 ^ lX8 ^ lY8;else return lResult ^ 0x40000000 ^ lX8 ^ lY8;
-	        } else return lResult ^ lX8 ^ lY8;
-	    }
-	    function F(x, y, z) {
-	        return x & y | ~x & z;
-	    }
-	    function G(x, y, z) {
-	        return x & z | y & ~z;
-	    }
-	    function H(x, y, z) {
-	        return x ^ y ^ z;
-	    }
-	    function I(x, y, z) {
-	        return y ^ (x | ~z);
-	    }
-	    function FF(a, b, c, d, x, s, ac) {
-	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
-	        return AddUnsigned(RotateLeft(a, s), b);
-	    }
-	    function GG(a, b, c, d, x, s, ac) {
-	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
-	        return AddUnsigned(RotateLeft(a, s), b);
-	    }
-	    function HH(a, b, c, d, x, s, ac) {
-	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
-	        return AddUnsigned(RotateLeft(a, s), b);
-	    }
-	    function II(a, b, c, d, x, s, ac) {
-	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
-	        return AddUnsigned(RotateLeft(a, s), b);
-	    }
-	    function ConvertToWordArray(sMessage) {
-	        var lWordCount;
-	        var lMessageLength = sMessage.length;
-	        var lNumberOfWords_temp1 = lMessageLength + 8;
-	        var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - lNumberOfWords_temp1 % 64) / 64;
-	        var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
-	        var lWordArray = Array(lNumberOfWords - 1);
-	        var lBytePosition = 0;
-	        var lByteCount = 0;
-	        while (lByteCount < lMessageLength) {
-	            lWordCount = (lByteCount - lByteCount % 4) / 4;
-	            lBytePosition = lByteCount % 4 * 8;
-	            lWordArray[lWordCount] = lWordArray[lWordCount] | sMessage.charCodeAt(lByteCount) << lBytePosition;
-	            lByteCount++;
-	        }
-	        lWordCount = (lByteCount - lByteCount % 4) / 4;
-	        lBytePosition = lByteCount % 4 * 8;
-	        lWordArray[lWordCount] = lWordArray[lWordCount] | 0x80 << lBytePosition;
-	        lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
-	        lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
-	        return lWordArray;
-	    }
-	    function WordToHex(lValue) {
-	        var WordToHexValue = "",
-	            WordToHexValue_temp = "",
-	            lByte,
-	            lCount;
-	        for (lCount = 0; lCount <= 3; lCount++) {
-	            lByte = lValue >>> lCount * 8 & 255;
-	            WordToHexValue_temp = "0" + lByte.toString(16);
-	            WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
-	        }
-	        return WordToHexValue;
-	    }
-	    var x = Array();
-	    var k, AA, BB, CC, DD, a, b, c, d;
-	    var S11 = 7,
-	        S12 = 12,
-	        S13 = 17,
-	        S14 = 22;
-	    var S21 = 5,
-	        S22 = 9,
-	        S23 = 14,
-	        S24 = 20;
-	    var S31 = 4,
-	        S32 = 11,
-	        S33 = 16,
-	        S34 = 23;
-	    var S41 = 6,
-	        S42 = 10,
-	        S43 = 15,
-	        S44 = 21;
-	    // Steps 1 and 2. Append padding bits and length and convert to words 
-	    x = ConvertToWordArray(sMessage);
-	    // Step 3. Initialise 
-	    a = 0x67452301;b = 0xEFCDAB89;c = 0x98BADCFE;d = 0x10325476;
-	    // Step 4. Process the message in 16-word blocks 
-	    for (k = 0; k < x.length; k += 16) {
-	        AA = a;BB = b;CC = c;DD = d;
-	        a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
-	        d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
-	        c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
-	        b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
-	        a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
-	        d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
-	        c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
-	        b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
-	        a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
-	        d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
-	        c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
-	        b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
-	        a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
-	        d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
-	        c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
-	        b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
-	        a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
-	        d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
-	        c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
-	        b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
-	        a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
-	        d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
-	        c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
-	        b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
-	        a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
-	        d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
-	        c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
-	        b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
-	        a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
-	        d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
-	        c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
-	        b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
-	        a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
-	        d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
-	        c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
-	        b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
-	        a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
-	        d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
-	        c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
-	        b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
-	        a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
-	        d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
-	        c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
-	        b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
-	        a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
-	        d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
-	        c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
-	        b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
-	        a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
-	        d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
-	        c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
-	        b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
-	        a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
-	        d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
-	        c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
-	        b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
-	        a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
-	        d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
-	        c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
-	        b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
-	        a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
-	        d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
-	        c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
-	        b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
-	        a = AddUnsigned(a, AA);b = AddUnsigned(b, BB);c = AddUnsigned(c, CC);d = AddUnsigned(d, DD);
-	    }
-	    if (bit == 32) {
-	        return WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
-	    } else {
-	        return WordToHex(b) + WordToHex(c);
-	    }
-	};
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = GUID;
-	function GUID() {
-	    this.date = new Date();
-
-	    /* 判断是否初始化过，如果初始化过以下代码，则以下代码将不再执行，实际中只执行一次 */
-	    if (typeof this.newGUID != 'function') {
-
-	        /* 生成GUID码 */
-	        GUID.prototype.newGUID = function () {
-	            this.date = new Date();
-	            var guidStr = '',
-	                sexadecimalDate = this.hexadecimal(this.getGUIDDate(), 16),
-	                sexadecimalTime = this.hexadecimal(this.getGUIDTime(), 16);
-	            for (var i = 0; i < 9; i++) {
-	                guidStr += Math.floor(Math.random() * 16).toString(16);
-	            }
-	            guidStr += sexadecimalDate;
-	            guidStr += sexadecimalTime;
-	            while (guidStr.length < 32) {
-	                guidStr += Math.floor(Math.random() * 16).toString(16);
-	            }
-	            return this.formatGUID(guidStr);
-	        };
-
-	        /*
-	         * 功能：获取当前日期的GUID格式，即8位数的日期：19700101
-	         * 返回值：返回GUID日期格式的字条串
-	         */
-	        GUID.prototype.getGUIDDate = function () {
-	            return this.date.getFullYear() + this.addZero(this.date.getMonth() + 1) + this.addZero(this.date.getDay());
-	        };
-
-	        /*
-	         * 功能：获取当前时间的GUID格式，即8位数的时间，包括毫秒，毫秒为2位数：12300933
-	         * 返回值：返回GUID日期格式的字条串
-	         */
-	        GUID.prototype.getGUIDTime = function () {
-	            return this.addZero(this.date.getHours()) + this.addZero(this.date.getMinutes()) + this.addZero(this.date.getSeconds()) + this.addZero(parseInt(this.date.getMilliseconds() / 10));
-	        };
-
-	        /*
-	         * 功能: 为一位数的正整数前面添加0，如果是可以转成非NaN数字的字符串也可以实现
-	         * 参数: 参数表示准备再前面添加0的数字或可以转换成数字的字符串
-	         * 返回值: 如果符合条件，返回添加0后的字条串类型，否则返回自身的字符串
-	         */
-	        GUID.prototype.addZero = function (num) {
-	            if (Number(num).toString() != 'NaN' && num >= 0 && num < 10) {
-	                return '0' + Math.floor(num);
-	            } else {
-	                return num.toString();
-	            }
-	        };
-
-	        /* 
-	         * 功能：将y进制的数值，转换为x进制的数值
-	         * 参数：第1个参数表示欲转换的数值；第2个参数表示欲转换的进制；第3个参数可选，表示当前的进制数，如不写则为10
-	         * 返回值：返回转换后的字符串
-	         */
-	        GUID.prototype.hexadecimal = function (num, x, y) {
-	            if (y != undefined) {
-	                return parseInt(num.toString(), y).toString(x);
-	            } else {
-	                return parseInt(num.toString()).toString(x);
-	            }
-	        };
-
-	        /*
-	         * 功能：格式化32位的字符串为GUID模式的字符串
-	         * 参数：第1个参数表示32位的字符串
-	         * 返回值：标准GUID格式的字符串
-	         */
-	        GUID.prototype.formatGUID = function (guidStr) {
-	            var str1 = guidStr.slice(0, 8) + '-',
-	                str2 = guidStr.slice(8, 12) + '-',
-	                str3 = guidStr.slice(12, 16) + '-',
-	                str4 = guidStr.slice(16, 20) + '-',
-	                str5 = guidStr.slice(20);
-	            return str1 + str2 + str3 + str4 + str5;
-	        };
-	    }
-	}
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	module.exports =
 	/******/ (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -17839,7 +17519,7 @@
 	/* 1 */
 	/***/ function(module, exports) {
 
-	module.exports = __webpack_require__(75);
+	module.exports = __webpack_require__(70);
 
 	/***/ },
 	/* 2 */
@@ -27446,19 +27126,19 @@
 	/* 199 */
 	/***/ function(module, exports) {
 
-	module.exports = __webpack_require__(76);
+	module.exports = __webpack_require__(71);
 
 	/***/ },
 	/* 200 */
 	/***/ function(module, exports) {
 
-	module.exports = __webpack_require__(77);
+	module.exports = __webpack_require__(72);
 
 	/***/ },
 	/* 201 */
 	/***/ function(module, exports) {
 
-	module.exports = __webpack_require__(78);
+	module.exports = __webpack_require__(73);
 
 	/***/ },
 	/* 202 */
@@ -27471,7 +27151,7 @@
 	/******/ ]);
 
 /***/ }),
-/* 75 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -37661,7 +37341,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 76 */
+/* 71 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -37692,7 +37372,7 @@
 
 
 /***/ }),
-/* 77 */
+/* 72 */
 /***/ (function(module, exports) {
 
 	/*
@@ -37739,7 +37419,7 @@
 
 
 /***/ }),
-/* 78 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -37748,6 +37428,326 @@
 	 * Released under the MIT License.
 	 */
 	!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define(t):e.VueLazyload=t()}(this,function(){"use strict";function e(e,t){if(e.length){var n=e.indexOf(t);return n>-1?e.splice(n,1):void 0}}function t(e,t){if(!e||!t)return e||{};if(e instanceof Object)for(var n in t)e[n]=t[n];return e}function n(e,t){for(var n=!1,r=0,i=e.length;r<i;r++)if(t(e[r])){n=!0;break}return n}function r(e,t){if("IMG"===e.tagName&&e.getAttribute("data-srcset")){var n=e.getAttribute("data-srcset"),r=[],i=e.parentNode,o=i.offsetWidth*t,s=void 0,a=void 0,u=void 0;n=n.trim().split(","),n.map(function(e){e=e.trim(),s=e.lastIndexOf(" "),s===-1?(a=e,u=999998):(a=e.substr(0,s),u=parseInt(e.substr(s+1,e.length-s-2),10)),r.push([u,a])}),r.sort(function(e,t){if(e[0]<t[0])return-1;if(e[0]>t[0])return 1;if(e[0]===t[0]){if(t[1].indexOf(".webp",t[1].length-5)!==-1)return 1;if(e[1].indexOf(".webp",e[1].length-5)!==-1)return-1}return 0});for(var l="",d=void 0,h=r.length,c=0;c<h;c++)if(d=r[c],d[0]>=o){l=d[1];break}return l}}function i(e,t){for(var n=void 0,r=0,i=e.length;r<i;r++)if(t(e[r])){n=e[r];break}return n}function o(){if(!f)return!1;var e=!0,t=document;try{var n=t.createElement("object");n.type="image/webp",n.style.visibility="hidden",n.innerHTML="!",t.body.appendChild(n),e=!n.offsetWidth,t.body.removeChild(n)}catch(t){e=!1}return e}function s(e,t){var n=null,r=0;return function(){if(!n){var i=Date.now()-r,o=this,s=arguments,a=function(){r=Date.now(),n=!1,e.apply(o,s)};i>=t?a():n=setTimeout(a,t)}}}function a(){if(f){var e=!1;try{var t=Object.defineProperty({},"passive",{get:function(){e=!0}});window.addEventListener("test",null,t)}catch(e){}return e}}function u(e){return null!==e&&"object"===("undefined"==typeof e?"undefined":c(e))}function l(e){if(!(e instanceof Object))return[];if(Object.keys)return Object.keys(e);var t=[];for(var n in e)e.hasOwnProperty(n)&&t.push(n);return t}function d(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function h(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var c="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},f="undefined"!=typeof window,v=f&&"IntersectionObserver"in window,p={event:"event",observer:"observer"},y=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:1;return f&&window.devicePixelRatio||e},b=a(),g={on:function(e,t,n){var r=arguments.length>3&&void 0!==arguments[3]&&arguments[3];b?e.addEventListener(t,n,{capture:r,passive:!0}):e.addEventListener(t,n,r)},off:function(e,t,n){var r=arguments.length>3&&void 0!==arguments[3]&&arguments[3];e.removeEventListener(t,n,r)}},m=function(e,t,n){var r=new Image;r.src=e.src,r.onload=function(){t({naturalHeight:r.naturalHeight,naturalWidth:r.naturalWidth,src:r.src})},r.onerror=function(e){n(e)}},L=function(e,t){return"undefined"!=typeof getComputedStyle?getComputedStyle(e,null).getPropertyValue(t):e.style[t]},w=function(e){return L(e,"overflow")+L(e,"overflow-y")+L(e,"overflow-x")},_=function(e){if(f){if(!(e instanceof HTMLElement))return window;for(var t=e;t&&t!==document.body&&t!==document.documentElement&&t.parentNode;){if(/(scroll|auto)/.test(w(t)))return t;t=t.parentNode}return window}},k=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),E={},T=function(){function e(t){var n=t.el,r=t.src,i=t.error,o=t.loading,s=t.bindType,a=t.$parent,u=t.options,l=t.elRenderer;d(this,e),this.el=n,this.src=r,this.error=i,this.loading=o,this.bindType=s,this.attempt=0,this.naturalHeight=0,this.naturalWidth=0,this.options=u,this.filter(),this.initState(),this.performanceData={init:Date.now(),loadStart:null,loadEnd:null},this.rect=n.getBoundingClientRect(),this.$parent=a,this.elRenderer=l,this.render("loading",!1)}return k(e,[{key:"initState",value:function(){this.state={error:!1,loaded:!1,rendered:!1}}},{key:"record",value:function(e){this.performanceData[e]=Date.now()}},{key:"update",value:function(e){var t=e.src,n=e.loading,r=e.error,i=this.src;this.src=t,this.loading=n,this.error=r,this.filter(),i!==this.src&&(this.attempt=0,this.initState())}},{key:"getRect",value:function(){this.rect=this.el.getBoundingClientRect()}},{key:"checkInView",value:function(){return this.getRect(),this.rect.top<window.innerHeight*this.options.preLoad&&this.rect.bottom>this.options.preLoadTop&&this.rect.left<window.innerWidth*this.options.preLoad&&this.rect.right>0}},{key:"filter",value:function(){var e=this;l(this.options.filter).map(function(t){e.options.filter[t](e,e.options)})}},{key:"renderLoading",value:function(e){var t=this;m({src:this.loading},function(n){t.render("loading",!1),e()})}},{key:"load",value:function(){var e=this;return this.attempt>this.options.attempt-1&&this.state.error?void(this.options.silent||console.log("VueLazyload log: "+this.src+" tried too more than "+this.options.attempt+" times")):this.state.loaded||E[this.src]?this.render("loaded",!0):void this.renderLoading(function(){e.attempt++,e.record("loadStart"),m({src:e.src},function(t){e.naturalHeight=t.naturalHeight,e.naturalWidth=t.naturalWidth,e.state.loaded=!0,e.state.error=!1,e.record("loadEnd"),e.render("loaded",!1),E[e.src]=1},function(t){e.state.error=!0,e.state.loaded=!1,e.render("error",!1)})})}},{key:"render",value:function(e,t){this.elRenderer(this,e,t)}},{key:"performance",value:function(){var e="loading",t=0;return this.state.loaded&&(e="loaded",t=(this.performanceData.loadEnd-this.performanceData.loadStart)/1e3),this.state.error&&(e="error"),{src:this.src,state:e,time:t}}},{key:"destroy",value:function(){this.el=null,this.src=null,this.error=null,this.loading=null,this.bindType=null,this.attempt=0}}]),e}(),A=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),$="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",z=["scroll","wheel","mousewheel","resize","animationend","transitionend","touchmove"],H={rootMargin:"0px",threshold:0},O=function(a){return function(){function l(e){var t=e.preLoad,n=e.error,r=e.throttleWait,i=e.preLoadTop,a=e.dispatchEvent,u=e.loading,d=e.attempt,c=e.silent,f=e.scale,v=e.listenEvents,b=(e.hasbind,e.filter),g=e.adapter,m=e.observer,L=e.observerOptions;h(this,l),this.version="1.1.3",this.mode=p.event,this.ListenerQueue=[],this.TargetIndex=0,this.TargetQueue=[],this.options={silent:c||!0,dispatchEvent:!!a,throttleWait:r||200,preLoad:t||1.3,preLoadTop:i||0,error:n||$,loading:u||$,attempt:d||3,scale:f||y(f),ListenEvents:v||z,hasbind:!1,supportWebp:o(),filter:b||{},adapter:g||{},observer:!!m,observerOptions:L||H},this._initEvent(),this.lazyLoadHandler=s(this._lazyLoadHandler.bind(this),this.options.throttleWait),this.setMode(this.options.observer?p.observer:p.event)}return A(l,[{key:"config",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};t(this.options,e)}},{key:"performance",value:function(){var e=[];return this.ListenerQueue.map(function(t){e.push(t.performance())}),e}},{key:"addLazyBox",value:function(e){this.ListenerQueue.push(e),f&&(this._addListenerTarget(window),this._observer&&this._observer.observe(e.el),e.$el&&e.$el.parentNode&&this._addListenerTarget(e.$el.parentNode))}},{key:"add",value:function(e,t,i){var o=this;if(n(this.ListenerQueue,function(t){return t.el===e}))return this.update(e,t),a.nextTick(this.lazyLoadHandler);var s=this._valueFormatter(t.value),u=s.src,l=s.loading,d=s.error;a.nextTick(function(){u=r(e,o.options.scale)||u,o._observer&&o._observer.observe(e);var n=Object.keys(t.modifiers)[0],s=void 0;n&&(s=i.context.$refs[n],s=s?s.$el||s:document.getElementById(n)),s||(s=_(e));var h=new T({bindType:t.arg,$parent:s,el:e,loading:l,error:d,src:u,elRenderer:o._elRenderer.bind(o),options:o.options});o.ListenerQueue.push(h),f&&(o._addListenerTarget(window),o._addListenerTarget(s)),o.lazyLoadHandler(),a.nextTick(function(){return o.lazyLoadHandler()})})}},{key:"update",value:function(e,t){var n=this,o=this._valueFormatter(t.value),s=o.src,u=o.loading,l=o.error;s=r(e,this.options.scale)||s;var d=i(this.ListenerQueue,function(t){return t.el===e});d&&d.update({src:s,loading:u,error:l}),this._observer&&this._observer.observe(e),this.lazyLoadHandler(),a.nextTick(function(){return n.lazyLoadHandler()})}},{key:"remove",value:function(t){if(t){this._observer&&this._observer.unobserve(t);var n=i(this.ListenerQueue,function(e){return e.el===t});n&&(this._removeListenerTarget(n.$parent),this._removeListenerTarget(window),e(this.ListenerQueue,n)&&n.destroy())}}},{key:"removeComponent",value:function(t){t&&(e(this.ListenerQueue,t),this._observer&&this._observer.unobserve(t.el),t.$parent&&t.$el.parentNode&&this._removeListenerTarget(t.$el.parentNode),this._removeListenerTarget(window))}},{key:"setMode",value:function(e){var t=this;v||e!==p.observer||(e=p.event),this.mode=e,e===p.event?(this._observer&&(this.ListenerQueue.forEach(function(e){t._observer.unobserve(e.el)}),this._observer=null),this.TargetQueue.forEach(function(e){t._initListen(e.el,!0)})):(this.TargetQueue.forEach(function(e){t._initListen(e.el,!1)}),this._initIntersectionObserver())}},{key:"_addListenerTarget",value:function(e){if(e){var t=i(this.TargetQueue,function(t){return t.el===e});return t?t.childrenCount++:(t={el:e,id:++this.TargetIndex,childrenCount:1,listened:!0},this.mode===p.event&&this._initListen(t.el,!0),this.TargetQueue.push(t)),this.TargetIndex}}},{key:"_removeListenerTarget",value:function(e){var t=this;this.TargetQueue.forEach(function(n,r){n.el===e&&(n.childrenCount--,n.childrenCount||(t._initListen(n.el,!1),t.TargetQueue.splice(r,1),n=null))})}},{key:"_initListen",value:function(e,t){var n=this;this.options.ListenEvents.forEach(function(r){return g[t?"on":"off"](e,r,n.lazyLoadHandler)})}},{key:"_initEvent",value:function(){var t=this;this.Event={listeners:{loading:[],loaded:[],error:[]}},this.$on=function(e,n){t.Event.listeners[e].push(n)},this.$once=function(e,n){function r(){i.$off(e,r),n.apply(i,arguments)}var i=t;t.$on(e,r)},this.$off=function(n,r){return r?void e(t.Event.listeners[n],r):void(t.Event.listeners[n]=[])},this.$emit=function(e,n,r){t.Event.listeners[e].forEach(function(e){return e(n,r)})}}},{key:"_lazyLoadHandler",value:function(){var e=!1;this.ListenerQueue.forEach(function(t){t.state.loaded||(e=t.checkInView(),e&&t.load())})}},{key:"_initIntersectionObserver",value:function(){var e=this;v&&(this._observer=new IntersectionObserver(this._observerHandler.bind(this),this.options.observerOptions),this.ListenerQueue.length&&this.ListenerQueue.forEach(function(t){e._observer.observe(t.el)}))}},{key:"_observerHandler",value:function(e,t){var n=this;e.forEach(function(e){e.isIntersecting&&n.ListenerQueue.forEach(function(t){if(t.el===e.target){if(t.state.loaded)return n._observer.unobserve(t.el);t.load()}})})}},{key:"_elRenderer",value:function(e,t,n){if(e.el){var r=e.el,i=e.bindType,o=void 0;switch(t){case"loading":o=e.loading;break;case"error":o=e.error;break;default:o=e.src}if(i?r.style[i]="url("+o+")":r.getAttribute("src")!==o&&r.setAttribute("src",o),r.setAttribute("lazy",t),this.$emit(t,e,n),this.options.adapter[t]&&this.options.adapter[t](e,this.options),this.options.dispatchEvent){var s=new CustomEvent(t,{detail:e});r.dispatchEvent(s)}}}},{key:"_valueFormatter",value:function(e){var t=e,n=this.options.loading,r=this.options.error;return u(e)&&(e.src||this.options.silent||console.error("Vue Lazyload warning: miss src with "+e),t=e.src,n=e.loading||this.options.loading,r=e.error||this.options.error),{src:t,loading:n,error:r}}}]),l}()},Q=function(e){return{props:{tag:{type:String,default:"div"}},render:function(e){return this.show===!1?e(this.tag):e(this.tag,null,this.$slots.default)},data:function(){return{el:null,state:{loaded:!1},rect:{},show:!1}},mounted:function(){this.el=this.$el,e.addLazyBox(this),e.lazyLoadHandler()},beforeDestroy:function(){e.removeComponent(this)},methods:{getRect:function(){this.rect=this.$el.getBoundingClientRect()},checkInView:function(){return this.getRect(),f&&this.rect.top<window.innerHeight*e.options.preLoad&&this.rect.bottom>0&&this.rect.left<window.innerWidth*e.options.preLoad&&this.rect.right>0},load:function(){this.show=!0,this.state.loaded=!0,this.$emit("show",this)}}}},x={install:function(e){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},r=O(e),i=new r(n),o="2"===e.version.split(".")[0];e.prototype.$Lazyload=i,n.lazyComponent&&e.component("lazy-component",Q(i)),o?e.directive("lazy",{bind:i.add.bind(i),update:i.update.bind(i),componentUpdated:i.lazyLoadHandler.bind(i),unbind:i.remove.bind(i)}):e.directive("lazy",{bind:i.lazyLoadHandler.bind(i),update:function(e,n){t(this.vm.$refs,this.vm.$els),i.add(this.el,{modifiers:this.modifiers||{},arg:this.arg,value:e,oldValue:n},{context:this.vm})},unbind:function(){i.remove(this.el)}})}};return x});
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(75);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(38)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!./ConfirmOrder.scss", function() {
+				var newContent = require("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!./ConfirmOrder.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(37)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\";\n  background: #f0f1f0; }\n\n.ios-select-widget-box header.iosselect-header a {\n  font-size: 0.4rem !important; }\n\n.ios-select-widget-box ul li.at {\n  font-size: 0.4rem !important; }\n\n.ios-select-widget-box ul li.side1 {\n  font-size: 0.34667rem !important; }\n\n.ios-select-widget-box ul li {\n  font-size: 0.29333rem !important; }\n\n.ios-select-widget-box.olay > div {\n  bottom: -6.66667rem;\n  z-index: 10000; }\n\n.ios-select-widget-box.olay {\n  background: rgba(0, 0, 0, 0.1) !important; }\n\n.mint-indicator-wrapper {\n  width: 2rem;\n  height: 2rem; }\n\n.mint-spinner-fading-circle {\n  width: 0.8rem !important;\n  height: 0.8rem !important;\n  margin-top: 50%; }\n\n.sitebar {\n  background: #ffffff;\n  padding: 0.4rem 0.26667rem 0.4rem 0.26667rem;\n  position: relative; }\n  .sitebar .info {\n    font-size: 0.37333rem;\n    margin-left: 0.66667rem;\n    width: 89%; }\n    .sitebar .info p:nth-child(1) {\n      margin-bottom: 0.13333rem; }\n      .sitebar .info p:nth-child(1) .defaultCont {\n        background-color: #394BFF;\n        color: #fff;\n        font-size: 0.32rem;\n        padding: 0.06667rem;\n        margin-left: 0.10667rem; }\n    .sitebar .info .addressCont {\n      color: #959595; }\n    .sitebar .info .phone {\n      line-height: 0.48rem; }\n    .sitebar .info .icon {\n      width: 0.33333rem;\n      height: 0.53333rem;\n      position: absolute;\n      top: 63%;\n      left: 0.26667rem;\n      margin-top: -0.21333rem; }\n    .sitebar .info .arrows {\n      width: 0.17333rem;\n      height: 0.29333rem;\n      position: absolute;\n      top: 50%;\n      right: 0.26667rem;\n      margin-top: -0.14667rem; }\n  .sitebar .addsite {\n    text-align: center; }\n    .sitebar .addsite i {\n      font-size: 0.93333rem;\n      color: #a9a9a9; }\n\n.bgbar {\n  width: 100%;\n  height: 0.06667rem;\n  margin-bottom: 0.13333rem;\n  background-size: 1.2rem 0.06667rem; }\n\n.margin {\n  margin-bottom: 0.26667rem; }\n\n.box {\n  margin-bottom: 1.46667rem; }\n\n.store {\n  background: #ffffff;\n  padding: 0.26667rem 0.26667rem;\n  overflow: hidden;\n  border-bottom: 1px solid #E7E7E7; }\n  .store .head {\n    width: 0.86667rem;\n    height: 0.86667rem;\n    border-radius: 50%;\n    float: left;\n    margin-right: 0.26667rem; }\n  .store p {\n    line-height: 0.86667rem; }\n  .store .storename {\n    color: #7d7d7e;\n    float: left; }\n    .store .storename img {\n      width: 0.10667rem;\n      height: 0.18667rem; }\n  .store .starts {\n    float: right;\n    color: #272728; }\n\n.detail:nth-child(even) {\n  border-bottom: 0.04rem solid #ffffff; }\n\n.detail {\n  padding: 0.26667rem 0.26667rem;\n  background-color: #fff;\n  position: relative; }\n  .detail img {\n    width: 2rem;\n    height: 2rem;\n    float: left;\n    margin-right: 0.26667rem; }\n  .detail .detailname {\n    float: left;\n    width: 50%; }\n    .detail .detailname h1 {\n      font-size: 0.37333rem;\n      margin-bottom: 0.26667rem; }\n    .detail .detailname p {\n      color: #7d7d7e;\n      font-size: 0.32rem; }\n  .detail .price {\n    float: right; }\n    .detail .price p:nth-child(1) {\n      font-size: 0.37333rem;\n      color: #EA0216;\n      margin-bottom: 0.13333rem; }\n    .detail .price p:nth-child(2) {\n      font-size: 0.34667rem;\n      color: #7d7d7e;\n      text-align: right;\n      position: absolute;\n      bottom: 0.26667rem;\n      right: 0.26667rem; }\n\n.OrderStatus {\n  background: #ffffff;\n  margin-top: 0.13333rem; }\n  .OrderStatus .privilege {\n    font-size: 0.32rem;\n    color: #9B9B9B; }\n    .OrderStatus .privilege li {\n      padding: 0.33333rem 0.26667rem;\n      border-bottom: 1px solid #EBEBEB; }\n    .OrderStatus .privilege li:last-child p {\n      margin-bottom: 0.13333rem; }\n      .OrderStatus .privilege li:last-child p span:last-child {\n        float: right; }\n  .OrderStatus .subtotal {\n    text-align: right;\n    font-size: 0.36rem;\n    color: #272728;\n    padding: 0.4rem 0.26667rem;\n    color: #EA0216; }\n\n.btn {\n  width: 100%;\n  position: fixed;\n  bottom: 0;\n  background: #ffffff; }\n  .btn div:nth-child(1) {\n    width: 70%;\n    float: left;\n    text-align: right;\n    font-size: 0.34667rem;\n    color: #EA0216;\n    height: 1.2rem;\n    line-height: 1.2rem; }\n    .btn div:nth-child(1) span {\n      padding-right: 0.26667rem;\n      color: #EA0216; }\n      .btn div:nth-child(1) span a {\n        font-size: 0.42667rem; }\n  .btn div:nth-child(2) {\n    float: left;\n    text-align: center;\n    background: #ED4F02;\n    color: #ffffff;\n    font-size: 0.42667rem;\n    width: 30%;\n    line-height: 1.2rem; }\n\n.popupAddSite {\n  width: 90%;\n  height: 9.06667rem;\n  border-radius: 3% !important;\n  padding: 0.13333rem;\n  z-index: 300 !important; }\n\n.popupAddSite2 {\n  width: 90%;\n  height: 5.33333rem;\n  border-radius: 3% !important;\n  padding: 0.13333rem;\n  z-index: 300 !important; }\n\n.v-modal {\n  z-index: 299 !important;\n  opacity: 0.5; }\n\n.popupTitle {\n  padding: 0.13333rem 0;\n  text-align: center;\n  font-size: 0.45333rem;\n  position: relative; }\n  .popupTitle .icon-guanbi {\n    position: absolute;\n    top: 0.13333rem;\n    right: 0.4rem;\n    font-size: 0.4rem; }\n  .popupTitle .icon-fanhui {\n    position: absolute;\n    top: 0.13333rem;\n    left: 0.13333rem;\n    font-size: 0.4rem; }\n\n.line {\n  padding: 0.4rem 0.26667rem;\n  background: #ffffff;\n  font-size: 0.37333rem;\n  color: #272728;\n  border-bottom: 0.01333rem solid #F0F0F0; }\n\n.line-f label {\n  display: inline-block;\n  width: 23%; }\n\n.line-f input {\n  display: inline-block;\n  border: 0px;\n  outline: none;\n  width: 77%;\n  font-size: 0.37333rem;\n  color: #272728; }\n\n.line-site P:nth-child(1) {\n  display: inline-block; }\n\n.line-site p:nth-child(2) {\n  float: right; }\n\n.line-site img {\n  width: 0.17333rem;\n  height: 0.29333rem;\n  float: right;\n  margin-left: 0.26667rem;\n  margin-top: 0.09333rem; }\n\n.line-info textarea {\n  width: 100%;\n  height: 2.26667rem;\n  border: 0px;\n  outline: none;\n  font-size: 0.32rem;\n  color: #272728; }\n\n.line-default {\n  overflow: hidden; }\n  .line-default span {\n    float: left;\n    font-size: 0.29333rem;\n    color: #999; }\n  .line-default .mint-switch {\n    float: right; }\n    .line-default .mint-switch .mint-switch-input:checked + .mint-switch-core {\n      border-color: #ED4F02;\n      background-color: #ED4F02; }\n\n.addBottomBtn {\n  width: 100%;\n  text-align: center;\n  padding: 0.13333rem 0; }\n  .addBottomBtn .addSubmit {\n    width: 3.2rem;\n    height: 0.93333rem;\n    background-color: #ED4F02; }\n    .addBottomBtn .addSubmit .mint-button-text {\n      font-size: 0.45333rem;\n      color: #fff; }\n\n.icon-iconfont707 {\n  font-size: 0.6rem; }\n\n.selectText {\n  padding-top: 1.2rem;\n  padding-bottom: 1.33333rem;\n  text-align: center;\n  font-size: 0.45333rem; }\n\n.selectBottomBtn {\n  width: 100%;\n  text-align: center;\n  padding: 0.13333rem 0; }\n  .selectBottomBtn .mint-button {\n    width: 4rem;\n    height: 1.06667rem;\n    background-color: #ED4F02; }\n    .selectBottomBtn .mint-button .mint-button-text {\n      font-size: 0.45333rem;\n      color: #fff; }\n  .selectBottomBtn .cancelBtn {\n    background-color: #FFFFFF;\n    border: 1px solid #ED4F02;\n    margin-right: 0.53333rem; }\n    .selectBottomBtn .cancelBtn .mint-button-text {\n      font-size: 0.45333rem;\n      color: #ED4F02; }\n\n.siteContent {\n  overflow: auto;\n  -webkit-overflow-scrolling: touch;\n  height: 6.26667rem;\n  margin: 0 0.33333rem;\n  margin-top: 0.13333rem;\n  font-size: 0.32rem; }\n  .siteContent li {\n    border-bottom: 0.01333rem solid #E7E7E7;\n    padding: 0.2rem 0;\n    position: relative; }\n  .siteContent .addressContent {\n    width: 90%;\n    padding-bottom: 0.10667rem;\n    font-size: 0.32rem; }\n    .siteContent .addressContent span {\n      margin-right: 0.13333rem; }\n    .siteContent .addressContent img {\n      width: 0.33333rem;\n      height: 0.21333rem;\n      margin-right: 0.13333rem; }\n    .siteContent .addressContent .defaultCont {\n      background-color: #394BFF;\n      color: #fff;\n      padding: 0.06667rem;\n      margin-left: 0.10667rem; }\n    .siteContent .addressContent .addressCont2 {\n      color: #959595; }\n  .siteContent .editAddress {\n    position: absolute;\n    bottom: 0.4rem;\n    right: 0; }\n    .siteContent .editAddress img {\n      width: 0.46667rem;\n      height: 0.46667rem;\n      vertical-align: middle; }\n\n.payModeMoney {\n  margin: 0.13333rem 0.4rem;\n  margin-bottom: 4rem;\n  border-top: 1px solid #EBEBEB; }\n  .payModeMoney li {\n    display: flex;\n    display: -webkit-flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #EBEBEB;\n    padding: 0.2rem 0;\n    font-size: 0.42667rem; }\n    .payModeMoney li .popupTotal {\n      color: #EB020E; }\n  .payModeMoney li:last-child img {\n    width: 2.68rem;\n    height: 0.88rem;\n    vertical-align: middle; }\n  .payModeMoney li:last-child span {\n    display: inline-block;\n    width: 0.4rem;\n    height: 0.4rem;\n    border: 1px solid #8E8E8E;\n    border-radius: 50%; }\n  .payModeMoney li:last-child .popupActive {\n    background: url(" + __webpack_require__(76) + ") no-repeat center;\n    background-size: 0.4rem 0.4rem;\n    border: none; }\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+	module.exports = "data:image/png;base64,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0p8zAAA6BGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICAgICAgICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE3LTA5LTIyVDEwOjEwKzA4OjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNZXRhZGF0YURhdGU+MjAxNy0wOS0yMlQxMDoxMCswODowMDwveG1wOk1ldGFkYXRhRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTctMDktMjJUMTA6MTArMDg6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjdhYzVhYzQxLTMyM2QtMDg0ZS1iMmQwLWJiMWE5NzlmYjRkZDwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+eG1wLmRpZDphMzZlYjhlMC1iYjgzLWRiNDEtYmM4MC05OWYxNzVlOWRiOGY8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+eG1wLmRpZDphMzZlYjhlMC1iYjgzLWRiNDEtYmM4MC05OWYxNzVlOWRiOGY8L3htcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkhpc3Rvcnk+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmFjdGlvbj5jcmVhdGVkPC9zdEV2dDphY3Rpb24+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6YTM2ZWI4ZTAtYmI4My1kYjQxLWJjODAtOTlmMTc1ZTlkYjhmPC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE3LTA5LTIyVDEwOjEwKzA4OjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo3YWM1YWM0MS0zMjNkLTA4NGUtYjJkMC1iYjFhOTc5ZmI0ZGQ8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTctMDktMjJUMTA6MTArMDg6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cyk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgICAgPHBob3Rvc2hvcDpJQ0NQcm9maWxlPnNSR0IgSUVDNjE5NjYtMi4xPC9waG90b3Nob3A6SUNDUHJvZmlsZT4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6WFJlc29sdXRpb24+NzIwMDAwLzEwMDAwPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MzA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PhPAh2MAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAv9JREFUeNqs10toXFUYwPHf3EmTUls6xqYWKdIKbYoUFyOKSKuCmKBUi62P0YIouDAxSBAXlaKOpVAVFzXYh7jpRlMUiuDCJ6KUuvARRPBRSq0LUZoam/gIkjqNi3uumczMzcw488Fd3PM9/t8593znficzW9CILEI/bsE1uAK5oJvED/gcH+A9nK8XMFMHnMMwBtGjMfkV+7EvJNU0uBCcL/X/5ExI+kgtZVRjLIsDGG0BKviOhljZeuAs3sCA9slAiJldCLwP27RftuGlNPC9GGor7qo+7tyVvD0aGPPAOYy0DZiJKOxl57t0LS3XjCRlmICHsbIt0GwHQ6+xdSeZDH+cLdeuDCwROkOdtmGmGR45zPVlNfrXuUqrQXRG6GvicKizhZ5i046KZKoqqQd9Cbh1yd/O9mL1ePdltaz7I+RbhuZWMXA4XupK6d1UM80I61sGP/wKS7urx/+c4Kt3anms68DyhgFLckxXnPvX3c3Vd1TbfvsxIwWmztSKtDxqCLhqHbs+jJezXLqWsOPFavtPR9nbnwYFHZhK3dUdnWx9Mq7JRYuZnWVtntNjsf7WYVZcPt/n+OsceIALpYWmMhXhZE3VlTfx/NfcVYyhSZ1uf2Zu2bc8Md9n7G0OPVQPCicjfFl7tl3MTNcum7V5+oe46OK58dNj8Tf9Z6aRjzeWLW6Uxf3Vv/FTfPRqnP2GzUTR3Kx71pDfwuJlofn5hT03x7u4MdmTmS3oxM+4JNVsw2YeP8qyFdW6C6UY+t0njULPYnWEGby8oOn3x3j2Bn77qVr35tPNQIWOZCbpuXI4UfcP1bOG4jG6V8fvJ46z+8ZGNlP5bNdjMiprUR+r7/Yjz93G9BTn/+bQg81ABcYkZIsb/xv8JtTztQu6/j7Oqc/iJL54qxnofryQ1t4mzV67+66juAeltGavFAwOthF6sBKa1leXQpdwH8ZbAI6HGIOV0DRwIkfQi92YaAI4EXx6024RjdydKi9tfWWXtuS8PFd2aXs/PHXPzX8HABD7u6QQ5g0/AAAAAElFTkSuQmCC"
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	String.prototype.MD5 = function (bit) {
+	    var sMessage = this;
+	    function RotateLeft(lValue, iShiftBits) {
+	        return lValue << iShiftBits | lValue >>> 32 - iShiftBits;
+	    }
+	    function AddUnsigned(lX, lY) {
+	        var lX4, lY4, lX8, lY8, lResult;
+	        lX8 = lX & 0x80000000;
+	        lY8 = lY & 0x80000000;
+	        lX4 = lX & 0x40000000;
+	        lY4 = lY & 0x40000000;
+	        lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
+	        if (lX4 & lY4) return lResult ^ 0x80000000 ^ lX8 ^ lY8;
+	        if (lX4 | lY4) {
+	            if (lResult & 0x40000000) return lResult ^ 0xC0000000 ^ lX8 ^ lY8;else return lResult ^ 0x40000000 ^ lX8 ^ lY8;
+	        } else return lResult ^ lX8 ^ lY8;
+	    }
+	    function F(x, y, z) {
+	        return x & y | ~x & z;
+	    }
+	    function G(x, y, z) {
+	        return x & z | y & ~z;
+	    }
+	    function H(x, y, z) {
+	        return x ^ y ^ z;
+	    }
+	    function I(x, y, z) {
+	        return y ^ (x | ~z);
+	    }
+	    function FF(a, b, c, d, x, s, ac) {
+	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
+	        return AddUnsigned(RotateLeft(a, s), b);
+	    }
+	    function GG(a, b, c, d, x, s, ac) {
+	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
+	        return AddUnsigned(RotateLeft(a, s), b);
+	    }
+	    function HH(a, b, c, d, x, s, ac) {
+	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
+	        return AddUnsigned(RotateLeft(a, s), b);
+	    }
+	    function II(a, b, c, d, x, s, ac) {
+	        a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
+	        return AddUnsigned(RotateLeft(a, s), b);
+	    }
+	    function ConvertToWordArray(sMessage) {
+	        var lWordCount;
+	        var lMessageLength = sMessage.length;
+	        var lNumberOfWords_temp1 = lMessageLength + 8;
+	        var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - lNumberOfWords_temp1 % 64) / 64;
+	        var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
+	        var lWordArray = Array(lNumberOfWords - 1);
+	        var lBytePosition = 0;
+	        var lByteCount = 0;
+	        while (lByteCount < lMessageLength) {
+	            lWordCount = (lByteCount - lByteCount % 4) / 4;
+	            lBytePosition = lByteCount % 4 * 8;
+	            lWordArray[lWordCount] = lWordArray[lWordCount] | sMessage.charCodeAt(lByteCount) << lBytePosition;
+	            lByteCount++;
+	        }
+	        lWordCount = (lByteCount - lByteCount % 4) / 4;
+	        lBytePosition = lByteCount % 4 * 8;
+	        lWordArray[lWordCount] = lWordArray[lWordCount] | 0x80 << lBytePosition;
+	        lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
+	        lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
+	        return lWordArray;
+	    }
+	    function WordToHex(lValue) {
+	        var WordToHexValue = "",
+	            WordToHexValue_temp = "",
+	            lByte,
+	            lCount;
+	        for (lCount = 0; lCount <= 3; lCount++) {
+	            lByte = lValue >>> lCount * 8 & 255;
+	            WordToHexValue_temp = "0" + lByte.toString(16);
+	            WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
+	        }
+	        return WordToHexValue;
+	    }
+	    var x = Array();
+	    var k, AA, BB, CC, DD, a, b, c, d;
+	    var S11 = 7,
+	        S12 = 12,
+	        S13 = 17,
+	        S14 = 22;
+	    var S21 = 5,
+	        S22 = 9,
+	        S23 = 14,
+	        S24 = 20;
+	    var S31 = 4,
+	        S32 = 11,
+	        S33 = 16,
+	        S34 = 23;
+	    var S41 = 6,
+	        S42 = 10,
+	        S43 = 15,
+	        S44 = 21;
+	    // Steps 1 and 2. Append padding bits and length and convert to words 
+	    x = ConvertToWordArray(sMessage);
+	    // Step 3. Initialise 
+	    a = 0x67452301;b = 0xEFCDAB89;c = 0x98BADCFE;d = 0x10325476;
+	    // Step 4. Process the message in 16-word blocks 
+	    for (k = 0; k < x.length; k += 16) {
+	        AA = a;BB = b;CC = c;DD = d;
+	        a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
+	        d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
+	        c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
+	        b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
+	        a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
+	        d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
+	        c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
+	        b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
+	        a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
+	        d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
+	        c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
+	        b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
+	        a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
+	        d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
+	        c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
+	        b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
+	        a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
+	        d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
+	        c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
+	        b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
+	        a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
+	        d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
+	        c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
+	        b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
+	        a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
+	        d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
+	        c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
+	        b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
+	        a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
+	        d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
+	        c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
+	        b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
+	        a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
+	        d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
+	        c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
+	        b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
+	        a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
+	        d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
+	        c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
+	        b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
+	        a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
+	        d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
+	        c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
+	        b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
+	        a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
+	        d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
+	        c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
+	        b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
+	        a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
+	        d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
+	        c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
+	        b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
+	        a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
+	        d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
+	        c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
+	        b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
+	        a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
+	        d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
+	        c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
+	        b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
+	        a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
+	        d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
+	        c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
+	        b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
+	        a = AddUnsigned(a, AA);b = AddUnsigned(b, BB);c = AddUnsigned(c, CC);d = AddUnsigned(d, DD);
+	    }
+	    if (bit == 32) {
+	        return WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
+	    } else {
+	        return WordToHex(b) + WordToHex(c);
+	    }
+	};
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = GUID;
+	function GUID() {
+	    this.date = new Date();
+
+	    /* 判断是否初始化过，如果初始化过以下代码，则以下代码将不再执行，实际中只执行一次 */
+	    if (typeof this.newGUID != 'function') {
+
+	        /* 生成GUID码 */
+	        GUID.prototype.newGUID = function () {
+	            this.date = new Date();
+	            var guidStr = '',
+	                sexadecimalDate = this.hexadecimal(this.getGUIDDate(), 16),
+	                sexadecimalTime = this.hexadecimal(this.getGUIDTime(), 16);
+	            for (var i = 0; i < 9; i++) {
+	                guidStr += Math.floor(Math.random() * 16).toString(16);
+	            }
+	            guidStr += sexadecimalDate;
+	            guidStr += sexadecimalTime;
+	            while (guidStr.length < 32) {
+	                guidStr += Math.floor(Math.random() * 16).toString(16);
+	            }
+	            return this.formatGUID(guidStr);
+	        };
+
+	        /*
+	         * 功能：获取当前日期的GUID格式，即8位数的日期：19700101
+	         * 返回值：返回GUID日期格式的字条串
+	         */
+	        GUID.prototype.getGUIDDate = function () {
+	            return this.date.getFullYear() + this.addZero(this.date.getMonth() + 1) + this.addZero(this.date.getDay());
+	        };
+
+	        /*
+	         * 功能：获取当前时间的GUID格式，即8位数的时间，包括毫秒，毫秒为2位数：12300933
+	         * 返回值：返回GUID日期格式的字条串
+	         */
+	        GUID.prototype.getGUIDTime = function () {
+	            return this.addZero(this.date.getHours()) + this.addZero(this.date.getMinutes()) + this.addZero(this.date.getSeconds()) + this.addZero(parseInt(this.date.getMilliseconds() / 10));
+	        };
+
+	        /*
+	         * 功能: 为一位数的正整数前面添加0，如果是可以转成非NaN数字的字符串也可以实现
+	         * 参数: 参数表示准备再前面添加0的数字或可以转换成数字的字符串
+	         * 返回值: 如果符合条件，返回添加0后的字条串类型，否则返回自身的字符串
+	         */
+	        GUID.prototype.addZero = function (num) {
+	            if (Number(num).toString() != 'NaN' && num >= 0 && num < 10) {
+	                return '0' + Math.floor(num);
+	            } else {
+	                return num.toString();
+	            }
+	        };
+
+	        /* 
+	         * 功能：将y进制的数值，转换为x进制的数值
+	         * 参数：第1个参数表示欲转换的数值；第2个参数表示欲转换的进制；第3个参数可选，表示当前的进制数，如不写则为10
+	         * 返回值：返回转换后的字符串
+	         */
+	        GUID.prototype.hexadecimal = function (num, x, y) {
+	            if (y != undefined) {
+	                return parseInt(num.toString(), y).toString(x);
+	            } else {
+	                return parseInt(num.toString()).toString(x);
+	            }
+	        };
+
+	        /*
+	         * 功能：格式化32位的字符串为GUID模式的字符串
+	         * 参数：第1个参数表示32位的字符串
+	         * 返回值：标准GUID格式的字符串
+	         */
+	        GUID.prototype.formatGUID = function (guidStr) {
+	            var str1 = guidStr.slice(0, 8) + '-',
+	                str2 = guidStr.slice(8, 12) + '-',
+	                str3 = guidStr.slice(12, 16) + '-',
+	                str4 = guidStr.slice(16, 20) + '-',
+	                str5 = guidStr.slice(20);
+	            return str1 + str2 + str3 + str4 + str5;
+	        };
+	    }
+	}
 
 /***/ })
 /******/ ]);

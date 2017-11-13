@@ -94,7 +94,7 @@ body{
 .header{
     img{
         width: 100%;
-        height: pxToRem(350px);
+        height: pxToRem(400px);
     }
 }
 .nav{
@@ -191,7 +191,11 @@ body{
 .discover{
     img{
         width: 100%;
+        height: pxToRem(200px);
+        margin-top: pxToRem(10px);
+        vertical-align: middle;
     }
+    margin-bottom: pxToRem(10px);
 }
 .phoneNav{
     overflow: hidden;

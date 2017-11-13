@@ -11,7 +11,7 @@ var higheruserid = global.getQueryString("higheruserid") ? global.getQueryString
 var vm = new Vue({
     el:"#app",
     data:{
-
+        
     },
     mounted(){
         this.$nextTick(()=>{
@@ -41,7 +41,11 @@ var vm = new Vue({
                 }
             }).then((req) => {
                 if(req.data.code == 1000){
-                    alert("恭喜您，注册成功！");
+                    if(req.data.isFirst){
+                        alert("恭喜您，注册成功！");
+                    }else{
+                        // alert("您已注册！")
+                    }
                 }
             }, (err) => {
                 alert("对不起，请稍后再试！");

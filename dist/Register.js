@@ -100,7 +100,11 @@
 	                }
 	            }).then(function (req) {
 	                if (req.data.code == 1000) {
-	                    alert("恭喜您，注册成功！");
+	                    if (req.data.isFirst) {
+	                        alert("恭喜您，注册成功！");
+	                    } else {
+	                        // alert("您已注册！")
+	                    }
 	                }
 	            }, function (err) {
 	                alert("对不起，请稍后再试！");
