@@ -103,7 +103,7 @@ var vm = new Vue({
         },
         //跳转到商品分享页
         GoShareProduct:function(id){
-            window.location.href = "https://share.boogoo.tv/share/ProductDetails.html?productid="+id+"&higheruserid="+userid;
+            window.location.href =   "https://share.boogoo.tv/share/ProductDetails.html?productid="+id+"&higheruserid="+userid;
         },
         // 当前选中按钮
         selectBtn:function(index){
