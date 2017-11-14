@@ -23,8 +23,13 @@
                         <span>
                             {{anchorInfo.nickname}}
                         </span>
-                        <span></span>
-                        <span class="follow">关注</span>
+                        <template v-if="anchorInfo.sex == '男'">
+                            <img src="../src/img/Share/man.png" alt="">
+                        </template>
+                        <template v-else>
+                            <img src="../src/img/Share/woman.png" alt="">
+                        </template>
+                        <!-- <span class="follow">关注</span> -->
                     </li>
                     <li>
                         <span>boogoo号：</span>
@@ -63,14 +68,8 @@
                 <!-- <span>更多>></span> -->
             </div>
             <ul class="photos">
-                <li>
-                    <img src="../src/img/Share/1.png" alt="">
-                </li>
-                <li>
-                    <img src="../src/img/Share/1.png" alt="">
-                </li>
-                <li>
-                    <img src="../src/img/Share/1.png" alt="">
+                <li v-for="item in imgsList">
+                    <img :src="item" alt="">
                 </li>
             </ul>
         </div>
@@ -92,7 +91,7 @@
             <loadmores v-on:increment="loadup" :bottomtext="bottomtext">
                 <div class="lists">
                     <ul class="likeList">
-                        <li v-for="(item,index) in productlist" @click="GoProductDetails(item.productid)">
+                        <li v-for="(item,index) in productlist" @click="GoShareProduct(item.productid)">
                             <img :src="item.coverurl+'?imageView2/2/w/350'" alt="">
                             <b class="restriction">限购{{item.stock}}件</b>
                             <span>{{item.name}}</span>
