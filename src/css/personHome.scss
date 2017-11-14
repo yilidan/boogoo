@@ -19,7 +19,7 @@ html{
         height: auto;
         margin: 0 auto;
         padding-top: pxToRem(90px);
-        img{
+        >img{
             width: pxToRem(160px);
             height: pxToRem(160px);
             vertical-align: middle;
@@ -34,6 +34,11 @@ html{
             .personInfo{
                 span{
                     font-size: pxToRem(28px);
+                }
+                img{
+                    width: pxToRem(22px);
+                    height: pxToRem(26px);
+                    vertical-align: middle;
                 }
                 .follow{
                     padding:pxToRem(3px) pxToRem(25px);
@@ -176,7 +181,7 @@ html{
     border-top: 1px solid #ececec;
 }
 .lists .likeList li:last-child{
-    border-bottom: none;
+    // border-bottom: none;
 }
 .lists .likeList li:nth-last-child(2){
     // border-bottom: pxToRem(5px) solid #ececec;

@@ -7,6 +7,9 @@ import loadmores from "../components/loadMore.vue"
 
 var anchorid = global.getQueryString("anchorid") ? global.getQueryString("anchorid") : "";
 var userid = global.getQueryString("userid") ? global.getQueryString("userid") : "";
+var ua = navigator.userAgent.toLowerCase();
+var bIsIphoneOs = ua.match(/iphone os/i) == "iphone os";
+var bIsAndroid = ua.match(/android/i) == "android";
 
 // test
 anchorid = 30892;
@@ -23,6 +26,7 @@ var vm = new Vue({
         pageindex: 1,//分页
         bottomtext: false,
         currentIndex:1, //当前选中
+        photoList:[],
     },
     mounted(){
         this.$nextTick(()=>{
@@ -31,7 +35,51 @@ var vm = new Vue({
         })
 
     },
+    computed:{
+        imgsList:function(){
+            return this.photoList.slice(0,3);
+
+        },
+    },
     methods:{
+        // 点击进入直播间
+        gotoLiveRoom:function(){
+            if (bIsIphoneOs) {
+                var last = Date.now();
+                var ifrSrc = 'https://share.boogoo.tv/apple-app-site-association';
+                var ifr = document.createElement('iframe');
+                ifr.src = ifrSrc;
+                ifr.style.display = 'none';
+                document.body.appendChild(ifr);
+                // window.location = 'apple-app-site-association';
+                setTimeout(function () {
+                    document.body.removeChild(ifr);
+                    //setTimeout回小于2000一般为唤起失败
+                    if (Date.now() - last < 1000) {
+                        location.href = "https://share.boogoo.tv/bogou/dist/pages/liveRoom.html?userid="+anchorid+"&higheruserid="+userid;
+                    }
+                }, 500);
+            }
+            if (bIsAndroid) {
+                var last = Date.now();
+                var ifrSrc = 'boogoo://open.app';
+                var ifr = document.createElement('iframe');
+                ifr.src = ifrSrc;
+                ifr.style.display = 'none';
+                document.body.appendChild(ifr);
+                setTimeout(function () {
+                    document.body.removeChild(ifr);
+                    //setTimeout回小于2000一般为唤起失败
+                    if (Date.now() - last < 2000) {
+                        location.href = "https://share.boogoo.tv/bogou/dist/pages/liveRoom.html?userid="+anchorid+"&higheruserid="+userid;
+                    }
+                }, 1000);
+            }
+        },
+        //跳转到商品分享页
+        GoShareProduct:function(id){
+            window.location.href = "https://share.boogoo.tv/share/ProductDetails.html?productid="+id+"&higheruserid="+userid;
+        },
         // 当前选中按钮
         selectBtn:function(index){
             this.pageindex = 1;
@@ -70,6 +118,7 @@ var vm = new Vue({
                 var data = req.data;
                 if(data.code == 1000){
                     this.anchorInfo = data.data;
+                    this.photoList = data.data.imglist;
                     console.log(this.anchorInfo);
                 }
 
