@@ -43,7 +43,7 @@
                         <span>{{anchorInfo.sign}}</span>
                     </li>
                     <li>
-                        <span @click="gotoApp()">进入直播间</span>
+                        <span @click="gotoLiveRoomApp()">进入直播间</span>
                     </li>
                 </ul>
             </div>
@@ -95,7 +95,7 @@
             <loadmores v-on:increment="loadup" :bottomtext="bottomtext">
                 <div class="lists">
                     <ul class="likeList">
-                        <li v-for="(item,index) in productlist" @click="GoShareProduct(item.productid)">
+                        <li v-for="(item,index) in productlist" @click="gotoProductRoom(item.productid)">
                             <img :src="item.coverurl+'?imageView2/2/w/350'" alt="">
                             <b class="restriction">限购{{item.stock}}件</b>
                             <span>{{item.name}}</span>

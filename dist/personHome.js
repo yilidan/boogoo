@@ -123,13 +123,23 @@
 	    },
 	    methods: {
 	        // 浏览器打开
-	        gotoApp: function gotoApp() {
+	        gotoLiveRoomApp: function gotoLiveRoomApp() {
 	            if (is_weixin() || is_weibo()) {
 	                //微信浏览器 and 微博
 	                this.showReminder = true;
 	            } else {
 	                //不在微信浏览器 and 微博
 	                this.gotoLiveRoom();
+	            }
+	        },
+	        // 商品浏览器打开
+	        gotoProductRoom: function gotoProductRoom(productid) {
+	            if (is_weixin() || is_weibo()) {
+	                //微信浏览器 and 微博
+	                this.showReminder = true;
+	            } else {
+	                //不在微信浏览器 and 微博
+	                this.GoShareProduct(productid);
 	            }
 	        },
 	        // 点击进入直播间
@@ -168,7 +178,36 @@
 	        },
 	        //跳转到商品分享页
 	        GoShareProduct: function GoShareProduct(id) {
-	            window.location.href = "https://share.boogoo.tv/share/ProductDetails.html?productid=" + id + "&higheruserid=" + userid;
+	            if (bIsIphoneOs) {
+	                var last = Date.now();
+	                var ifrSrc = 'https://share.boogoo.tv/apple-app-site-association';
+	                var ifr = document.createElement('iframe');
+	                ifr.src = ifrSrc;
+	                ifr.style.display = 'none';
+	                document.body.appendChild(ifr);
+	                // window.location = 'apple-app-site-association';
+	                setTimeout(function () {
+	                    document.body.removeChild(ifr);
+	                    //setTimeout回小于2000一般为唤起失败
+	                    if (Date.now() - last < 1000) {
+	                        location.href = "https://itunes.apple.com/cn/app/%E6%92%AD%E8%B4%AD%E7%9B%B4%E6%92%AD/id1193113646?mt=8";
+	                    }
+	                }, 500);
+	            } else if (bIsAndroid) {
+	                var last = Date.now();
+	                var ifrSrc = 'boogoo://open.notitlewebview?' + _global2.default.path + "/page/ProductDetails.html?productid=" + id;
+	                var ifr = document.createElement('iframe');
+	                ifr.src = ifrSrc;
+	                ifr.style.display = 'none';
+	                document.body.appendChild(ifr);
+	                setTimeout(function () {
+	                    document.body.removeChild(ifr);
+	                    //setTimeout回小于2000一般为唤起失败
+	                    if (Date.now() - last < 2000) {
+	                        location.href = "https://file.okxueche.net/boogoo_android.apk";
+	                    }
+	                }, 1000);
+	            }
 	        },
 	        // 当前选中按钮
 	        selectBtn: function selectBtn(index) {
