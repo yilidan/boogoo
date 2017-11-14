@@ -7,6 +7,19 @@ html{
     background: #f0f1f0;
 }
 
+.navTop{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top:0;
+    right: -16%;
+    z-index: 99;
+    text-align: center;
+    img{
+        width: pxToRem(370px);
+    }
+}
+
 .headCon{
     width: 100%;
     height: pxToRem(400px);

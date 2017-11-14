@@ -15,6 +15,10 @@
 </head>
 <body>
     <div id="app" v-cloak>
+        <!-- 头部 -->
+        <div class="navTop" v-show="showReminder">
+            <img id="tips" src="../src/img/productDetails/1_07.png" alt="">
+        </div>
         <div class="headCon">
             <div class="hContent">
                 <img :src="anchorInfo.headurl" alt="">
@@ -39,7 +43,7 @@
                         <span>{{anchorInfo.sign}}</span>
                     </li>
                     <li>
-                        <span @click="gotoLiveRoom()">进入直播间</span>
+                        <span @click="gotoApp()">进入直播间</span>
                     </li>
                 </ul>
             </div>

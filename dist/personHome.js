@@ -73,6 +73,21 @@
 	var bIsIphoneOs = ua.match(/iphone os/i) == "iphone os";
 	var bIsAndroid = ua.match(/android/i) == "android";
 
+	function is_weixin() {
+	    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}
+	function is_weibo() {
+	    if (ua.match(/Weibo/i) == "weibo") {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}
+
 	// test
 	anchorid = 30892;
 
@@ -88,7 +103,9 @@
 	        pageindex: 1, //分页
 	        bottomtext: false,
 	        currentIndex: 1, //当前选中
-	        photoList: []
+	        photoList: [], //相册数据
+	        // 显示提示
+	        showReminder: false
 	    },
 	    mounted: function mounted() {
 	        var _this = this;
@@ -105,6 +122,16 @@
 	        }
 	    },
 	    methods: {
+	        // 浏览器打开
+	        gotoApp: function gotoApp() {
+	            if (is_weixin() || is_weibo()) {
+	                //微信浏览器 and 微博
+	                this.showReminder = true;
+	            } else {
+	                //不在微信浏览器 and 微博
+	                this.gotoLiveRoom();
+	            }
+	        },
 	        // 点击进入直播间
 	        gotoLiveRoom: function gotoLiveRoom() {
 	            if (bIsIphoneOs) {
@@ -2762,7 +2789,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\";\n  background: #f0f1f0; }\n\n.headCon {\n  width: 100%;\n  height: 5.33333rem;\n  background: url(" + __webpack_require__(230) + ") no-repeat center;\n  background-size: 100% 100%; }\n  .headCon .hContent {\n    display: flex;\n    display: -webkit-flex;\n    width: 90%;\n    height: auto;\n    margin: 0 auto;\n    padding-top: 1.2rem; }\n    .headCon .hContent > img {\n      width: 2.13333rem;\n      height: 2.13333rem;\n      vertical-align: middle;\n      border-radius: 50%; }\n    .headCon .hContent ul {\n      width: 70%;\n      margin-left: 0.2rem; }\n      .headCon .hContent ul li {\n        margin-bottom: 0.06667rem; }\n      .headCon .hContent ul .personInfo span {\n        font-size: 0.37333rem; }\n      .headCon .hContent ul .personInfo img {\n        width: 0.29333rem;\n        height: 0.34667rem;\n        vertical-align: middle; }\n      .headCon .hContent ul .personInfo .follow {\n        padding: 0.04rem 0.33333rem;\n        font-size: 0.29333rem;\n        border-radius: 0.26667rem;\n        color: #fff;\n        background-color: #ED4F02;\n        margin-left: 0.13333rem; }\n      .headCon .hContent ul li:nth-child(2) {\n        font-size: 0.34667rem; }\n      .headCon .hContent ul li:nth-child(3) {\n        font-size: 0.32rem; }\n      .headCon .hContent ul li:last-child {\n        margin-top: 0.53333rem;\n        margin-left: 0.66667rem; }\n        .headCon .hContent ul li:last-child span {\n          display: inline-block;\n          width: 2.66667rem;\n          height: 0.66667rem;\n          line-height: 0.66667rem;\n          border-radius: 0.53333rem;\n          color: #fff;\n          text-align: center;\n          background-color: #F08C02; }\n\n.content1 {\n  width: 100%;\n  height: auto;\n  padding: 0.53333rem 0;\n  background-color: #fff;\n  display: flex;\n  display: -webkit-flex;\n  justify-content: space-around; }\n  .content1 li {\n    text-align: center; }\n    .content1 li p {\n      font-size: 0.64rem; }\n    .content1 li span {\n      font-size: 0.32rem;\n      color: #909090; }\n\n.content2 {\n  height: auto;\n  margin-top: 0.13333rem;\n  background-color: #fff; }\n  .content2 .headNav {\n    display: flex;\n    display: -webkit-flex;\n    justify-content: space-between;\n    height: 1.24rem;\n    line-height: 1.24rem;\n    font-size: 0.42667rem;\n    border-bottom: 1px solid #ececec;\n    padding: 0 0.2rem; }\n    .content2 .headNav span {\n      color: #909090; }\n\n.photos {\n  display: flex;\n  display: -webkit-flex;\n  padding: 0.32rem; }\n  .photos li {\n    margin-left: 0.26667rem; }\n    .photos li img {\n      width: 2.93333rem;\n      height: 4rem;\n      vertical-align: middle; }\n  .photos li:first-child {\n    margin-left: 0; }\n\n.selectBtn {\n  display: flex;\n  display: -webkit-flex;\n  height: 1.26667rem;\n  line-height: 1.26667rem;\n  justify-content: center; }\n  .selectBtn span {\n    width: 50%;\n    text-align: center;\n    font-size: 0.34667rem;\n    color: #909090; }\n  .selectBtn .activeBtn {\n    color: #ED4F02; }\n\n.lists {\n  background-color: #fff; }\n\n.likeList {\n  display: flex;\n  display: -webkit-flex;\n  flex-wrap: wrap;\n  width: 100%;\n  height: auto;\n  margin: 0 auto; }\n\n.likeList li {\n  width: 50%;\n  height: auto;\n  border-bottom: 0.06667rem solid #ececec;\n  padding: 0 0.2rem 0.2rem 0.2rem;\n  position: relative;\n  /*padding-left: .5rem;*/\n  box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  /* Firefox */\n  -webkit-box-sizing: border-box;\n  /* Safari */ }\n\n.likeList li:nth-child(odd) {\n  border-right: 0.06667rem solid #ececec; }\n\n.lists .likeList li:first-child {\n  border-top: 1px solid #ececec; }\n\n.lists .likeList li:nth-child(2) {\n  border-top: 1px solid #ececec; }\n\n.likeList li > img {\n  width: 4.4rem;\n  height: 4.4rem; }\n\n.restriction {\n  color: #EB020E;\n  font-size: 0.34667rem;\n  display: block;\n  text-align: right; }\n\n.likeList li > span {\n  width: 100%;\n  line-height: 0.53333rem;\n  font-size: 0.32rem;\n  margin-top: 0.26667rem;\n  vertical-align: text-top;\n  padding-left: 0.13333rem;\n  height: 1.06667rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  word-wrap: break-word;\n  word-break: break-all; }\n\n.price {\n  font-size: 0.32rem;\n  vertical-align: text-top;\n  overflow: hidden;\n  padding-top: 0.2rem; }\n\n.money {\n  float: left;\n  color: #EB020E;\n  font-size: 0.32rem;\n  margin-left: 0.06667rem; }\n\n.discount {\n  float: left;\n  background-color: #EB020E;\n  color: #fff;\n  font-size: 0.34667rem;\n  padding: 0 0.06667rem; }\n\n.sales {\n  float: right;\n  color: #959595; }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\";\n  background: #f0f1f0; }\n\n.navTop {\n  width: 100%;\n  height: auto;\n  position: fixed;\n  top: 0;\n  right: -16%;\n  z-index: 99;\n  text-align: center; }\n  .navTop img {\n    width: 4.93333rem; }\n\n.headCon {\n  width: 100%;\n  height: 5.33333rem;\n  background: url(" + __webpack_require__(230) + ") no-repeat center;\n  background-size: 100% 100%; }\n  .headCon .hContent {\n    display: flex;\n    display: -webkit-flex;\n    width: 90%;\n    height: auto;\n    margin: 0 auto;\n    padding-top: 1.2rem; }\n    .headCon .hContent > img {\n      width: 2.13333rem;\n      height: 2.13333rem;\n      vertical-align: middle;\n      border-radius: 50%; }\n    .headCon .hContent ul {\n      width: 70%;\n      margin-left: 0.2rem; }\n      .headCon .hContent ul li {\n        margin-bottom: 0.06667rem; }\n      .headCon .hContent ul .personInfo span {\n        font-size: 0.37333rem; }\n      .headCon .hContent ul .personInfo img {\n        width: 0.29333rem;\n        height: 0.34667rem;\n        vertical-align: middle; }\n      .headCon .hContent ul .personInfo .follow {\n        padding: 0.04rem 0.33333rem;\n        font-size: 0.29333rem;\n        border-radius: 0.26667rem;\n        color: #fff;\n        background-color: #ED4F02;\n        margin-left: 0.13333rem; }\n      .headCon .hContent ul li:nth-child(2) {\n        font-size: 0.34667rem; }\n      .headCon .hContent ul li:nth-child(3) {\n        font-size: 0.32rem; }\n      .headCon .hContent ul li:last-child {\n        margin-top: 0.53333rem;\n        margin-left: 0.66667rem; }\n        .headCon .hContent ul li:last-child span {\n          display: inline-block;\n          width: 2.66667rem;\n          height: 0.66667rem;\n          line-height: 0.66667rem;\n          border-radius: 0.53333rem;\n          color: #fff;\n          text-align: center;\n          background-color: #F08C02; }\n\n.content1 {\n  width: 100%;\n  height: auto;\n  padding: 0.53333rem 0;\n  background-color: #fff;\n  display: flex;\n  display: -webkit-flex;\n  justify-content: space-around; }\n  .content1 li {\n    text-align: center; }\n    .content1 li p {\n      font-size: 0.64rem; }\n    .content1 li span {\n      font-size: 0.32rem;\n      color: #909090; }\n\n.content2 {\n  height: auto;\n  margin-top: 0.13333rem;\n  background-color: #fff; }\n  .content2 .headNav {\n    display: flex;\n    display: -webkit-flex;\n    justify-content: space-between;\n    height: 1.24rem;\n    line-height: 1.24rem;\n    font-size: 0.42667rem;\n    border-bottom: 1px solid #ececec;\n    padding: 0 0.2rem; }\n    .content2 .headNav span {\n      color: #909090; }\n\n.photos {\n  display: flex;\n  display: -webkit-flex;\n  padding: 0.32rem; }\n  .photos li {\n    margin-left: 0.26667rem; }\n    .photos li img {\n      width: 2.93333rem;\n      height: 4rem;\n      vertical-align: middle; }\n  .photos li:first-child {\n    margin-left: 0; }\n\n.selectBtn {\n  display: flex;\n  display: -webkit-flex;\n  height: 1.26667rem;\n  line-height: 1.26667rem;\n  justify-content: center; }\n  .selectBtn span {\n    width: 50%;\n    text-align: center;\n    font-size: 0.34667rem;\n    color: #909090; }\n  .selectBtn .activeBtn {\n    color: #ED4F02; }\n\n.lists {\n  background-color: #fff; }\n\n.likeList {\n  display: flex;\n  display: -webkit-flex;\n  flex-wrap: wrap;\n  width: 100%;\n  height: auto;\n  margin: 0 auto; }\n\n.likeList li {\n  width: 50%;\n  height: auto;\n  border-bottom: 0.06667rem solid #ececec;\n  padding: 0 0.2rem 0.2rem 0.2rem;\n  position: relative;\n  /*padding-left: .5rem;*/\n  box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  /* Firefox */\n  -webkit-box-sizing: border-box;\n  /* Safari */ }\n\n.likeList li:nth-child(odd) {\n  border-right: 0.06667rem solid #ececec; }\n\n.lists .likeList li:first-child {\n  border-top: 1px solid #ececec; }\n\n.lists .likeList li:nth-child(2) {\n  border-top: 1px solid #ececec; }\n\n.likeList li > img {\n  width: 4.4rem;\n  height: 4.4rem; }\n\n.restriction {\n  color: #EB020E;\n  font-size: 0.34667rem;\n  display: block;\n  text-align: right; }\n\n.likeList li > span {\n  width: 100%;\n  line-height: 0.53333rem;\n  font-size: 0.32rem;\n  margin-top: 0.26667rem;\n  vertical-align: text-top;\n  padding-left: 0.13333rem;\n  height: 1.06667rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  word-wrap: break-word;\n  word-break: break-all; }\n\n.price {\n  font-size: 0.32rem;\n  vertical-align: text-top;\n  overflow: hidden;\n  padding-top: 0.2rem; }\n\n.money {\n  float: left;\n  color: #EB020E;\n  font-size: 0.32rem;\n  margin-left: 0.06667rem; }\n\n.discount {\n  float: left;\n  background-color: #EB020E;\n  color: #fff;\n  font-size: 0.34667rem;\n  padding: 0 0.06667rem; }\n\n.sales {\n  float: right;\n  color: #959595; }\n", ""]);
 
 	// exports
 

@@ -11,6 +11,21 @@ var ua = navigator.userAgent.toLowerCase();
 var bIsIphoneOs = ua.match(/iphone os/i) == "iphone os";
 var bIsAndroid = ua.match(/android/i) == "android";
 
+function is_weixin(){
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        return true;
+    }else{
+        return false;
+    }
+}
+function is_weibo(){
+    if(ua.match(/Weibo/i) == "weibo"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 // test
 anchorid = 30892;
 
@@ -26,7 +41,9 @@ var vm = new Vue({
         pageindex: 1,//分页
         bottomtext: false,
         currentIndex:1, //当前选中
-        photoList:[],
+        photoList:[], //相册数据
+        // 显示提示
+        showReminder:false,
     },
     mounted(){
         this.$nextTick(()=>{
@@ -42,6 +59,14 @@ var vm = new Vue({
         },
     },
     methods:{
+        // 浏览器打开
+        gotoApp:function(){
+            if(is_weixin() || is_weibo()){ //微信浏览器 and 微博
+                this.showReminder = true;
+            }else{  //不在微信浏览器 and 微博
+                this.gotoLiveRoom();
+            }
+        },
         // 点击进入直播间
         gotoLiveRoom:function(){
             if (bIsIphoneOs) {
