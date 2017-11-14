@@ -111,36 +111,7 @@ var vm = new Vue({
         },
         //跳转到商品分享页
         GoShareProduct:function(id){
-            if (bIsIphoneOs) {
-                var last = Date.now();
-                var ifrSrc = 'https://share.boogoo.tv/apple-app-site-association';
-                var ifr = document.createElement('iframe');
-                ifr.src = ifrSrc;
-                ifr.style.display = 'none';
-                document.body.appendChild(ifr);
-                // window.location = 'apple-app-site-association';
-                setTimeout(function () {
-                    document.body.removeChild(ifr);
-                    //setTimeout回小于2000一般为唤起失败
-                    if (Date.now() - last < 1000) {
-                        location.href = "https://itunes.apple.com/cn/app/%E6%92%AD%E8%B4%AD%E7%9B%B4%E6%92%AD/id1193113646?mt=8"
-                    }
-                }, 500);
-            }else if(bIsAndroid){
-                var last = Date.now();
-                var ifrSrc = 'boogoo://open.notitlewebview?'+global.path + "/page/ProductDetails.html?productid=" + id;
-                var ifr = document.createElement('iframe');
-                ifr.src = ifrSrc;
-                ifr.style.display = 'none';
-                document.body.appendChild(ifr);
-                setTimeout(function () {
-                    document.body.removeChild(ifr);
-                    //setTimeout回小于2000一般为唤起失败
-                    if (Date.now() - last < 2000) {
-                        location.href = "https://file.okxueche.net/boogoo_android.apk"
-                    }
-                }, 1000);
-            }
+            window.location.href =   "https://share.boogoo.tv/share/ProductDetails.html?productid="+id+"&higheruserid="+userid;
         },
         // 当前选中按钮
         selectBtn:function(index){
