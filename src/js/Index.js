@@ -52,14 +52,13 @@ var vm = new Vue({
         adlist: "",
         opactiyShow:false,
         headshow:headshow,
-        isIos:true,
+        isIos:false,
         isAndroid:false,
 
     },
     created: function () {
-        alert("ok");
         this.getdata();
-        // this.testScoll();
+        this.testScoll();
     },
     mounted: function () {
         this.$nextTick(()=>{
