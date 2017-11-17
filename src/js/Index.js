@@ -52,7 +52,7 @@ var vm = new Vue({
         adlist: "",
         opactiyShow:false,
         headshow:headshow,
-        isIos:false,
+        isIos:true,
         isAndroid:false,
 
     },
