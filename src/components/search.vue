@@ -88,6 +88,7 @@ export default {
         top:0;
         left:0;
         z-index: 199;
+        -webkit-transform: translateZ(0);
     }
     .icon-back{
         color:#333;

@@ -52,6 +52,9 @@ var vm = new Vue({
         adlist: "",
         opactiyShow:false,
         headshow:headshow,
+        isIos:false,
+        isAndroid:false,
+
     },
     created: function () {
         // alert("1");
@@ -68,7 +71,10 @@ var vm = new Vue({
             }else{
                 if(global.bIsIphoneOs()){
                     console.log(this.$refs);
+                    this.isIos = true;
                     this.$refs.searchTop.style.paddingTop = "3%";
+                }else if(global.bIsAndroid()){
+                    this.isAndroid = true;
                 }
             }
         })
@@ -167,11 +173,11 @@ var vm = new Vue({
                 // location.href = "./test1.html?classifyid=" + id;
 
             }else{
-                var data = JSON.stringify({
-                    url: global.path + "/page/ClassifyList.html?classifyid=" + id
-                })
-                location.href = "boogoo.app://?pushcode=100011&data=" + data
-                // location.href = "./ClassifyList.html?classifyid=" + id;
+                // var data = JSON.stringify({
+                //     url: global.path + "/page/ClassifyList.html?classifyid=" + id
+                // })
+                // location.href = "boogoo.app://?pushcode=100011&data=" + data
+                location.href = "./ClassifyList.html?classifyid=" + id;
 
 
             }

@@ -58,17 +58,23 @@ var vm = new Vue({
             var tit = document.getElementById("hotWord");
             var searchH = $(".headerBar").outerHeight();
             var titleTop = tit.offsetTop - searchH;
+            var hotWordHeight = $("#hotWord").height();
+            console.log(hotWordHeight);
             console.log(titleTop);
             $(".banner").css({
                 "margin-top":searchH
             })
             $(window).scroll(function(){
-                if ($(window).scrollTop()>titleTop){
+                if ($(window).scrollTop()>=titleTop){
                     $("#hotWord").css({
                         'position': "fixed",
                         'top': searchH-1,
                         'left': 0,
-                        'z-index': 200
+                        'z-index': 200,
+                        '-webkit-transform': 'translateZ(0)',
+                    })
+                    $("#loadMore").css({
+                        'margin-top':hotWordHeight+'px',
                     })
                     // vm.fixedTop = true;
                 }else{
@@ -78,6 +84,9 @@ var vm = new Vue({
                         // 'top': searchH,
                         // 'left': 0,
                         // 'z-index': 200
+                    })
+                    $("#loadMore").css({
+                        'margin-top':0,
                     })
                 }
             });

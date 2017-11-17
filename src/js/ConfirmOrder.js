@@ -381,9 +381,13 @@ var vm = new Vue({
             this.defaultValue = false;
             this.receSite = '';
         },
-        // 取消
+        // 取消，退出购买
         cancelBtn(){
             this.popupSelect = false;
+            var data = JSON.stringify({
+                type: 0
+            })
+            location.href = "boogoo.app://?pushcode=100006";
         },
         // 默认地址状态
         setDefault(event){

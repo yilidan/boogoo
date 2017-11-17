@@ -51,13 +51,13 @@ export default {
             font-size:pxToRem(32px);
             float:left;
             margin-left:pxToRem(10px);
-            color:#666;
+            color:#999;
         }
         .icon-scan1{
             font-size:pxToRem(32px);
             float:right;
             margin-right:pxToRem(10px);
-            color:#666;
+            color:#999;
         }
     }
 </style>

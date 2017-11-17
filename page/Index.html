@@ -19,7 +19,7 @@
     <div id="app" v-cloak>
         <!-- <div class=""> -->
         <template>
-            <div v-if="headshow!=1" class="search" :class="{'searchBGC':opactiyShow}" ref="searchTop">
+            <div v-if="headshow!=1" class="search" :class="[{'searchBGC':opactiyShow},{'iosSearch':isIos},{'androidSearch':isAndroid}]" ref="searchTop">
                 <search-bar></search-bar>
             </div>
             <div v-else>

@@ -61,9 +61,8 @@
                     </div>
                 </transition>
             </div>
-
         </div>
-        <loadmores v-on:increment="loadup" :bottomtext="bottomtext">
+        <loadmores v-on:increment="loadup" :bottomtext="bottomtext" id="loadMore">
             <div class="lists">
                 <ul class="likeList">
                     <li v-for="(item,index) in productlist" @click="GoProductDetails(item.productid)">

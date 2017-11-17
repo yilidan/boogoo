@@ -132,17 +132,23 @@
 	            var tit = document.getElementById("hotWord");
 	            var searchH = (0, _jquery2.default)(".headerBar").outerHeight();
 	            var titleTop = tit.offsetTop - searchH;
+	            var hotWordHeight = (0, _jquery2.default)("#hotWord").height();
+	            console.log(hotWordHeight);
 	            console.log(titleTop);
 	            (0, _jquery2.default)(".banner").css({
 	                "margin-top": searchH
 	            });
 	            (0, _jquery2.default)(window).scroll(function () {
-	                if ((0, _jquery2.default)(window).scrollTop() > titleTop) {
+	                if ((0, _jquery2.default)(window).scrollTop() >= titleTop) {
 	                    (0, _jquery2.default)("#hotWord").css({
 	                        'position': "fixed",
 	                        'top': searchH - 1,
 	                        'left': 0,
-	                        'z-index': 200
+	                        'z-index': 200,
+	                        '-webkit-transform': 'translateZ(0)'
+	                    });
+	                    (0, _jquery2.default)("#loadMore").css({
+	                        'margin-top': hotWordHeight + 'px'
 	                    });
 	                    // vm.fixedTop = true;
 	                } else {
@@ -152,6 +158,9 @@
 	                        // 'top': searchH,
 	                        // 'left': 0,
 	                        // 'z-index': 200
+	                    });
+	                    (0, _jquery2.default)("#loadMore").css({
+	                        'margin-top': 0
 	                    });
 	                }
 	            });
@@ -13060,7 +13069,7 @@
 
 
 	// module
-	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 199; }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n", ""]);
+	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 199;\n  -webkit-transform: translateZ(0); }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n", ""]);
 
 	// exports
 
@@ -13162,6 +13171,7 @@
 	    //         top:0;
 	    //         left:0;
 	    //         z-index: 199;
+	    //         -webkit-transform: translateZ(0);
 	    //     }
 	    //     .icon-back{
 	    //         color:#333;

@@ -459,9 +459,13 @@
 	            this.receSite = '';
 	        },
 
-	        // 取消
+	        // 取消，退出购买
 	        cancelBtn: function cancelBtn() {
 	            this.popupSelect = false;
+	            var data = (0, _stringify2.default)({
+	                type: 0
+	            });
+	            location.href = "boogoo.app://?pushcode=100006";
 	        },
 
 	        // 默认地址状态

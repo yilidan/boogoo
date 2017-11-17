@@ -645,7 +645,7 @@ var vm = new Vue({
                 var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)
                 gallery.init()
             } catch (err) {
-                alert(err)
+                // alert(err)
             }
 
         },

@@ -128,9 +128,11 @@ html{
     display: flex;
     display: -webkit-flex;
     // justify-content:space-around;
-    padding:pxToRem(24px);
+    padding:0 0 pxToRem(24px) pxToRem(24px);
+    flex-wrap:wrap;
     li{
-        margin-left: pxToRem(20px);
+        margin-top: pxToRem(20px);
+        margin-right: pxToRem(20px);
         img{
             width: pxToRem(220px);
             height: pxToRem(300px);
@@ -138,7 +140,64 @@ html{
         }
     }
     li:first-child{
-        margin-left: 0;
+        // margin-left: pxToRem(20px);
+    }
+}
+.wonderful{
+    padding:0 pxToRem(24px);
+    padding-bottom: pxToRem(20px);
+    li{
+        display: flex;
+        display: -webkit-flex;
+        // justify-content: space-between;
+        margin-top: pxToRem(15px);
+        .videoTime{
+            text-align: center;
+            h5{
+                font-size: pxToRem(22px);
+                margin-bottom: pxToRem(5px);
+            }
+            h1{
+                font-size: pxToRem(30px);
+            }
+            span{
+                display: inline-block;
+                width: pxToRem(15px);
+                height: pxToRem(100px);
+                background: url("../img/Share/jchg.png") no-repeat center;
+                background-size: pxToRem(15px) pxToRem(100px);
+            }
+        }
+        >img{
+            width: pxToRem(270px);
+            height: pxToRem(160px);
+            vertical-align: middle;
+            margin-left: pxToRem(25px);
+        }
+        .anchorSign{
+            height: pxToRem(160px);
+            margin-left: pxToRem(25px);
+            position: relative;
+            p:first-child{
+                font-size: pxToRem(26px);
+            }
+            p:last-child{
+                display: inline-flex;
+                display: -webkit-inline-flex;
+                position: absolute;
+                bottom:0;
+                img{
+                    width: pxToRem(36px);
+                    height: pxToRem(25px);
+                    vertical-align: middle;
+                }
+                span{
+                    font-size: pxToRem(26px);
+                    color: #909090;
+                    margin-left: pxToRem(10px);
+                }
+            }
+        }
     }
 }
 
