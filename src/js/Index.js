@@ -59,7 +59,7 @@ var vm = new Vue({
     created: function () {
         alert("ok");
         this.getdata();
-        this.testScoll();
+        // this.testScoll();
     },
     mounted: function () {
         this.$nextTick(()=>{

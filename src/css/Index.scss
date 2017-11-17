@@ -27,7 +27,8 @@ body{
     text-align: center;
     // transform: translate3d(0, 0, 0);
     // -webkit-transform:translate3d(0, 0, 0);
-    background-color: rgba(255,255,255,0);
+    // background-color: rgba(255,255,255,0);
+    background-color: rgba(0,0,0,1);
     transition:background-color 1s linear;
     -moz-transition:background-color 1s linear; /* Firefox 4 */
     -webkit-transition:background-color 1s linear; /* Safari and Chrome */
