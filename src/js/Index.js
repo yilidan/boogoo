@@ -57,7 +57,7 @@ var vm = new Vue({
 
     },
     created: function () {
-        // alert("1");
+        alert("ok");
         this.getdata();
         this.testScoll();
     },
