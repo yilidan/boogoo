@@ -15,6 +15,7 @@ import {Indicator} from 'mint-ui';
 var userid, token, enterid, entertype;
 var site, timero,timers;
 var productinfo = JSON.parse(localStorage.getItem("productinfo")); //获取商品，主播信息
+
 // 主播id
 var anchorid = global.getQueryString("anchorid") ? global.getQueryString("anchorid") : '';
 
@@ -60,11 +61,11 @@ var vm = new Vue({
     created: function () {
         this.init();
         this.getcity();
-        console.log(productinfo)
     },
     mounted:function(){
         this.$nextTick(()=>{
-
+            // var productinfo = JSON.parse(localStorage.getItem("productinfo")); //获取商品，主播信息
+            // alert(productinfo);
         })
     },
     updated:function(){
@@ -101,11 +102,11 @@ var vm = new Vue({
                     token = global.getToken();
 
                     // test
-                    // userid= "43019";
-                    // token="BADC1D69EA8349189854E58E4FCFAFDE";
+                    // userid= "43040";
+                    // token="FA46159681BDA3AF9EC600C968D0C565";
 
                     //数据模型
-                    var messages = [
+                    var messages1 = [
                         {
                             anchorid: anchorid,//主播id,从url上截取
                             headerimg: "",//主播头像
@@ -126,7 +127,7 @@ var vm = new Vue({
                             ]
                         }
                     ];
-                    this.orderinfo = messages //将数据赋值给data属性
+                    this.orderinfo = messages1; //将数据赋值给data属性
                     this.getsubtotalAndMunber();
                     this.gettotal();
                     this.getAnchorid();
@@ -647,9 +648,9 @@ var vm = new Vue({
                     cssUnit: 'rem',
                     callback: function (selectOneObj, selectTwoObj) {
                         // console.log(selectOneObj, selectTwoObj)
-                        vm.receSite = selectOneObj.value + "" + selectTwoObj.value
-                        vm.addressid = selectOneObj.id
-                        vm.areaid = selectTwoObj.id
+                        vm.receSite = selectOneObj.value + "" + selectTwoObj.value;
+                        // vm.addressid = selectOneObj.id
+                        vm.areaid = selectTwoObj.id;
                     }
                 });
                $(".layer").animate({

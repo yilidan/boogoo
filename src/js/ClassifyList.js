@@ -71,7 +71,7 @@ var vm = new Vue({
                         'top': searchH-1,
                         'left': 0,
                         'z-index': 200,
-                        '-webkit-transform': 'translateZ(0)',
+                        // '-webkit-transform': 'translateZ(0)',
                     })
                     $("#loadMore").css({
                         'margin-top':hotWordHeight+'px',
@@ -187,7 +187,7 @@ var vm = new Vue({
             }
 
             document.querySelector(".dropDownbg img").classList.remove("rotate")
-            this.pageindex = 1
+            this.pageindex = 1;
             this.brandid = brandid
             this.Actives = index;
             this.cacheData(index, brandid)
@@ -256,6 +256,7 @@ var vm = new Vue({
             })
         },
         screenSelectBtn:function(sBrandid,index){
+            this.pageindex = 1;
             if(sBrandid == "all"){
                 this.currentScreenBtn = -1;
                 brandid = "";

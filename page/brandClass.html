@@ -23,16 +23,20 @@
             <li v-for="(item,index) in brandList">
                 <h3>{{item.brandorigin}}</h3>
                 <ul class="brandImg">
-                    <li v-for="(list,index) in item.brandlist" @click="goToClassifyList(list.brandid)">
+                    <li v-for="list in brandJQ(item)" @click="goToClassifyList(list.brandid)">
                         <img :src="list.brandlogo" alt="">
                     </li>
                 </ul>
+                <p>
+                    <span @click="moreBtn(item)">{{item.checked?'收起':'更多'}} >></span>
+                    <!-- <span v-else @click="moreBtn(item)">更多 >></span> -->
+                </p>
             </li>
         </ul>
     </div>
 </body>
 <script src="../src/lib/vue/vue.min.js"></script>
 <script src="../src/lib/mint/index.js"></script>
-<script src="../dist/BrandClass.js"></script>
+<script src="../dist/BrandClass.js?t=123"></script>
 
 </html>

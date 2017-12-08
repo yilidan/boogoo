@@ -1,9 +1,9 @@
 <template lang="html">
     <div class="headerBar" ref="searchTop">
-        <i @click="backUpBtn" class="iconfont icon-back"></i>
-        <div class="searchBox" @click="Gosearch">
+        <i @click="backUpBtn()" class="iconfont icon-back"></i>
+        <div class="searchBox" @click="Gosearch()">
             <i class="iconfont icon-icon19"></i>
-            <i class="iconfont icon-scan1" @click.stop="richScan"></i>
+            <i class="iconfont icon-scan1" @click.stop="richScan()"></i>
         </div>
     </div>
 </template>
@@ -87,8 +87,8 @@ export default {
         position: fixed;
         top:0;
         left:0;
-        z-index: 199;
-        -webkit-transform: translateZ(0);
+        z-index: 210;
+        // -webkit-transform: translateZ(0);
     }
     .icon-back{
         color:#333;
@@ -96,5 +96,14 @@ export default {
         vertical-align:middle;
         padding-left: pxToRem(20px);
         padding-right: pxToRem(20px);
+    }
+
+    // 适配iphoneX
+    @media only screen and (device-width: 375px) and (device-height: 812px) and
+    (-webkit-device-pixel-ratio: 3){
+        .headerBar{
+            height:pxToRem(132px);
+            line-height:pxToRem(175px);
+        }
     }
 </style>

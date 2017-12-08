@@ -91,6 +91,7 @@ html{
     height: pxToRem(350px);
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
     // position: relative;
     // top:0;
     // left:0;
@@ -150,7 +151,7 @@ html{
     // margin-top: pxToRem(154px);
 }
 .lists{
-    background-color: #fff;
+    background-color: #F0F1F0;
     //  overflow:hidden;
     .box:nth-child(odd){
         margin-right: 2%
@@ -216,30 +217,34 @@ html{
 .likeList li{
     width: 50%;
     height: auto;
-    border-bottom: pxToRem(5px) solid #ececec;
+    border-bottom: pxToRem(5px) solid #F0F1F0;
     padding:0 pxToRem(15px) pxToRem(15px) pxToRem(15px);
     position: relative;
     /*padding-left: .5rem;*/
     box-sizing: border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Safari */
+    background-color: #fff;
 }
 .likeList li:nth-child(odd){
     // margin-left: pxToRem(60px);
-    border-right: pxToRem(5px) solid #ececec;
+    border-right: pxToRem(5px) solid #F0F1F0;
 }
 .lists .likeList li:first-child{
-    border-top: 1px solid #ececec;
+    border-top: 1px solid #F0F1F0;
 }
 .lists .likeList li:nth-child(2){
-    border-top: 1px solid #ececec;
+    border-top: 1px solid #F0F1F0;
 }
-.lists .likeList li:last-child{
-    border-bottom: none;
-}
-.lists .likeList li:nth-last-child(2){
-    // border-bottom: pxToRem(5px) solid #ececec;
-}
+// .lists .likeList li:last-child{
+//     border-bottom: none;
+// }
+// .lists .likeList li:nth-last-child(2){
+//     border-bottom: none;
+// }
+// .lists .likeList li:nth-last-child(odd):nth-last-child(2){
+//     border-bottom: none;
+// }
 .likeList li>img{
     width: pxToRem(330px);
     height: pxToRem(330px);

@@ -12,10 +12,6 @@ import "../css/ProductDetails.scss"
 var userid = global.getUserid(),
     token = global.getToken();
 
-// test
-// userid= "42328";
-// token="33FF4AC4DEA79BBB8AA426A350BD8CF3";
-
 var productid = global.getQueryString("productid") ? global.getQueryString("productid") : "",
     anchorid = global.getQueryString("anchorid") ? global.getQueryString("anchorid") : "",
 
@@ -26,6 +22,10 @@ var productid = global.getQueryString("productid") ? global.getQueryString("prod
     enterid = global.getQueryString("enterid") ? global.getQueryString("enterid") : '',
     entertype = global.getQueryString("entertype") ? global.getQueryString("entertype") : 1;
 
+    // test
+    // userid= "43040";
+    // token="FA46159681BDA3AF9EC600C968D0C565";
+    // anchorid="4360";
 
 var vm = new Vue({
     el: '#app',
@@ -74,8 +74,7 @@ var vm = new Vue({
          * 如果anchorid存在显示主播小店
          *
          */
-        this.getdata()
-
+        this.getdata();
         if (userid) {
             this.getCollect()
         }
@@ -478,7 +477,7 @@ var vm = new Vue({
             console.log(skutext);
             console.log(this.priceInfo);
             if (anchorid == "") { //没有主播id时跳转到选择主播
-                var obj = JSON.stringify({
+                let obj = JSON.stringify({
                     productid: productid,
                     productname: this.pI.name,
                     skuid: this.skuid,
@@ -502,10 +501,10 @@ var vm = new Vue({
 
             }else{ //存在主播id时
                 if (type == 1) {//加入购物车请求
-                    this.Addshopingcar()
+                    this.Addshopingcar();
                 }
                 if (type == 2) {//跳转到确认订单
-                    var obj = JSON.stringify({
+                    let obj1 = JSON.stringify({
                         productid: productid,
                         productname: this.pI.name,
                         productimg: this.imgurl,
@@ -513,13 +512,16 @@ var vm = new Vue({
                         skutext: skutext,
                         buynumber: this.buynumber,
                         prices: this.prices,
-                    })
-                    localStorage.removeItem("site")
+                    });
+                    // localStorage.removeItem("productinfo");
+                    localStorage.setItem("productinfo", obj1); //将产品信息和主播信息放入缓存
                     let data = JSON.stringify({
                         url: 'https://share.boogoo.tv/page/ConfirmOrder.html?anchorid=' + anchorid + '&enterid=' + enterid + '&entertype=' + entertype,
                     })
-                    localStorage.setItem("productinfo", obj)//将产品信息和主播信息放入缓存
-                    location.href = "boogoo.app://?pushcode=100002&data=" + data
+                    setTimeout(function(){
+                        location.href = "boogoo.app://?pushcode=100002&data=" + data
+                    },1000);
+                    // location.href = "boogoo.app://?pushcode=100002&data=" + data
 
                     // let data = JSON.stringify({
                     //     url: 'https://share.okxueche.net/order/ConfirmOrder?anchorid=' + anchorid + '&enterid=' + enterid + '&entertype=' + entertype,

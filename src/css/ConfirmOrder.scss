@@ -245,7 +245,6 @@ html{
     width: 100%;
     position: fixed;
     bottom: 0;
-
     background: #ffffff;
 
     div:nth-child(1){
@@ -274,6 +273,14 @@ html{
         line-height: pxToRem(90px);
     }
 }
+// 适配iphoneX
+@media only screen and (device-width: 375px) and (device-height: 812px) and
+(-webkit-device-pixel-ratio: 3){
+    .btn{
+        padding-bottom: pxToRem(40px);
+    }
+}
+
 // 新增地址
 .popupAddSite{
     width: 90%;
@@ -368,6 +375,7 @@ html{
     }
     .mint-switch{
         float: right;
+        margin-top: pxToRem(15px);
         .mint-switch-core::after{
             // background-color: #8F8F8F;
         }
@@ -377,6 +385,27 @@ html{
         }
     }
 }
+.mint-switch-core{
+    width: pxToRem(52px);
+    height: pxToRem(32px);
+    border-radius:pxToRem(16px);
+}
+.mint-switch-core::before{
+    width: pxToRem(50px);
+    height: pxToRem(30px);
+}
+.mint-switch-core::after{
+    width: pxToRem(30px);
+    height: pxToRem(30px);
+}
+.mint-switch-core::after, .mint-switch-core::before{
+    border-radius: pxToRem(15px);
+}
+.mint-switch-input:checked + .mint-switch-core::after{
+    -webkit-transform: translateX(pxToRem(20px));
+    transform: translateX(pxToRem(20px));
+}
+
 .addBottomBtn{
     width: 100%;
     text-align: center;

@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>播购直播</title>
     <link href="../src/css/download.css" rel="stylesheet"/>
     <style media="screen">
         *{margin:0;padding:0;}
-        body{font-family:Arial,"Microsoft YaHei";}
+        body{font-family:Arial,"Microsoft YaHei";background-color: #180027;}
         .mar-l{padding-left:.46rem;}
         .share_bg{width:100%;vertical-align:top;}
         #tips{position:absolute;top:0;right:.9rem;z-index:100;display:block;display:none;width:4.3rem;height:1.6rem;}
@@ -22,11 +22,20 @@
         .btn img{width:9.34rem;height:1.46rem;}
         .name{padding-bottom:.4rem;color:#d53e6d;font-size:.37rem;}
         .name,.titleimg{display:none;}
+        /*适配iPhone X*/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and(-webkit-device-pixel-ratio: 3){
+            /*.flexdbox{
+                bottom:5rem;
+            }*/
+            /*.btn{
+                margin-bottom: 2rem;
+            }*/
+        }
     </style>
 </head>
 <body>
     <div class="browserbox">
-        <img class="share_bg" src="../src/img/share/1.jpg" alt="">
+        <img class="share_bg" src="../src/img/share/3.jpg" alt="">
         <div class="dalog">
             <img id="tips" src="../src/img/share/1_07.png" alt="">
         </div>
@@ -50,6 +59,7 @@
              init: function () {
                  var higheruserid=this.getQueryString("higheruserid");
                  var heights = document.documentElement.clientHeight
+                //  alert(heights);
                  $(".browserbox").height(heights);
                  download.is_weixin();
              },
@@ -81,7 +91,7 @@
                          document.body.removeChild(ifr);
                          //setTimeout回小于2000一般为唤起失败
                          if (Date.now() - last < 2000) {
-                             location.href = "https://file.okxueche.net/boogoo_android.apk"
+                             location.href = "https://file.boogoo.tv/boogoo_android_v2.0.1_boogoo.apk";
                          }
                      }, 1000);
                  }

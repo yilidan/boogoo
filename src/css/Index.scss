@@ -8,7 +8,7 @@ html{
 }
 body{
     // overflow: hidden;
-    // -webkit-overflow-scroll:touch;
+    // -webkit-overflow-scrolling:touch;
 }
  // .mint-loadmore-bottom{
  //     height: pxToRem(80px) !important;
@@ -56,6 +56,18 @@ body{
 .searchBGC{
     background-color: rgba(255,255,255,1);
 }
+// 适配iPhone X
+@media only screen and (device-width: 375px) and (device-height: 812px) and
+(-webkit-device-pixel-ratio: 3){
+    .search{
+        height:pxToRem(166px);
+        line-height:pxToRem(232px);
+    }
+    #app{
+        // margin-top: pxToRem(44px);
+    }
+}
+
 .main{
     // overflow: auto;
     width: 100%;
@@ -172,7 +184,7 @@ body{
             float: left;
             width: 33%;
             padding-bottom:pxToRem(15px);
-            border-bottom:1px solid #e2e1e1;
+            // border-bottom:1px solid #e2e1e1;
             height: pxToRem(210px);
             position: relative;
                 p:nth-child(1){

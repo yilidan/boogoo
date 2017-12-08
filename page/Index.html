@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../src/fonts/iconfont.css">
     <title>商城</title>
     <style>
+        /*body{
+            padding-top: constant(safe-area-inset-top);
+            padding-left: constant(safe-area-inset-left);
+            padding-right: constant(safe-area-inset-right);
+            padding-bottom: constant(safe-area-inset-bottom);
+        }*/
         [v-cloak] {
             display: none;
         }
@@ -67,6 +73,7 @@
                         <div class="discover">
                             <img v-for="item in adlist" :src="item.imgurl" alt="" v-on:click="bannerhandle(item.link)">
                         </div>
+
                         <!--手机-->
                         <!-- <div class="phoneNav">
                             <div class="phoneNavbox" v-for="item in thirdProduct" v-on:click="GoProductDetails(item.productid)">
@@ -97,7 +104,7 @@
 <!-- <script src="../src/lib/iscroll/iscroll.js"></script> -->
 <script src="../src/lib/vue/vue.min.js"></script>
 <script src="../src/lib/mint/index.js"></script>
-<script src="../dist/Index.js"></script>
+<script src="../dist/Index.js?t=201712051200"></script>
 <!-- <script src="../src/lib/touch/transform.js"></script>
 <script src="../src/lib/touch/alloy_touch.js"></script> -->
 <script type="text/javascript">

@@ -79,6 +79,36 @@ html{
     // overflow-y:auto;
     // height: 100%;
 }
+// 适配iPhone X
+@media only screen and (device-width: 375px) and (device-height: 812px) and
+(-webkit-device-pixel-ratio: 3){
+    #navTop{
+        height: pxToRem(132px);
+        line-height: pxToRem(175px);
+    }
+    #main{
+        margin-top: pxToRem(132px);
+    }
+    .btn-group{
+        padding-bottom: pxToRem(40px);
+        background-color: #fff;
+    }
+    .info{
+        .detailInfo{
+            margin-bottom: pxToRem(130px) !important;
+        }
+    }
+    .mint-popup{
+        padding-bottom: pxToRem(40px);
+    }
+    .seletAbbr .btnconfirm{
+        margin-bottom: pxToRem(40px);
+    }
+    .seletAttr .seletfooter{
+        margin-bottom: pxToRem(40px);
+    }
+}
+
 .fade-choose-enter-active, .fade-choose-leave-active {
     transition: opacity .5s;
 }

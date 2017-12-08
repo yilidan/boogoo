@@ -1,3 +1,4 @@
+// var webpack = require("webpack");
 module.exports = {
     entry: {
         ProductDetails: "./src/js/ProductDetails.js",
@@ -18,7 +19,8 @@ module.exports = {
         serviceHelp:"./src/js/serviceHelp.js",
         test1:"./src/js/test1.js",
         shareProduct:"./src/js/shareProduct.js",
-        Register:"./src/js/Register.js"
+        Register:"./src/js/Register.js",
+        personHome:"./src/js/personHome.js"
 
     },
     output: {
@@ -58,6 +60,13 @@ module.exports = {
             }
 
         ]
-    }
+    },
+    // plugins: [
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         compress: {
+    //             warnings: false
+    //         }
+    //     }),
+    // ]
 
 }

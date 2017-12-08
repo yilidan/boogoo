@@ -103,13 +103,13 @@
                 <i class="iconfont icon-guanbi" @click="popupAddSite=false"></i>
             </div>
             <div class="line line-f">
-                <label>收件人</label><input type="text" v-model="consignee">
+                <label>收件人：</label><input type="text" v-model="consignee">
             </div>
             <div class="line line-f">
-                <label>手机</label><input type="tel" v-model="Phone" maxlength="11">
+                <label>手 &nbsp;&nbsp; 机：</label><input type="tel" v-model="Phone" maxlength="11">
             </div>
             <div class="line line-site" @click="selectCitySite">
-                <p>所在地区</p>
+                <p>所在地区：</p>
                 <p>
                     {{receSite}}
                     <img src="../src/img/orderdetail/bigArrows.png" alt="">
@@ -118,7 +118,7 @@
             <div class="line line-f">
                 <!-- <span>详细地址</span>
                 <textarea></textarea> -->
-                <label>详细地址</label><input type="text" placeholder="请输入详细地址" v-model="DetailedSite">
+                <label>详细地址：</label><input type="text" placeholder="请输入详细地址" v-model="DetailedSite">
             </div>
             <div class="line line-default">
                 <span>
@@ -199,10 +199,10 @@
     // var order_info = "";
 
 </script>
-<!-- <script src="../src/lib/vue/vue.min.js"></script> -->
-<script src="../src/lib/vue/vue.js"></script>
+<script src="../src/lib/vue/vue.min.js"></script>
+<!-- <script src="../src/lib/vue/vue.js"></script> -->
 <script src="../src/lib/mint/index.js"></script>
 <script src="../src/lib/base64/base64.js"></script>
-<script src="../dist/ConfirmOrder.js"></script>
+<script src="../dist/ConfirmOrder.js?t=201711221818"></script>
 
 </html>

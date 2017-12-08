@@ -12819,7 +12819,7 @@
 
 
 	// module
-	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 199;\n  -webkit-transform: translateZ(0); }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n", ""]);
+	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 210; }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n\n@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {\n  .headerBar {\n    height: 1.76rem;\n    line-height: 2.33333rem; } }\n", ""]);
 
 	// exports
 
@@ -12920,8 +12920,8 @@
 	    //         position: fixed;
 	    //         top:0;
 	    //         left:0;
-	    //         z-index: 199;
-	    //         -webkit-transform: translateZ(0);
+	    //         z-index: 210;
+	    //         // -webkit-transform: translateZ(0);
 	    //     }
 	    //     .icon-back{
 	    //         color:#333;
@@ -12930,15 +12930,24 @@
 	    //         padding-left: pxToRem(20px);
 	    //         padding-right: pxToRem(20px);
 	    //     }
+	    //
+	    //     // 适配iphoneX
+	    //     @media only screen and (device-width: 375px) and (device-height: 812px) and
+	    //     (-webkit-device-pixel-ratio: 3){
+	    //         .headerBar{
+	    //             height:pxToRem(132px);
+	    //             line-height:pxToRem(175px);
+	    //         }
+	    //     }
 	    // </style>
 	    //
 
 	}; // <template lang="html">
 	//     <div class="headerBar" ref="searchTop">
-	//         <i @click="backUpBtn" class="iconfont icon-back"></i>
-	//         <div class="searchBox" @click="Gosearch">
+	//         <i @click="backUpBtn()" class="iconfont icon-back"></i>
+	//         <div class="searchBox" @click="Gosearch()">
 	//             <i class="iconfont icon-icon19"></i>
-	//             <i class="iconfont icon-scan1" @click.stop="richScan"></i>
+	//             <i class="iconfont icon-scan1" @click.stop="richScan()"></i>
 	//         </div>
 	//     </div>
 	// </template>
@@ -12949,7 +12958,7 @@
 /* 52 */
 /***/ (function(module, exports) {
 
-	module.exports = "\r\n    <div class=\"headerBar\" ref=\"searchTop\">\r\n        <i @click=\"backUpBtn\" class=\"iconfont icon-back\"></i>\r\n        <div class=\"searchBox\" @click=\"Gosearch\">\r\n            <i class=\"iconfont icon-icon19\"></i>\r\n            <i class=\"iconfont icon-scan1\" @click.stop=\"richScan\"></i>\r\n        </div>\r\n    </div>\r\n";
+	module.exports = "\r\n    <div class=\"headerBar\" ref=\"searchTop\">\r\n        <i @click=\"backUpBtn()\" class=\"iconfont icon-back\"></i>\r\n        <div class=\"searchBox\" @click=\"Gosearch()\">\r\n            <i class=\"iconfont icon-icon19\"></i>\r\n            <i class=\"iconfont icon-scan1\" @click.stop=\"richScan()\"></i>\r\n        </div>\r\n    </div>\r\n";
 
 /***/ }),
 /* 53 */,

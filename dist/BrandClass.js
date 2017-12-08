@@ -83,7 +83,11 @@
 	    },
 	    data: {
 	        bannerList: [],
-	        brandList: []
+	        brandList: [],
+	        limitMore: '更多',
+	        limitBy: null,
+	        currentIndex: -1,
+	        isListShow: false
 
 	    },
 	    mounted: function mounted() {
@@ -98,7 +102,41 @@
 	        this.blist();
 	        this.queryBrand();
 	    },
+	    computed: {
+	        // filterBrand:function(){
+	        //     var _this = this;
+	        //     _this.brandList.forEach((item,index)=>{
+	        //         console.log(item.brandlist);
+	        //          return item.brandlist.slice(0,9);
+	        //     })
+	        // }
+	    },
 	    methods: {
+	        brandJQ: function brandJQ(list1) {
+	            // if(this.currentIndex == index1){
+	            //     return list1.slice(0,this.limitBy);
+	            // }else{
+	            //     return list1.slice(0,9);
+	            // }
+	            if (list1.checked) {
+	                return list1.brandlist.slice(0, this.limitBy);
+	            } else {
+	                return list1.brandlist.slice(0, 9);
+	            }
+	        },
+	        moreBtn: function moreBtn(item) {
+	            // this.currentIndex = index2;
+	            this.limitBy = item.brandlist.length;
+	            console.log(item);
+	            if (typeof item.checked == "undefined") {
+	                this.$set(item, "checked", true);
+	            } else {
+	                item.checked = !item.checked;
+	            }
+	        },
+	        packUpBtn: function packUpBtn() {
+	            this.currentIndex = -1;
+	        },
 	        blist: function blist() {
 	            var _this = this;
 
@@ -114,6 +152,15 @@
 	            _axios2.default.get(_global2.default.Apipath + "/api/Product/ProductBrandGroupList").then(function (req) {
 	                var data1 = req.data;
 	                _this2.brandList = data1.data;
+	                // this.brandList.forEach((item,index)=>{
+	                //     console.log(item.brandlist.length);
+	                //     if(item.brandlist.length >= 9){
+	                //         return item.brandlist.splice(9,item.brandlist.length);
+	                //         console.log(item.brandlist);
+	                //
+	                //     }
+	                //     console.log(item.brandlist);
+	                // })
 	                console.log(_this2.brandList);
 	            });
 	        },
@@ -12777,7 +12824,7 @@
 
 
 	// module
-	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 199;\n  -webkit-transform: translateZ(0); }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n", ""]);
+	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 210; }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n\n@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {\n  .headerBar {\n    height: 1.76rem;\n    line-height: 2.33333rem; } }\n", ""]);
 
 	// exports
 
@@ -12878,8 +12925,8 @@
 	    //         position: fixed;
 	    //         top:0;
 	    //         left:0;
-	    //         z-index: 199;
-	    //         -webkit-transform: translateZ(0);
+	    //         z-index: 210;
+	    //         // -webkit-transform: translateZ(0);
 	    //     }
 	    //     .icon-back{
 	    //         color:#333;
@@ -12888,15 +12935,24 @@
 	    //         padding-left: pxToRem(20px);
 	    //         padding-right: pxToRem(20px);
 	    //     }
+	    //
+	    //     // 适配iphoneX
+	    //     @media only screen and (device-width: 375px) and (device-height: 812px) and
+	    //     (-webkit-device-pixel-ratio: 3){
+	    //         .headerBar{
+	    //             height:pxToRem(132px);
+	    //             line-height:pxToRem(175px);
+	    //         }
+	    //     }
 	    // </style>
 	    //
 
 	}; // <template lang="html">
 	//     <div class="headerBar" ref="searchTop">
-	//         <i @click="backUpBtn" class="iconfont icon-back"></i>
-	//         <div class="searchBox" @click="Gosearch">
+	//         <i @click="backUpBtn()" class="iconfont icon-back"></i>
+	//         <div class="searchBox" @click="Gosearch()">
 	//             <i class="iconfont icon-icon19"></i>
-	//             <i class="iconfont icon-scan1" @click.stop="richScan"></i>
+	//             <i class="iconfont icon-scan1" @click.stop="richScan()"></i>
 	//         </div>
 	//     </div>
 	// </template>
@@ -12907,7 +12963,7 @@
 /* 52 */
 /***/ (function(module, exports) {
 
-	module.exports = "\r\n    <div class=\"headerBar\" ref=\"searchTop\">\r\n        <i @click=\"backUpBtn\" class=\"iconfont icon-back\"></i>\r\n        <div class=\"searchBox\" @click=\"Gosearch\">\r\n            <i class=\"iconfont icon-icon19\"></i>\r\n            <i class=\"iconfont icon-scan1\" @click.stop=\"richScan\"></i>\r\n        </div>\r\n    </div>\r\n";
+	module.exports = "\r\n    <div class=\"headerBar\" ref=\"searchTop\">\r\n        <i @click=\"backUpBtn()\" class=\"iconfont icon-back\"></i>\r\n        <div class=\"searchBox\" @click=\"Gosearch()\">\r\n            <i class=\"iconfont icon-icon19\"></i>\r\n            <i class=\"iconfont icon-scan1\" @click.stop=\"richScan()\"></i>\r\n        </div>\r\n    </div>\r\n";
 
 /***/ }),
 /* 53 */
@@ -12944,7 +13000,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\"; }\n\nbody {\n  background-color: #ECECEC; }\n\n.banner {\n  width: 100%;\n  height: 4rem;\n  margin-top: 1.17333rem; }\n\n.banner img {\n  width: 100%;\n  height: 4rem;\n  vertical-align: middle; }\n\n.mint-swipe-indicator {\n  width: 0.16rem;\n  height: 0.16rem; }\n\n.mint-swipe-indicator.is-active {\n  background-color: #ED4F02;\n  opacity: .8; }\n\n.brandStyle {\n  margin-bottom: 0.4rem; }\n\n.brandStyle > li {\n  margin-top: 0.13333rem;\n  background-color: #fff; }\n\n.brandStyle > li > h3 {\n  height: 1.06667rem;\n  line-height: 1.06667rem;\n  text-align: center;\n  font-size: 0.42667rem;\n  border-bottom: 0.01333rem solid #ECECEC; }\n\n.brandImg {\n  display: flex;\n  display: -webkit-flex;\n  flex-wrap: wrap; }\n  .brandImg li {\n    width: 33%;\n    height: 3.33333rem;\n    line-height: 3.33333rem;\n    text-align: center;\n    border-right: 0.01333rem solid #ECECEC;\n    border-bottom: 0.01333rem solid #ECECEC; }\n    .brandImg li img {\n      width: 2.66667rem;\n      vertical-align: middle; }\n  .brandImg li:nth-child(3n) {\n    border-right: 0; }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\"; }\n\nbody {\n  background-color: #ECECEC; }\n\n.banner {\n  width: 100%;\n  height: 4rem;\n  margin-top: 1.17333rem; }\n\n.banner img {\n  width: 100%;\n  height: 4rem;\n  vertical-align: middle; }\n\n.mint-swipe-indicator {\n  width: 0.16rem;\n  height: 0.16rem; }\n\n.mint-swipe-indicator.is-active {\n  background-color: #ED4F02;\n  opacity: .8; }\n\n.brandStyle {\n  margin-bottom: 0.4rem; }\n\n.brandStyle > li {\n  margin-top: 0.13333rem;\n  background-color: #fff; }\n\n.brandStyle > li > h3 {\n  height: 1.06667rem;\n  line-height: 1.06667rem;\n  text-align: center;\n  font-size: 0.42667rem;\n  border-bottom: 0.01333rem solid #ECECEC; }\n\n.brandStyle > li > p {\n  text-align: right;\n  padding-top: 0.10667rem;\n  padding-bottom: 0.2rem;\n  margin-right: 0.26667rem;\n  font-size: 0.37333rem;\n  color: #666; }\n\n.brandImg {\n  display: flex;\n  display: -webkit-flex;\n  flex-wrap: wrap; }\n  .brandImg li {\n    width: 33%;\n    height: 3.33333rem;\n    line-height: 3.33333rem;\n    text-align: center;\n    border-right: 0.01333rem solid #ECECEC;\n    border-bottom: 0.01333rem solid #ECECEC; }\n    .brandImg li img {\n      width: 2.66667rem;\n      vertical-align: middle; }\n  .brandImg li:nth-child(3n) {\n    border-right: 0; }\n", ""]);
 
 	// exports
 

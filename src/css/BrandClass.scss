@@ -41,6 +41,14 @@ body{
     font-size: pxToRem(32px);
     border-bottom: pxToRem(1px) solid #ECECEC;
 }
+.brandStyle>li>p{
+    text-align: right;
+    padding-top: pxToRem(8px);
+    padding-bottom: pxToRem(15px);
+    margin-right: pxToRem(20px);
+    font-size: pxToRem(28px);
+    color: #666;
+}
 .brandImg{
     display: flex;
     display: -webkit-flex;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>分享商品</title>
+    <title>商品详情</title>
     <meta name="format-detection" content="telephone=no" />
     <!-- <meta name="apple-itunes-app" content="app-id=8W5CNKFJFF, affiliate-data=myAffiliateData, app-argument=myURL"> -->
     <link rel="stylesheet" href="../src/lib/mint/style.css">
@@ -108,14 +108,14 @@
     </transition>
         <!--按钮集-->
         <div class="btn-group" @click="downloadApp()">
-            <img src="../src/img/productDetails/download-line.png" alt="">
+            <img src="../src/img/productDetails/download-line1.png" alt="">
         </div>
         <!--选择属性-->
         <mt-popup v-model="attrshow" position="bottom" class="mint-popup-4">
             <div class="seletAttr">
                 <div class="seletheader">
                     <div class="productImgPar">
-                        <img class="productimg" :src="imgurl+'?imageView2/2/w/350'" alt="" v-on:touchstart.prevent="showlightbox($event,1)">
+                        <img class="productimg" :src="imgurl+'?imageView2/2/w/350'" alt="" v-on:click="showlightbox($event,1)">
                     </div>
                     <div class="pirce">
                         <p>¥ {{ (prices=="") ? pI.price: prices}}</p>

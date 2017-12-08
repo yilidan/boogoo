@@ -154,7 +154,7 @@
 	                    console.log(_this2.$refs);
 	                    _this2.isIos = true;
 	                    _this2.$refs.searchTop.style.paddingTop = "3%";
-	                } else if (_global2.default.bIsAndroid()) {
+	                } else {
 	                    _this2.isAndroid = true;
 	                }
 	            }
@@ -257,11 +257,11 @@
 	                // location.href = "boogoo.app://?pushcode=100002&data=" + data
 	                // location.href = "./test1.html?classifyid=" + id;
 	            } else {
-	                // var data = JSON.stringify({
-	                //     url: global.path + "/page/ClassifyList.html?classifyid=" + id
-	                // })
-	                // location.href = "boogoo.app://?pushcode=100011&data=" + data
-	                location.href = "./ClassifyList.html?classifyid=" + id;
+	                var data = (0, _stringify2.default)({
+	                    url: _global2.default.path + "/page/ClassifyList.html?classifyid=" + id
+	                });
+	                location.href = "boogoo.app://?pushcode=100011&data=" + data;
+	                // location.href = "./ClassifyList.html?classifyid=" + id;
 	            }
 	        },
 	        GoClassifyTheme: function GoClassifyTheme(brandid) {
@@ -12955,7 +12955,7 @@
 
 
 	// module
-	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 199;\n  -webkit-transform: translateZ(0); }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n", ""]);
+	exports.push([module.id, ".searchBox {\n  display: inline-block;\n  width: 80%;\n  height: 0.8rem;\n  line-height: 0.8rem;\n  margin: 0 auto;\n  background-color: rgba(213, 213, 213, 0.42);\n  border-radius: .1rem;\n  vertical-align: middle; }\n  .searchBox .icon-icon19 {\n    font-size: 0.42667rem;\n    float: left;\n    margin-left: 0.13333rem;\n    color: #666; }\n  .searchBox .icon-scan1 {\n    font-size: 0.42667rem;\n    float: right;\n    margin-right: 0.13333rem;\n    color: #666; }\n\n.headerBar {\n  width: 100%;\n  height: 1.17333rem;\n  line-height: 1.16rem;\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 210; }\n\n.icon-back {\n  color: #333;\n  font-size: 0.64rem;\n  vertical-align: middle;\n  padding-left: 0.26667rem;\n  padding-right: 0.26667rem; }\n\n@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {\n  .headerBar {\n    height: 1.76rem;\n    line-height: 2.33333rem; } }\n", ""]);
 
 	// exports
 
@@ -13056,8 +13056,8 @@
 	    //         position: fixed;
 	    //         top:0;
 	    //         left:0;
-	    //         z-index: 199;
-	    //         -webkit-transform: translateZ(0);
+	    //         z-index: 210;
+	    //         // -webkit-transform: translateZ(0);
 	    //     }
 	    //     .icon-back{
 	    //         color:#333;
@@ -13066,15 +13066,24 @@
 	    //         padding-left: pxToRem(20px);
 	    //         padding-right: pxToRem(20px);
 	    //     }
+	    //
+	    //     // 适配iphoneX
+	    //     @media only screen and (device-width: 375px) and (device-height: 812px) and
+	    //     (-webkit-device-pixel-ratio: 3){
+	    //         .headerBar{
+	    //             height:pxToRem(132px);
+	    //             line-height:pxToRem(175px);
+	    //         }
+	    //     }
 	    // </style>
 	    //
 
 	}; // <template lang="html">
 	//     <div class="headerBar" ref="searchTop">
-	//         <i @click="backUpBtn" class="iconfont icon-back"></i>
-	//         <div class="searchBox" @click="Gosearch">
+	//         <i @click="backUpBtn()" class="iconfont icon-back"></i>
+	//         <div class="searchBox" @click="Gosearch()">
 	//             <i class="iconfont icon-icon19"></i>
-	//             <i class="iconfont icon-scan1" @click.stop="richScan"></i>
+	//             <i class="iconfont icon-scan1" @click.stop="richScan()"></i>
 	//         </div>
 	//     </div>
 	// </template>
@@ -13085,7 +13094,7 @@
 /* 52 */
 /***/ (function(module, exports) {
 
-	module.exports = "\r\n    <div class=\"headerBar\" ref=\"searchTop\">\r\n        <i @click=\"backUpBtn\" class=\"iconfont icon-back\"></i>\r\n        <div class=\"searchBox\" @click=\"Gosearch\">\r\n            <i class=\"iconfont icon-icon19\"></i>\r\n            <i class=\"iconfont icon-scan1\" @click.stop=\"richScan\"></i>\r\n        </div>\r\n    </div>\r\n";
+	module.exports = "\r\n    <div class=\"headerBar\" ref=\"searchTop\">\r\n        <i @click=\"backUpBtn()\" class=\"iconfont icon-back\"></i>\r\n        <div class=\"searchBox\" @click=\"Gosearch()\">\r\n            <i class=\"iconfont icon-icon19\"></i>\r\n            <i class=\"iconfont icon-scan1\" @click.stop=\"richScan()\"></i>\r\n        </div>\r\n    </div>\r\n";
 
 /***/ }),
 /* 53 */,
@@ -17465,7 +17474,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\"; }\n\n.swiper-pagination-bullet {\n  width: 0.16rem !important;\n  height: 0.16rem !important; }\n\n.mint-header {\n  height: 1.28rem; }\n\n.search {\n  width: 100%;\n  height: 1.28rem;\n  line-height: 1.28rem;\n  text-align: center;\n  background-color: rgba(255, 255, 255, 0);\n  transition: background-color 1s linear;\n  -moz-transition: background-color 1s linear;\n  /* Firefox 4 */\n  -webkit-transition: background-color 1s linear;\n  /* Safari and Chrome */\n  -o-transition: background-color 1s linear;\n  /* Opera */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0); }\n\n.iosSearch {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  left: 0;\n  z-index: 99;\n  margin-top: -16%; }\n\n.androidSearch {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 99; }\n\n.searchBGC {\n  background-color: white; }\n\n.main {\n  width: 100%;\n  height: 100%; }\n\n.header img {\n  width: 100%;\n  height: 5.33333rem; }\n\n.nav {\n  margin-bottom: 0.13333rem;\n  background: #ffffff;\n  overflow: hidden; }\n  .nav .box {\n    width: 20%;\n    text-align: center;\n    font-size: 0.34667rem;\n    color: #9d9d9e;\n    float: left;\n    margin: 0.13333rem 0; }\n    .nav .box img {\n      margin-bottom: 0.13333rem;\n      width: 1.18667rem;\n      height: 1.18667rem; }\n\n.shops {\n  background: #ffffff; }\n  .shops .col-2 {\n    overflow: hidden; }\n    .shops .col-2 .col-2-box:nth-child(1) {\n      border-right: 1px solid #dedede; }\n    .shops .col-2 .col-2-box {\n      float: left;\n      width: 49%;\n      padding-bottom: 0.2rem;\n      border-bottom: 1px solid #e2e1e1;\n      height: 2.8rem;\n      position: relative; }\n      .shops .col-2 .col-2-box p:nth-child(1) {\n        font-size: 0.4rem;\n        color: #3d3a39;\n        padding: 0.2rem 0 0.2rem 0.2rem; }\n      .shops .col-2 .col-2-box p:nth-child(2) {\n        width: 30%;\n        font-size: 0.32rem;\n        color: #e73817;\n        padding-left: 0.2rem;\n        line-height: 0.46667rem; }\n      .shops .col-2 .col-2-box img {\n        position: absolute;\n        bottom: 0;\n        width: 100%; }\n  .shops .col-3 {\n    overflow: hidden; }\n    .shops .col-3 .col-3-box {\n      border-right: 1px solid #e2e1e1;\n      float: left;\n      width: 33%;\n      padding-bottom: 0.2rem;\n      border-bottom: 1px solid #e2e1e1;\n      height: 2.8rem;\n      position: relative; }\n      .shops .col-3 .col-3-box p:nth-child(1) {\n        font-size: 0.42667rem;\n        color: #272728;\n        padding: 0.2rem 0 0.2rem 0.2rem; }\n      .shops .col-3 .col-3-box p:nth-child(2) {\n        width: 35%;\n        font-size: 0.32rem;\n        color: #e73817;\n        padding-left: 0.2rem;\n        line-height: 0.42667rem; }\n      .shops .col-3 .col-3-box img {\n        position: absolute;\n        bottom: 0;\n        right: 0;\n        width: 90%; }\n\n.discover {\n  margin-bottom: 0.13333rem; }\n  .discover img {\n    width: 100%;\n    height: 2.66667rem;\n    margin-top: 0.13333rem;\n    vertical-align: middle; }\n\n.phoneNav {\n  overflow: hidden;\n  background: #ffffff;\n  margin-bottom: 0.13333rem; }\n  .phoneNav .phoneNavbox {\n    text-align: center;\n    width: 33.3%;\n    padding: 0.26667rem 0;\n    float: left; }\n    .phoneNav .phoneNavbox img {\n      width: 100%;\n      height: 1.86667rem; }\n    .phoneNav .phoneNavbox .phoneName {\n      font-size: 0.34667rem;\n      color: #3d3a39;\n      padding: 0.13333rem 0; }\n    .phoneNav .phoneNavbox p:nth-child(3) {\n      font-size: 0.26667rem;\n      color: #c52d48;\n      padding-bottom: 0.13333rem; }\n      .phoneNav .phoneNavbox p:nth-child(3) span {\n        font-size: 0.34667rem; }\n    .phoneNav .phoneNavbox p:nth-child(4) {\n      padding-bottom: 0.13333rem;\n      font-size: 0.26667rem;\n      color: #9e9f9f; }\n      .phoneNav .phoneNavbox p:nth-child(4) a {\n        text-decoration: line-through; }\n\n.theme .themebox {\n  background: #ffffff;\n  border-bottom: 1px solid #e2e2e2;\n  margin-bottom: 0.13333rem; }\n  .theme .themebox #themebg {\n    width: 100%; }\n  .theme .themebox div {\n    padding: 0.26667rem 0.26667rem;\n    position: relative; }\n    .theme .themebox div p {\n      font-size: 0.37333rem;\n      color: #393a39;\n      line-height: 0.4rem; }\n    .theme .themebox div img {\n      position: absolute;\n      top: 50%;\n      right: 0.26667rem;\n      width: 0.10667rem;\n      height: 0.18667rem;\n      margin-top: -0.09333rem; }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: \"Microsoft Yahei\"; }\n\n.swiper-pagination-bullet {\n  width: 0.16rem !important;\n  height: 0.16rem !important; }\n\n.mint-header {\n  height: 1.28rem; }\n\n.search {\n  width: 100%;\n  height: 1.28rem;\n  line-height: 1.28rem;\n  text-align: center;\n  background-color: rgba(255, 255, 255, 0);\n  transition: background-color 1s linear;\n  -moz-transition: background-color 1s linear;\n  /* Firefox 4 */\n  -webkit-transition: background-color 1s linear;\n  /* Safari and Chrome */\n  -o-transition: background-color 1s linear;\n  /* Opera */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0); }\n\n.iosSearch {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  left: 0;\n  z-index: 99;\n  margin-top: -16%; }\n\n.androidSearch {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 99; }\n\n.searchBGC {\n  background-color: white; }\n\n@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {\n  .search {\n    height: 2.21333rem;\n    line-height: 3.09333rem; } }\n\n.main {\n  width: 100%;\n  height: 100%; }\n\n.header img {\n  width: 100%;\n  height: 5.33333rem; }\n\n.nav {\n  margin-bottom: 0.13333rem;\n  background: #ffffff;\n  overflow: hidden; }\n  .nav .box {\n    width: 20%;\n    text-align: center;\n    font-size: 0.34667rem;\n    color: #9d9d9e;\n    float: left;\n    margin: 0.13333rem 0; }\n    .nav .box img {\n      margin-bottom: 0.13333rem;\n      width: 1.18667rem;\n      height: 1.18667rem; }\n\n.shops {\n  background: #ffffff; }\n  .shops .col-2 {\n    overflow: hidden; }\n    .shops .col-2 .col-2-box:nth-child(1) {\n      border-right: 1px solid #dedede; }\n    .shops .col-2 .col-2-box {\n      float: left;\n      width: 49%;\n      padding-bottom: 0.2rem;\n      border-bottom: 1px solid #e2e1e1;\n      height: 2.8rem;\n      position: relative; }\n      .shops .col-2 .col-2-box p:nth-child(1) {\n        font-size: 0.4rem;\n        color: #3d3a39;\n        padding: 0.2rem 0 0.2rem 0.2rem; }\n      .shops .col-2 .col-2-box p:nth-child(2) {\n        width: 30%;\n        font-size: 0.32rem;\n        color: #e73817;\n        padding-left: 0.2rem;\n        line-height: 0.46667rem; }\n      .shops .col-2 .col-2-box img {\n        position: absolute;\n        bottom: 0;\n        width: 100%; }\n  .shops .col-3 {\n    overflow: hidden; }\n    .shops .col-3 .col-3-box {\n      border-right: 1px solid #e2e1e1;\n      float: left;\n      width: 33%;\n      padding-bottom: 0.2rem;\n      height: 2.8rem;\n      position: relative; }\n      .shops .col-3 .col-3-box p:nth-child(1) {\n        font-size: 0.42667rem;\n        color: #272728;\n        padding: 0.2rem 0 0.2rem 0.2rem; }\n      .shops .col-3 .col-3-box p:nth-child(2) {\n        width: 35%;\n        font-size: 0.32rem;\n        color: #e73817;\n        padding-left: 0.2rem;\n        line-height: 0.42667rem; }\n      .shops .col-3 .col-3-box img {\n        position: absolute;\n        bottom: 0;\n        right: 0;\n        width: 90%; }\n\n.discover {\n  margin-bottom: 0.13333rem; }\n  .discover img {\n    width: 100%;\n    height: 2.66667rem;\n    margin-top: 0.13333rem;\n    vertical-align: middle; }\n\n.phoneNav {\n  overflow: hidden;\n  background: #ffffff;\n  margin-bottom: 0.13333rem; }\n  .phoneNav .phoneNavbox {\n    text-align: center;\n    width: 33.3%;\n    padding: 0.26667rem 0;\n    float: left; }\n    .phoneNav .phoneNavbox img {\n      width: 100%;\n      height: 1.86667rem; }\n    .phoneNav .phoneNavbox .phoneName {\n      font-size: 0.34667rem;\n      color: #3d3a39;\n      padding: 0.13333rem 0; }\n    .phoneNav .phoneNavbox p:nth-child(3) {\n      font-size: 0.26667rem;\n      color: #c52d48;\n      padding-bottom: 0.13333rem; }\n      .phoneNav .phoneNavbox p:nth-child(3) span {\n        font-size: 0.34667rem; }\n    .phoneNav .phoneNavbox p:nth-child(4) {\n      padding-bottom: 0.13333rem;\n      font-size: 0.26667rem;\n      color: #9e9f9f; }\n      .phoneNav .phoneNavbox p:nth-child(4) a {\n        text-decoration: line-through; }\n\n.theme .themebox {\n  background: #ffffff;\n  border-bottom: 1px solid #e2e2e2;\n  margin-bottom: 0.13333rem; }\n  .theme .themebox #themebg {\n    width: 100%; }\n  .theme .themebox div {\n    padding: 0.26667rem 0.26667rem;\n    position: relative; }\n    .theme .themebox div p {\n      font-size: 0.37333rem;\n      color: #393a39;\n      line-height: 0.4rem; }\n    .theme .themebox div img {\n      position: absolute;\n      top: 50%;\n      right: 0.26667rem;\n      width: 0.10667rem;\n      height: 0.18667rem;\n      margin-top: -0.09333rem; }\n", ""]);
 
 	// exports
 
