@@ -42,6 +42,10 @@
                                 <div class="swiper-slide" v-for="item in swiperSlides">
                                     <img v-on:click="bannerhandle(item.link)" :src="item.imgurl" alt="">
                                 </div>
+                                <!-- 活动 -->
+                                <div class="swiper-slide">
+                                    <img @click="gotoActivity()" src="../src/img/index/banner1.jpg" alt="">
+                                </div>
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -104,7 +108,7 @@
 <!-- <script src="../src/lib/iscroll/iscroll.js"></script> -->
 <script src="../src/lib/vue/vue.min.js"></script>
 <script src="../src/lib/mint/index.js"></script>
-<script src="../dist/Index.js?t=201712051200"></script>
+<script src="../dist/Index.js?t=201712131200"></script>
 <!-- <script src="../src/lib/touch/transform.js"></script>
 <script src="../src/lib/touch/alloy_touch.js"></script> -->
 <script type="text/javascript">

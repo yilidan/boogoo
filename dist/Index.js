@@ -290,6 +290,14 @@
 	            });
 	            location.href = "boogoo.app://?pushcode=100011&data=" + data;
 	        },
+	        // banner活动页
+	        gotoActivity: function gotoActivity() {
+	            var data = (0, _stringify2.default)({
+	                url: _global2.default.path + "/page/activity.html"
+	            });
+	            location.href = "boogoo.app://?pushcode=100011&data=" + data;
+	            // location.href = "./activity.html";
+	        },
 	        testScoll: function testScoll() {
 	            var _this = this;
 	            // window.onscroll = function(){

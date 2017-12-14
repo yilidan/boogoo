@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>活动一</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/fonts/iconfont.css">
+    <style media="screen">
+        body{
+            width: 100%;
+            height: auto;
+            background-color: #E9E9E9;
+        }
+        .header{
+            width: 100%;
+            height: 1.1733rem;
+            line-height: 1.1733rem;
+            background-color: #fff;
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 99;
+        }
+        .header>i{
+            /*display: inline-block;
+            height: 100%;*/
+            font-size: .6667rem;
+            padding-left: .4rem;
+            vertical-align: middle;
+        }
+        .header>span{
+            color: #000;
+            font-size: .4533rem;
+            vertical-align: middle;
+            margin-left: .3733rem;
+        }
+        .main{
+            width: 100%;
+            height: auto;
+            margin-bottom: .4rem;
+            /*margin-top: 1.1733rem;*/
+        }
+        .banner>img{
+            width: 100%;
+            height: 4rem;
+            margin-top: .1333rem;
+        }
+        .liveDate{
+            width: 92%;
+            height: auto;
+            margin:0 auto;
+            color: #6A6A6A;
+            text-align: right;
+            font-size: .2667rem;
+            padding:.0667rem 0;
+            padding-right: .2667rem;
+        }
+        .content{
+            width: 92%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .content li{
+            margin-top: .1333rem;
+        }
+        .content li>img{
+            width: 9.2rem;
+            height: 3.4667rem;
+        }
+        /*适配iphoneX*/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and(-webkit-device-pixel-ratio: 3){
+            .header{
+                height:1.76rem;
+                line-height:2.3333rem;
+            }
+        }
+        /*.content2{
+            width: 92%;
+            height: auto;
+            margin:0 auto;
+        }
+        .content2 li{
+            width: 100%;
+            height: 3.4667rem;
+            background-color: #fff;
+            border-radius: .1333rem;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="header" id="iosTop">
+            <i class="iconfont icon-back" id="goBack"></i>
+            <span>14号18：30进入首页“看直播”</span>
+        </div>
+        <div class="main">
+            <div class="banner">
+                <img src="../src/img/activity/banner.png" alt="">
+            </div>
+            <p class="liveDate">12月14号</p>
+            <!-- <ul class="content2">
+                <li>
+                    <div>
+
+                    </div>
+                </li>
+            </ul> -->
+            <ul class="content">
+                <li>
+                    <img src="../src/img/activity/live1.png" alt="">
+                </li>
+                <li>
+                    <img src="../src/img/activity/live2.png" alt="">
+                </li>
+                <li>
+                    <img src="../src/img/activity/live3.png" alt="">
+                </li>
+            </ul>
+            <p class="liveDate">12月15号</p>
+            <ul class="content">
+                <li>
+                    <img src="../src/img/activity/live4.png" alt="">
+                </li>
+                <li>
+                    <img src="../src/img/activity/live5.png" alt="">
+                </li>
+                <li>
+                    <img src="../src/img/activity/live6.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../src/lib/jquery/jquery.min.js"></script>
+    <script src="../src/lib/flexibel/flexible.debug.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIphoneOs = sUserAgent.match(/iphone/i) == "iphone";
+            var iosTop = document.getElementById("iosTop");
+            console.dir(iosTop);
+            if(bIsIphoneOs){
+                iosTop.style.paddingTop = "5%";
+            }
+            var searchH = $(".header").outerHeight();
+            console.log(searchH);
+            $(".main").css({
+                "margin-top":searchH
+            })
+            $("#goBack").click(function(){
+                var data = JSON.stringify({
+                    type: 0
+                })
+                location.href = "boogoo.app://?pushcode=100006";
+            })
+            // function goBack(){
+            //     var data = JSON.stringify({
+            //         type: 0
+            //     })
+            //     location.href = "boogoo.app://?pushcode=100006";
+            // }
+        }
+
+    </script>
+</body>
+</html>

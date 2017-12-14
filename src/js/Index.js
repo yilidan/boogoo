@@ -207,6 +207,14 @@ var vm = new Vue({
             })
             location.href = "boogoo.app://?pushcode=100011&data=" + data
         },
+        // banner活动页
+        gotoActivity:function(){
+            var data = JSON.stringify({
+                url: global.path + "/page/activity.html",
+            })
+            location.href = "boogoo.app://?pushcode=100011&data=" + data;
+            // location.href = "./activity.html";
+        },
         testScoll:function(){
             var _this = this;
             // window.onscroll = function(){
